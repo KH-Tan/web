@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Accordian1</title>
+
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+
+}
+html {
+
+}
+body {
+  background-color: black;
+  color: antiquewhite;  
+
+  margin-inline: 10%;
+
+  /* text-align: center; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+details {
+  position: relative;
+  max-inline-size: 40rem;
+  padding: 1rem;
+  margin-block: 1rem 0;
+  margin-inline: auto;
+
+  background-color: white;
+  color: black;
+  border: 1px solid palevioletred;
+  border-radius: 0.5rem;
+
+}
+.details[open] summary ~ * {
+  animation: sweep 0.5s ease-in-out;
+}
+@keyframes sweep {
+  from {
+    opacity: 0;
+    margin-top: -10px;
+  }
+  to {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+summary {
+  position: relative;
+  padding-inline: 0.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+summary::marker {
+  content: ">";
+  /* content: none; */
+}
+/* summary::before {
+  content: ">>";
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: -0.05rem;
+} */
+summary:hover {
+  background-color: aquamarine;
+}
+summary::-webkit-details-marker {
+  background: ">>>";
+}
+
+.details__content {
+  margin-block: 1rem;
+  margin-inline: 1.5rem;
+}
+
+</style>
+
+</head>
+
+<body>
+  <h1>Accordian - details summary</h1>
+
+
+
+  <details open class="details">
+    <summary class="details__summary">Question 0</summary>
+    <div class="details__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.</div>
+  </details>
+
+  <details class="details">
+    <summary class="details__summary">Question 1</summary>
+    <div class="details__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.</div>
+  </details>
+ 
+  <details class="details">
+    <summary class="details__summary">Question 2</summary>
+    <div class="details__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.</div>
+  </details>
+
+
+
+
+</body>
+</html>

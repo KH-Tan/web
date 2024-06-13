@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Position</title>
+
+
+<style>
+/* ------------------------------------------ */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* 
+  position: sticky;
+  position: fixed;
+  position: absolute;
+  position: relative;
+  position: static; -->default
+  */
+
+}
+
+html {
+
+}
+body {
+  /* scenario 1 - static (top left has NO effect) */
+  /* position: static;
+  top: 100px;
+  left: 100px; */
+
+  /* scenario 2 - relative (top left HAS effect) */
+  position: relative;
+}
+main {
+  width: 90vw;
+  /* margin: 0 auto; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 100px;
+
+}
+section {
+  padding: 2rem;
+  margin-bottom: 1rem;
+  background-color: aquamarine;
+  border: solid 1px blue;
+  border-radius: 12px;
+}
+.section-sticky {
+  /* scenario 4 - sticky */
+  position: sticky;
+  top: 100px;          
+  /* threshold value to stick */
+}
+
+header {
+  padding: 2rem;
+  text-align: center;
+  background-color: lightgray;
+  border: solid 1px black;
+
+  /* scenario 2 - relative parent absolue child (top left HAS effect) */
+  position: absolute;      /* taken out of normal flow*/
+  top: 200px;
+
+  /* scenario 3 - fixed to viewport (top left HAS effect) */
+  position: fixed;      /* taken out of normal flow*/
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+  min-height: 100px;
+  width: 100%;
+
+  /* margin-top: 0rem;
+  margin-bottom: 0rem; */
+
+}
+
+footer {
+  background-color: lightgray;
+  border: solid 1px black;
+  width: 100%;
+  height: 75px;
+
+  padding: 1rem;
+  text-align: center;
+
+  /* scenario 2 - relative parent absolue child (top left HAS effect) */
+  position: absolute;          /* taken out of normal flow*/      
+  bottom: 0;
+
+}
+
+/* -------------------------------------------- */
+</style>
+
+</head>
+
+
+<body>
+<header>
+  <p>Header (Position: Fixed)</p>
+</header>  
+
+<main>
+
+  <section class="section section-sticky">
+    <h2>Section 1 (Position: Sticky)</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p><br>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section>
+    <h2>Section 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section>
+    <h2>Section 3</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section>
+    <h2>Section 4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section>
+    <h2>Section X</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p><br>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p><br>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+
+
+</main>
+
+
+<footer>
+<p>Footer (Position: Absolute)</p>
+</footer>
+
+</body>
+</html>

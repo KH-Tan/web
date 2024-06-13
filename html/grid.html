@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grid</title>
+<style>
+
+.grid {
+  display: grid;
+  gap: 1rem;
+
+    grid-auto-columns: 1fr;
+
+  grid-template-areas: 
+   "section1"
+   "section2"
+   "section3"
+   "section4"
+   "sectionx";
+}
+.section1 {
+  grid-area: section1;
+}
+.section2 {
+  grid-area: section2;
+}
+.section3 {
+  grid-area: section3;
+}
+.section4 {
+  grid-area: section4;
+}
+.sectionx {
+  grid-area: sectionx;
+}
+
+@media (min-width: 720px) {
+
+.grid {
+  /* display: grid; */
+  /* row-gap: 2rem; */
+  /* column-gap: 2rem; */
+  /* gap: 25px 50px; */
+
+  /* Method 1 */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+
+  /* Method 2 */
+  grid-template-areas:
+   "section1 section1 section1 sectionx"
+   "section2 section3 section4 sectionx";
+
+  /* grid-auto-rows: minmax(150px, auto); */
+  /* justify-content: end; */
+  /* align-content: center; */
+  /* height: 100vh; */
+}
+
+.grid-col-span-2 {
+  /* grid-column: span 2; */
+}
+
+.grid-item-special {
+  /* grid-column-start: 4; */
+
+  /* grid-row-start: 1; */
+  /* grid-row-end: 3; */
+
+  /* grid-row: 1 / span 2 */
+}
+
+}
+
+
+
+section {
+  padding: 1rem;
+  background-color: aquamarine;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+header, footer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: lightgray;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <p>Header Information</p>
+</header>  
+
+<main class="grid">
+
+  <section class="grid-col-span-2 section1">
+    <h2>Section 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section class="section2">
+    <h2>Section 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section class="section3">
+    <h2>Section 3</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section class="section4">
+    <h2>Section 4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+  <section class="grid-item-special sectionx">
+    <h2>Section X</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi libero unde assumenda minima temporibus quibusdam mollitia dolorum quam voluptatum placeat dolorem illum, officia dolor aspernatur.</p>
+  </section>
+
+</main>
+
+<footer>
+<p>Footer Information</p>
+</footer>
+
+</body>
+</html>

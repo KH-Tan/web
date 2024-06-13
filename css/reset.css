@@ -1,0 +1,76 @@
+/* ------------------------------------------- */
+/* reset.css */
+/* ------------------------------------------- */
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type thru ... */
+* {
+  margin: 0;
+  padding: 0;
+
+  font: inherit;
+}
+
+html {
+  /* dark mode user-agent-styles */
+  color-scheme: dark light;
+
+  /* default font-size of root element */
+  /* determines 1rem (root em) */
+  font-size: 16px;
+
+  /* webkit support only ??? */
+  hanging-punctuation: first last;
+}
+
+/* min body height*/
+body {
+  min-height: 100svh;
+}
+
+/* responsive images, videos, ... */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* balanced heading displays for wordy headings */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  /* default sizing - change as desired */
+  max-width: 75ch;
+  margin-bottom: 2rem;
+
+  /* prevent orphans */
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: no-preferance) {
+  :has(:target) {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  /* example */
+  /* .content {
+    height: 50vh;
+    max-width: 50vw;
+    overflow-x: scroll;
+  } */
+
+}
+
+/* --------------eof-------------------------- */

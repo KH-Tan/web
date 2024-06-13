@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block Inline Block-Inline</title>
+
+
+  <style>
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+  }
+  .div {
+    /* outline: 1px solid black; */
+    border: 1px solid black;
+    border-radius: 8px;
+    /* display: block; */
+    /* display: inline; */
+    display: inline-block;
+    width: 20%;
+    height: 50px;
+  }
+  .span {
+    /* border: 1px solid black; */
+    outline: 1px solid black;
+    /* display: block; */
+    /* display: inline; */
+    display: inline-block;
+    width: 25%;
+    height: 30px;
+  }
+
+  .box-blue {
+    background-color: aqua;
+  }
+  .box-yellow {
+    background-color: yellow;
+  }
+  .box-orange {
+    background-color: orange;
+  }
+  .box-red {
+    background-color: red;
+  }
+
+  .display-none {
+    display: none;
+  }
+  .visibility-hidden {
+    visibility: hidden;
+  }
+
+  </style>
+
+
+</head>
+<body>
+  <h1>block vs inline vs inline-block</h1>
+
+  <h2>div defaults to display: block</h2>
+  <div class="div box-blue">Box Blue</div>
+  <div class="div box-yellow visibility-hidden">Box Yellow</div>
+  <div class="div box-orange">Box Orange</div>
+  <div class="div box-red">Box Red</div>
+
+  <h2>span defaults to display: inline</h2>
+  <span class="span box-blue">Box Blue</span>
+  <span class="span box-yellow">Box Yellow</span>
+
+
+
+
+</body>
+</html>

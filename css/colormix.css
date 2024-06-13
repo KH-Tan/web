@@ -1,0 +1,16 @@
+
+:root {
+  --base-color: purple;
+}
+
+.color-mid {
+  background-color: color-mix(in oklab, var(--base-color) 50% );
+}
+
+.color-light {
+  background-color: color-mix(in oklab, var(--base-color) 30%, white);
+}
+
+.color-dark {
+  background-color: color-mix(in oklab, var(--base-color) 70%, black);
+}

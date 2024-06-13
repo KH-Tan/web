@@ -1,0 +1,41 @@
+
+body {
+  font-family: system-ui, Arial, Helvetica, sans-serif ;
+  font-size: 1.15rem;
+  font-weight: 300;
+
+  line-height: 1.5;
+  text-align: justify;
+  color: black;
+}
+
+header {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  color: darkmagenta;
+  text-decoration: underline overline;
+}
+
+footer {
+  font-size: 3rem;
+  font-weight: 500;
+  text-align: center;
+  color: darkmagenta;
+  text-decoration: underline overline;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: darkmagenta;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: darkblue;
+
+}
+

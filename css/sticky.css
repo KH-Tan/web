@@ -1,0 +1,68 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: lightgray;
+
+
+
+
+  min-height: 100vh;
+
+  /* min-height: 100vh;
+  display: flex;
+  flex-direction: column; */
+
+
+  /* sticky footer */   
+  padding-bottom: 70px;
+
+  /* commented code below required to keep at bottom */
+  /* position: relative;
+  min-height: 100vh; */
+}
+
+header {
+  text-align: center;
+  background-color: black;
+  color: white;
+ 
+  padding: 50px;
+}
+
+main {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+footer {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 25px;
+
+
+  margin-top: auto;
+
+  
+  /* position: sticky;   */
+
+
+  /* position: absolute; */    /* this will keep it at the bottom */     
+ 
+  /* this will keep it sticky  */
+  position: fixed;    
+ 
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  
+
+}

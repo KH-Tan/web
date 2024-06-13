@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexBox</title>
+
+
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+
+  background-color: antiquewhite;    
+}
+.wrapper > * {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+
+  flex: 1 100%;
+}
+
+
+.header {
+  background-color: tomato;
+  height: 120px;
+}
+.article {
+  text-align: left;
+  background-color: deepskyblue;
+  height: 300px;
+  font-size: 24px;
+}
+.aside {
+  background-color: gray;   
+}
+.aside1 {
+  background-color: goldenrod;
+}
+.aside2 {
+  background-color: gold;
+}
+.footer {
+  background-color: lightseagreen;
+  height: 80px;
+}
+
+@media all and (min-width: 800px) {
+  .article {
+    flex: 3;
+  }
+  .aside1 {
+    order: 1;
+  }
+  .aside2 {
+    order: 2;
+  }
+  .article {
+    order: 2;
+  }
+  .footer {
+    order: 4;
+  }
+}
+@media all and (min-width: 600px) {
+ .aside {
+  flex: 1;
+ }
+}
+
+
+
+.f-container {
+  height: 75dvh;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  background-color: antiquewhite;  
+
+}
+.f-item {
+  width: 300px;
+  margin: 10px;
+  border: 1px solid black;
+  background-color: aqua;
+}
+.f-item-1 {
+  min-height: 200px;
+  flex-grow: 1;
+  flex-basis: 0;    
+}
+.f-item-2 {
+  min-height: 100px;
+  flex-shrink: 0;
+}
+.f-item-3 {
+  min-height: 300px;
+  flex-grow: 2;
+  flex-basis: 0;
+}
+
+
+</style>
+
+
+</head>
+
+<body>
+<!-- Eg 1 -->
+
+  <div class="wrapper">
+    <header class="header"><h1>Header</h1></header>
+    <article class="article">
+      <h2>Article</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore soluta, quasi eaque excepturi tenetur modi illo! Harum rerum doloremque dolores?</p>
+      <br>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sapiente accusantium suscipit eum, debitis sit dolor a, et sint deserunt veritatis possimus animi voluptatem rerum omnis dicta earum hic, laborum reprehenderit minima laudantium magni fugit! Mollitia molestias ipsum maiores beatae, illo dolorum delectus ab nisi nobis. Eveniet facilis impedit eaque.</p>
+
+    </article>
+    <aside class="aside aside1">
+      <h2>Aside1</h2>
+    </aside>
+    <aside class="aside aside2">
+      <h2>Aside2</h2>
+    </aside>
+    <footer class="footer">
+      <h2>Footer</h2>
+    </footer>
+  </div>
+
+
+
+
+<!-- Eg 2 -->
+
+  <div class="f-container">
+    <div class="f-item f-item-1">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est, odio cum. Quod, minima? Quisquam, adipisci. Quibusdam facilis odit alias ex qui reprehenderit perferendis suscipit laborum laboriosam repellendus. Eveniet debitis cumque ex possimus accusamus magnam, dolorum, voluptate nobis delectus dolor a totam iure culpa eius tempora?</p>
+    </div>
+    <div class="f-item f-item-2">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem adipisci necessitatibus modi, illo optio, tempora a accusamus dicta harum explicabo delectus esse odio tenetur nisi?</p>
+    </div>
+    <div class="f-item f-item-3">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus repellat pariatur, sapiente quae deserunt rem. Eaque ipsa vero perferendis velit dolores sequi ducimus quo eos a iste, culpa, ipsum voluptatum provident sed veniam tempora libero nobis dolor! A iure, vel, reiciendis quae rerum incidunt doloremque, aperiam eius esse maiores unde!</p>
+    </div>
+  </div>
+
+</body>
+</html>

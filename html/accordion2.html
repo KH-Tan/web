@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Accordian2</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+
+}
+html {
+
+}
+body {
+  background-color: whitesmoke;
+  color: black;  
+
+  margin-inline: 10%;
+
+  /* text-align: center; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+details {
+  border: 1px solid palevioletred;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  background-color: lightgray;  
+}
+details > div {
+  border-top: 1px solid palevioletred;
+  padding: 10px 0px;
+  margin: 10px 0px 0px 0px;
+}
+details:hover:not([open]) {
+  background-color: lightcoral;
+}
+
+summary {
+  background-color: aquamarine;  
+  cursor: pointer;
+  font-weight: 700;
+  user-select: none;
+  -webkit-user-select: none;
+
+  padding-top: 0;
+  margin-top: 0;
+}
+/* summary:hover {
+  background-color: aquamarine;
+} */
+::marker {
+  /* content: none; */
+  /* content: ">"; */
+
+  content: "\f04b";
+  color: orange;
+  font-size: 24px;
+}
+
+/* Google Icons */
+/* Rules for icon sizes: */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 {
+   font-size: 24px;
+   padding-top: 5px;
+   } /* Default */
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+</style>
+
+<!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+
+<script src="https://kit.fontawesome.com/78d8d80c96.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1>Accordian - details summary</h1>
+
+
+  <span class="material-icons md-18">cloud</span>
+  <i class="material-icons">cloud</i>
+  <i class="material-icons md-36" style="color: brown">cloud</i>
+  <i class="material-icons md-48">cloud</i>
+  <p class="material-icons md-24">cloud</p>
+  <p class="material-icons md-24">clear</p>
+  <p class="material-icons md-24">add</p>
+
+
+  <i class="fa fa-car"></i>
+  <i class="fas fa-clock"></i>
+  <i class="fa-solid fa-user"></i>
+
+  <i class="fa-solid fa-play">f04b</i>
+  <i class="fa-solid fa-square">f0c8</i>
+
+  <details open class="details">
+    <summary class="details__summary"><i class="fa-solid fa-user"></i> Question 0</summary>
+    <div class="details__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.</div>
+  </details>
+
+  <details class="details">
+    <summary class="details__summary">Question 1</summary>
+    <div class="details__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.</div>
+  </details>
+ 
+  <details class="details">
+    <summary class="details__summary"><span class="material-icons md-24">clear</span> Question 2</summary>
+    <div class="details__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quidem molestiae temporibus nulla, optio dolorem sed iure, inventore dolores iste consequuntur rerum facilis laudantium architecto adipisci eaque ipsum totam veritatis.</div>
+  </details>
+
+
+
+
+</body>
+</html>

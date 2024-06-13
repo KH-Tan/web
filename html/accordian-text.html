@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Text expand collapse</title>
+
+  <style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    background-color:aliceblue ;
+    /* overflow: hidden; */
+  }
+
+  .card-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    /* align-items: flex-start; */
+  }
+  .card {
+    background-color: antiquewhite;
+    padding: 1rem;
+    border: 1px solid darkgray;
+    border-radius: 0.25rem;
+  }
+
+  h2, p {
+    margin: 0;
+  }
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .p-lines5 {
+    --max-lines: 5;
+
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--max-lines);
+
+  }
+  .p-expand {
+    appearance: none;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-top: 1rem;
+
+  }
+  .p-expand:hover {
+    background-color: lightgray;
+  }
+  .p-expand::before {
+    content: "Expand";
+  }
+  .p-expand:checked::before {
+    content: "Collapse";
+  }
+  .p-lines5:has(+ .p-expand:checked) {
+    /* max-height: none; */
+   -webkit-line-clamp: 25;
+  }
+
+
+  dialog::backdrop {
+    background-color: lavender;
+    opacity: 0.8;
+  }
+
+  :modal {
+    background-color: aquamarine;
+  }
+
+  /* div[data-modal] {} */
+  [data-modal] {
+    background-color: coral;
+  }
+
+
+  #my-popover::backdrop {
+    background-color: palevioletred;
+    opacity: 0.3;
+  }
+  [popover] {
+    position: fixed;
+    top: 500px;
+    left: 800px;
+    background-color: burlywood;
+    color: canvastext;
+    width: 250px;
+    height: 200px;
+    padding-left: 20px;
+    border-radius: 12px;
+    border: 2px solid red;
+  }
+
+
+  </style>
+
+
+<script>
+  // see below
+</script>
+
+
+</head>
+<body>
+  <h1>Demos</h1>
+
+  <!-- example 1 -->
+
+  <button onclick="showMyDialog(true)">Open myDialog</button>  
+  <dialog id="my-dialog">
+    <h3>Modal dialog</h3>
+    <p>blah blah blah.....</p>
+    <button type="button" onclick="showMyDialog(false)">Close</button>
+  </dialog>
+
+
+  <!-- example 2 -->
+  <button data-modal-open>Open Modal</button>
+  <dialog data-modal>
+    <h3>Modal dialog</h3>
+    <button data-modal-close>Close</button>
+  </dialog>
+
+
+
+  <button popovertarget="my-popover">Toggle Popover</button>  
+  <button popovertarget="my-popover" popovertargetaction="show">Open Popover</button>
+  <button popovertarget="my-popover" popovertargetaction="hide">Hide Popover</button>
+
+  <div id="my-popover" popover>
+    <h3>Popover</h3>
+    <p>Popover content</p><br>
+    <button popovertarget="my-popover" popovertargetaction="hide">OK</button>
+  </div>
+
+
+  <section class="card-group">
+    <article class="card">
+      <h2>Article 1</h2>
+      <p class="p-lines5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quaerat ea fugiat quis, laboriosam tempora est quae dignissimos rem blanditiis consequuntur voluptatibus sed nihil, ab quam nemo. Eum dolor placeat ad ullam, corrupti maxime dignissimos cumque hic repellat maiores, corporis eos, rerum iure ab id? Illum adipisci cumque provident corporis.</p>
+      <input type="checkbox" class="p-expand">      
+    </article>
+    <article class="card">
+      <h2>Article 2</h2>
+      <p class="p-lines5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quaerat ea fugiat quis, laboriosam tempora est quae dignissimos rem blanditiis consequuntur voluptatibus sed nihil, ab quam nemo. Eum dolor placeat ad ullam, corrupti maxime dignissimos cumque hic repellat maiores, corporis eos, rerum iure ab id? Illum adipisci cumque provident corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit magnam, porro, tempora dignissimos ullam exercitationem amet eum quisquam deleniti ex repellat. Explicabo fugit laboriosam ullam.</p>
+      <input type="checkbox" class="p-expand">
+    </article>
+    <article class="card">
+      <h2>Article 3</h2>
+      <p class="p-lines5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque quaerat ea fugiat quis, laboriosam tempora est quae dignissimos rem blanditiis consequuntur voluptatibus sed nihil, ab quam nemo. Eum dolor placeat ad ullam, corrupti maxime dignissimos cumque hic repellat maiores, corporis eos, rerum iure ab id? Illum adipisci cumque provident corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit magnam, porro, tempora dignissimos ullam exercitationem amet eum quisquam deleniti ex repellat. Explicabo fugit laboriosam ullam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto vel optio exercitationem reprehenderit rem quidem incidunt itaque ab quaerat sapiente? Maiores placeat ipsam quod cupiditate.</p>
+      <input type="checkbox" class="p-expand">
+    </article>
+
+  </section>
+
+
+
+
+<!-- js section -->
+<script>
+
+  // const myDialog = document.getElementById("my-dialog")
+  const myDialog = document.querySelector("#my-dialog")
+  const showMyDialog = (show) => { show ? myDialog.showModal() : myDialog.close() }
+  // function showMyDialog() {
+  //   myDialog.showModal()
+  // }
+  // function closeMyDialog() {
+  //   myDialog.close()
+  // }
+
+  const openModal = document.querySelector("[data-modal-open]")
+  const closeModal = document.querySelector("[data-modal-close]")
+  const myModal = document.querySelector("[data-modal]")
+
+  openModal.addEventListener("click", () => {
+    myModal.showModal()
+  })
+  closeModal.addEventListener("click", () => {
+    myModal.close()
+  })
+
+
+
+</script>
+<!-- js section -->
+
+</body>
+</html>

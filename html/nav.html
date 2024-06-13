@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation - Responsive</title>
+
+
+<style>
+
+:root {
+  --background: rgba(85, 214, 170, .85);
+}
+
+*, *::before, ::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 100px;
+
+
+  color: ghostwhite;
+  background: #222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+  position: relative;
+}
+
+
+header {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1rem;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after
+{
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  position: relative;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+
+  display: none;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1rem;
+
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  color: black;
+} 
+.nav-toggle:checked ~ nav {
+  display: block;
+}
+
+
+main {
+margin-top: 300px;
+
+  height: 200vh;
+  background-color: #333;
+
+  background-size: cover;
+  /* display: grid;
+  place-items: center; */
+
+}
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Logo</h1>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li> 
+    </ul>
+  </nav>
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+
+
+
+
+</header>  
+
+
+<main>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro qui asperiores laboriosam cupiditate, numquam, dicta perspiciatis eius, architecto cumque rerum impedit assumenda dolore repellendus fugiat quisquam error molestiae perferendis saepe!</p>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro qui asperiores laboriosam cupiditate, numquam, dicta perspiciatis eius, architecto cumque rerum impedit assumenda dolore repellendus fugiat quisquam error molestiae perferendis saepe!</p>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro qui asperiores laboriosam cupiditate, numquam, dicta perspiciatis eius, architecto cumque rerum impedit assumenda dolore repellendus fugiat quisquam error molestiae perferendis saepe!</p>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro qui asperiores laboriosam cupiditate, numquam, dicta perspiciatis eius, architecto cumque rerum impedit assumenda dolore repellendus fugiat quisquam error molestiae perferendis saepe!</p>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro qui asperiores laboriosam cupiditate, numquam, dicta perspiciatis eius, architecto cumque rerum impedit assumenda dolore repellendus fugiat quisquam error molestiae perferendis saepe!</p>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro qui asperiores laboriosam cupiditate, numquam, dicta perspiciatis eius, architecto cumque rerum impedit assumenda dolore repellendus fugiat quisquam error molestiae perferendis saepe!</p>
+
+
+</main>
+
+
+<footer>
+
+</footer>
+
+
+
+</body>
+</html>

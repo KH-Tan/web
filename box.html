@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Box Model</title>
+
+  <style>
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  font-size: 2rem;
+  background-color: pink;
+  /* display: block; */
+
+  width: 350px;
+  height: 100px;
+
+  /* padding-top: 32px;
+  padding-right: 64px;
+  padding-bottom: 100px;
+  padding-left: 10px; */
+  /* padding: 32px 64px 100px 10px; */
+  padding: 16px;
+
+  /* border: 10px solid orange; */
+  border-radius: 15px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+  /* margin: 20px 20px 20px 20px; */
+  margin: 15px;
+}
+
+.box2 {
+  font-size: 2rem;
+  background-color: pink;
+
+  width: 350px;
+  height: 100px;
+
+  padding: 16px;
+  margin: 15px;
+
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+}
+
+.box3 {
+  font-size: 2rem;
+  background-color: pink;
+
+  width: 200px;
+  height: 200px;
+
+  padding: 50px;
+  margin: 15px;
+
+  border-radius: 50%;
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+  <div class="box">
+    <p>Hello, World!</p>
+  </div>
+  <div class="box2">
+    <p>Hello, Box Model!</p>
+  </div>
+  <div class="box3">
+    <p>Box!</p>
+  </div>
+
+
+</body>
+</html>
+

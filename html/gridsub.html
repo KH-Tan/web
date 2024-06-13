@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grid SubGrid</title>
+
+<style>
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.25rem;
+  width: 90%;
+  display: block;
+  margin-inline: auto;
+}
+h1 {
+  font-size: 5rem;
+}
+h2 {
+  font-size: 3rem;
+}
+img {
+  /* max-width: 100%; */
+  width: 200px;
+  height: 200px;
+  display: block;
+  border: 1px solid blue;
+}
+
+.wrapper {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* grid-template-rows: auto auto auto; */
+  gap: 1rem;
+  margin-top: 3rem;
+}
+.box {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+
+  display: grid;
+  grid-template-rows: subgrid;
+  /* grid-row: 1 / 4; */
+  grid-row: span 3;
+}
+
+</style>
+</head>
+
+<body>
+  <h1>Grid & subGrids</h1>
+
+
+  <div class="wrapper">
+    <div class="box">
+      <h2>Lorem25</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, maxime quae! Unde quisquam numquam sint et pariatur cum officia sunt reiciendis delectus autem! Doloremque, accusamus.</p>
+
+      <img src="" alt="">
+    </div>
+    <div class="box">
+      <h2>Lorem35</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, quo, soluta nulla neque enim atque officia accusantium velit unde ratione dolorem consectetur placeat vitae, consequatur magni ea debitis adipisci facilis libero illum natus necessitatibus? Explicabo.</p>
+
+      <img src="" alt="">
+    </div>
+    <div class="box">
+      <h2>Lorem50</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed deserunt adipisci iusto blanditiis. Soluta voluptate enim delectus voluptatem facere numquam recusandae adipisci beatae perferendis, libero vero nesciunt aut, ab quisquam, nisi error illo! Repellendus, quibusdam voluptas assumenda similique ea rem neque. Sapiente, illo sint. Ipsum veniam minima tempore inventore dolores.</p>
+
+      <img src="" alt="">
+    </div>
+    <div class="box">
+      <h2>Lorem30</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid sit accusantium eos necessitatibus adipisci saepe pariatur nulla? Repellat dolorum accusantium veniam tempora, provident aliquid iusto sapiente necessitatibus unde dicta illum?</p>
+
+      <img src="" alt="">
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
