@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Gradients</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  /* margin-left: 10%; */
+  /* margin-right: 10%; */
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: antiquewhite;
+  font-family: Verdana, sans-serif;
+  font-size: 1.5rem;
+
+  text-align: center;
+}
+
+.hero {
+outline: 3px solid red;
+
+  background-color: olive;
+  color: darkblue;
+
+  background-image: 
+    url("/images/tampinesparkslogo2.jpg"),
+    url("/images/softwatercolorwallpaper1.jpg");
+    
+  background-repeat: no-repeat, repeat;
+  background-position: top 10px left 10px, top left;
+  background-size: 200px 200px, cover;
+  /* background-size: cover; */
+  /* background-blend-mode: darken;   blend bgcolor & image */
+
+  padding-block: 5rem;  
+}
+
+.box {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 30vw;
+  height: 20vh;
+  background-color: white;
+  color: black;
+  padding: 2rem;
+
+  border: 1px solid black;
+  border-radius: 15px;
+
+  
+}
+
+.box--1 {
+  background-image: linear-gradient(lightblue, salmon);
+  background-image: linear-gradient(to right,  lightblue, salmon);
+  background-image: linear-gradient(to top right,  lightblue, salmon);
+  background-image: linear-gradient(135deg,  lightblue 25%, salmon);
+  background-image: linear-gradient(135deg,  lightblue 25%, salmon 25%, red);
+  background-image: repeating-linear-gradient(45deg,
+   salmon, salmon 10px, aqua 10px, aqua 20px, lightblue 20px, lightblue 30px);
+}
+.box--2 {
+  background-image: radial-gradient( lightblue 25%, salmon 75%, red);
+  background-image: radial-gradient( lightblue 25%, salmon 25%, red 95%);
+  background-image: repeating-radial-gradient(
+    red, red 10px, green 10px, green 20px, blue 20px, blue 30px);
+}
+.box--x {
+  background-color: aquamarine;
+  color: darkblue;
+
+  background-image: url("/images/softwatercolorwallpaper1.jpg");
+  background-size: cover;
+
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+  <div class="hero">
+    <h1>CSS Gradients</h1>
+  </div>
+
+  <br>
+
+
+  <h2><code>background-image: linear-gradient()</code></h2>
+  <div class="box box--1">
+    <p>Lorem, ipsum dolor sit amet.</p>
+  </div>
+
+  <br><br><br>
+
+  <h2><code>background-image: radial-gradient()</code></h2>
+  <div class="box box--2">
+    <p>Lorem, ipsum dolor.</p>
+  </div>
+
+
+  <br>
+
+  <h2><code>background-image: url()</code></h2>
+  <div class="box box--x">
+    <p>Lorem, ipsum dolor.</p>
+  </div>
+
+
+
+</body>
+</html>

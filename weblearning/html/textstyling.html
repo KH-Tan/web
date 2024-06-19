@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Text Styling</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+
+  background-color: antiquewhite;
+  color: darkslategray;
+
+
+  font-family: system-ui, Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+
+  line-height: 1.75rem;
+  letter-spacing: 0.15rem;
+  word-spacing: 0.1rem;
+
+  text-emphasis-color: orange;   /* ???????? */
+
+}
+p {
+  margin-bottom: 1rem;
+  /* text-align: left; */
+  text-wrap: balance ;
+
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  font-weight: 600;
+
+  text-align: center;
+}
+.text-h1 {
+  margin-bottom: 1rem;
+  /* font-size: 4rem;
+  line-height: 8rem; */
+
+  /* width: 1080px; */
+
+  /* white-space: nowrap; */
+
+  /* text-wrap: nowrap; */
+  /* text-wrap: wrap; */
+  /* text-wrap: balance ; */
+
+  background-color: gray;
+  color: black;
+  font-weight: 900;
+
+  /* @media (min-width: 400px)  {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+  @media (min-width: 800px)  {
+    font-size: 4rem;
+    line-height: 8rem;
+    background-color: green;
+  } */
+
+  @media ( width > 400px)  {
+    font-size: 3rem;
+    line-height: 4.5rem;
+  }
+  @media ( width > 800px)  {
+    font-size: 4rem;
+    line-height: 8rem;
+    background-color: green;
+  }
+
+  @media ( width > 1200px )  {
+    font-size: 5rem;
+    line-height: 10rem;
+    background-color: orange;
+  }
+  @media ( width > 1600px )  {
+    background-color: darkmagenta;
+    font-size: 6rem;
+    line-height: 12rem;
+  }
+
+
+
+}
+.text-h2 {
+  margin-bottom: 0.75rem;
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 700;
+}
+
+.text-style-o {
+  font-style: oblique;
+}
+.text-style-i {
+  font-style: italic;
+}
+.text-decoration {
+  /* text-underline-position: below;   (for japanese) */
+  
+  text-decoration: double overline underline  blue;
+
+  text-decoration-style: wavy;    /* none/solid/dotted/dashed/double */
+  text-decoration-line: underline  ; /* line-through/overline */  
+  text-decoration-color: blueviolet;
+  text-decoration-thickness: 0.2rem ;
+  text-decoration: wavy underline overline blue 0.1rem;
+
+  text-underline-offset: 0.2rem ;
+
+
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <h1 class="text-h1">Text Styling</h1>
+</header>
+  
+<main>
+  <h2 class="text-h2 text-style-i">Heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident facere saepe blanditiis, rerum culpa velit minima vitae laborum itaque officia assumenda fuga quod repellendus iste laboriosam omnis dolore! <span class="text-decoration">Possimus</span> , nihil.</p>
+
+  <h2 class="text-h2 text-style-o">Heading</h2>
+  <p><strong>Lorem</strong> <em>ipsum</em> dolor sit amet consectetur, adipisicing elit. Provident facere saepe blanditiis, rerum culpa velit minima vitae laborum itaque officia assumenda fuga quod repellendus iste laboriosam omnis dolore! Possimus, nihil.</p>
+
+  <h3>Heading</h3>
+  <p><b>Lorem</b> <i>ipsum</i> <u>dolor</u> sit amet consectetur, adipisicing elit. Provident facere saepe blanditiis, rerum culpa velit minima vitae laborum itaque officia assumenda fuga quod repellendus iste laboriosam omnis dolore! Possimus, nihil.</p>
+
+  <h2></h2>
+  <p></p>
+
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+</html>

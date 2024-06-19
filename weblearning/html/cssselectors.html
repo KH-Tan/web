@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors</title>
+
+</head>
+
+
+<style>
+/* Cascade */
+/* 1. last rule */
+/* 2. specificity - !important->id->class->element */
+/* 3. inheritance */
+
+/* universal selector - selects everything */
+* {
+  /* applies to every element */
+     /* border: 2px solid purple; */
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* element selectors */
+html {}
+body {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.35;
+
+  margin-inline: 10%;
+  padding: 1rem;
+
+  border: 5px solid red;   /* only applies to body/not inherited */
+}
+header {}
+main {}
+footer {}
+h1 {
+  padding-bottom: 1rem;
+  color: black;
+}
+h2, h3 {
+  color: darkblue;
+}
+p {
+  padding-bottom: 1rem;
+  color: gray
+}
+/* p span {
+  text-transform: uppercase;
+  background-color: gold;
+} */
+/* form elements do not inherit by default */
+button, input, textarea, select {
+  font: inherit;
+}
+
+
+
+/* class selectors */
+.clr--gray {
+  color: gray;
+}
+/* article.article--1 {
+  background-color: orange;
+} */
+article.article--1.article--11 {
+  background-color: red;
+}
+article .article--1a {
+  background-color: red;
+}
+
+.class-level1 {
+  background-color: yellow;
+}
+.class-level2 {
+  background-color: orange;
+}
+.class-level3 {
+  background-color: red;
+}
+
+/* And selector */
+.class-level1.class-level2 {
+  background-color: gray;
+}
+/* Or selector */
+.class-level1, .class-level2 {
+  background-color: black;
+}
+/* Descendant selector */
+.class-level1   .class-level2 {
+  background-color: blue;
+}
+/* Direct Child selector */
+.class-level1  >  .class-level2 {
+  background-color: lightblue;
+}
+/* Adjacent Sibling selector */
+.class-level1  +  .class-level2 {
+  background-color: purple;
+}
+/* General Sibling selector */
+.class-level1  ~  .class-level2 {
+  background-color: lightgreen;
+}
+
+div ~ .siblings {
+  background-color: yellowgreen;
+}
+div + .siblings {
+  background-color: green;
+}
+
+
+/* id selectors (not recommended/use only when required) */
+#p--1 {
+
+}
+#p--2 {
+  color: red;
+}
+#p--3 {
+  
+}
+
+</style>
+
+
+<body>
+<h1>CSS Selectors</h1>
+
+
+<div class="class-level1">
+  <p>Paragraph in Level1</p>
+  <div class="class-level2">
+    <p>Paragraph in Level2</p>
+    <div class="class-level3">
+      <p>Paragraph in Level3</p>
+    </div>
+  </div>
+</div>
+<div class="class-level1  class-level2">
+  <p>Paragraph in Level1 & Level2</p>
+</div>
+
+<div>Something</div>
+
+<div class="container--siblings">
+  <div class="siblings">1</div>
+  <div class="siblings">2</div>
+  <div class="siblings">3</div>
+  <div class="siblings">4</div>
+</div>
+
+
+<div>Something</div>
+
+
+<article class="article--1 article--11">  
+<h2>Article 1</h2>
+<p id="p--1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore laudantium maxime doloribus fugiat in, voluptatem adipisci voluptates <span class="article--1a">sequi autem</span>, esse recusandae? Cumque voluptatum modi ducimus aliquid quos, porro esse ipsam qui reiciendis doloremque numquam in?</p>
+</article>
+
+<p class="article--1"><u>Article 1 - Appendix</u></p>
+
+<span>span text not in p</span>
+<button>Button Text</button>
+
+<article class="article--1">
+<h2>Article 2</h2>
+<p id="p--2" class="clr--gray">Lorem <span>ipsum</span> dolor sit, amet consectetur adipisicing elit. Dolore laudantium maxime doloribus fugiat in, voluptatem adipisci voluptates sequi autem, esse recusandae? Cumque voluptatum modi ducimus aliquid quos, porro esse ipsam qui reiciendis doloremque numquam in?</p>
+</article>
+<article class="article--3">
+<h2>Article 3</h2>
+<p id="p--3" class="clr--gray">Lorem ipsum <span>dolor</span> sit, amet consectetur adipisicing elit. Dolore laudantium maxime doloribus fugiat in, voluptatem adipisci voluptates sequi autem, esse recusandae? Cumque voluptatum modi ducimus aliquid quos, porro esse ipsam qui reiciendis doloremque numquam in?</p>
+</article>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Animation Basics</title>
+
+<style>
+
+
+.element-animate-1 {
+  background-color: dodgerblue;
+  color: whitesmoke;
+  
+  font-family: Poppins, Roboto, system-ui;
+  font-weight: 700;
+  font-size: 2rem;
+
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  animation-name: skew;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: forwards;
+  animation-fill-mode: both;
+  animation-play-state: paused;
+
+  &:hover {
+    animation-play-state: running;
+  }
+}
+@keyframes spin {
+  0% {scale: 0.75; transform: rotate(1deg);}
+  25% {scale: 0.25; transform: rotate(90deg); border-radius: 45%;}
+  50% {scale: 0.5; transform: rotate(180deg); border-radius: 90%;}
+  100% {scale: 0.75; transform: rotate(360deg); border-radius: 90%;}
+}
+@keyframes grow {
+  from {scale: 1 1 } to {scale: 5 1}
+}
+@keyframes skew {
+  from {
+    /* transform: skew(-5deg); */
+    /* transform: skewX(-5deg); */
+    transform: skewY(-5deg);
+  }
+  to {
+    /* transform: skew(-45deg); */
+    /* transform: skewX(-45deg); */
+    transform: skewY(-45deg);
+  }
+}
+
+</style>
+
+
+
+
+
+
+</head>
+<body>
+<h1>Animation Basiscs</h1>
+  
+<button>Click Me</button>
+
+
+<div>
+  <h2>Heading 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci deleniti aliquid dolores quia expedita laborum, rem deserunt facere nulla quisquam?</p>
+</div>
+<div>
+  <h2>Heading 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci deleniti aliquid dolores quia expedita laborum, rem deserunt facere nulla quisquam?</p>
+</div>
+
+<div class="element-animate-1">
+  <p>coding2go.com</p>
+</div>
+
+<div>
+  <h2>Heading 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci deleniti aliquid dolores quia expedita laborum, rem deserunt facere nulla quisquam?</p>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Shadows</title>
+
+<style>
+
+
+body {
+  margin-left: 10%;
+  margin-right: 10%;
+
+  background-color: antiquewhite;
+  font-family: Verdana, sans-serif;
+  font-size: 1.25rem;
+
+  text-align: center;
+}
+code {
+  background-color: lightgray;  
+}
+
+.box {
+  background-color: lightcoral;
+  color: darkblue;
+  padding: 2rem;
+
+  border: 1px solid black;
+  border-radius: 15px;
+  /* box-shadow: x-offset y-offset        min 2 values */
+  /* box-shadow: 10px 20px; */
+
+  /* box-shadow: x y blur-size */
+  /* box-shadow: 50px 50px 150px; */
+
+  /* box-shadow: x y blur spread-size */
+  /* box-shadow: 0px 0px 10px 50px; */
+
+  /* box-shadow: x y blur spread color */
+  /* box-shadow: 0px 0px 10px 20px indianred; */
+
+  /* box-shadow: inset x y blur spread color    reverse shadow inwards  */
+  /* box-shadow: inset 0px 0px 10px 20px indianred; */
+
+  /* box-shadow: multiple shadows    */
+  box-shadow: 10px 10px 10px,
+              20px 20px 10px indianred;
+
+}
+
+#filter-shadow {
+  font-size: 3rem;
+  filter: drop-shadow(10px 10px 10px);
+}
+#text-shadow {
+  font-size: 3rem;
+  text-shadow: 10px 10px 10px green;
+}
+#text-shadow-animate {
+  font-size: 3rem;
+  transition: transform 1.5s, text-shadow 1.5s;
+}
+#text-shadow-animate:hover {
+  transform: scale(1.5);      /* does not apply to span elements */
+  text-shadow: 10px 10px 10px green;
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+  <h1>Box Shadows & Filter Shadows</h1>
+  <br>
+
+  <h2><code>box-shadow: </code> property</h2>
+  <div class="box">
+    <p>Lorem, ipsum dolor sit amet.</p>
+  </div>
+
+  <br><br><br>
+
+  <h2><code>filter: drop-shadow()</code> property</h2>
+  <h3>(applies to text, png, svg)</h3>
+  <div class="box">
+    <p id="filter-shadow">Lorem, ipsum dolor.</p>
+  </div>
+
+  <br><br><br>
+
+  <h2><code>text-shadow: </code> property</h2>
+  <h3>(applies to text)</h3>
+  <p id="text-shadow">Lorem, ipsum dolor.</p>
+
+  <br>
+
+  <h2><code>text-shadow: </code> property</h2>
+  <h3>(with animation)</h3>
+  <p id="text-shadow-animate">Lorem, ipsum dolor.</p>
+
+
+
+</body>
+</html>

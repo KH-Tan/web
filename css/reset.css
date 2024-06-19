@@ -20,7 +20,7 @@
 
 html {
   /* dark mode user-agent-styles */
-  color-scheme: dark light;
+  /* color-scheme: dark light; */
 
   /* default font-size of root element */
   /* determines 1rem (root em) */

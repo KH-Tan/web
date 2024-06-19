@@ -6,9 +6,55 @@
   <title>SVG</title>
 
 <style>
+  .svg-container1 {
+    background-color: aqua;
+    border: 1px soild blue;       /* does not work ????? */
+    & img {
+      width: 150px;
+      fill: red;     /* does not work ????? */      
+    }
+    & svg {
+      fill: red;     /* does not work ????? */
+    }
+  }
+
+  .svg-container2 {
+    background-color: aquamarine;
+    border: 1px soild blue;       /* does not work ????? */
+    & svg {
+      width: 200px;
+      fill: red;                       /*   WORKS    +++++++       */
+      -webkit-text-stroke-color: black;      /* does not work ????? */
+    }
+  }
+
+  .icon-hidden {
+    width: 400px;
+    height: 400px;    
+    background-color: tan;
+    border: 1px soild blue;       /* does not work ????? */
+    fill: blue;
+    stroke: brown;   
+    & svg {
+      width: 400px;
+      fill: blue;                       /*   WORKS    +++++++       */
+      -webkit-text-stroke-color: black;      /* does not work ????? */
+    }
+  }
 
   .svg-container {
+    width: 100px;
+  }
+
+  .svg-container3 {
     width: 200px;
+    & svg {
+      fill: violet;
+    }
+  }
+
+  .symbols-arrows {
+    font-size: 36px;
   }
 
 </style>
@@ -16,7 +62,52 @@
 
 </head>
 <body>
-  <h1>SVG Demo - Test</h1>
+  <h1>How to add SVG</h1>
+
+  <div class="svg-container1">
+    <h2>1. Use - img src="somefilename.svg"</h2>
+    <img src="/images/close-circle.svg" width="50px">
+    <img src="/images/menu.svg" width="100px">
+    <br>
+    <img src="/images/close_X.svg" width="50px">
+    <img src="/images/menu3lines.svg" width="100px">
+  </div>
+
+  <div class="svg-container2">
+    <h2>2. Use - svg tag</h2>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm75.31 260.69a16 16 0 11-22.62 22.62L256 278.63l-52.69 52.68a16 16 0 01-22.62-22.62L233.37 256l-52.68-52.69a16 16 0 0122.62-22.62L256 233.37l52.69-52.68a16 16 0 0122.62 22.62L278.63 256z"/></svg>
+
+    <br>
+
+    <img src="/images/close-circle.svg" width="50px">
+    <img src="/images/menu.svg" width="100px">
+    <br>
+    <img src="/images/close_X.svg" width="50px">
+    <img src="/images/menu3lines.svg" width="100px">
+  </div>
+  
+
+  <p class="symbols-arrows">&uarr;</p>
+  <p class="symbols-arrows">&#8593;</p>
+  
+
+  <p class="symbols-arrows">&darr;</p>
+  <p class="symbols-arrows">&larr;</p>
+  <p class="symbols-arrows">&rarr;</p>
+  <symbol class="symbols-arrows">A</symbol>
+  <p class="symbols-arrows">&#8681;</p>
+  
+  
+  
+  <svg>
+      <use href="#hidden-svg"></use>
+    </svg>
+
+
+    <br><br><br>
+  
+
 
 
   <svg width="250px" height="250px">
@@ -33,21 +124,28 @@
 
 
 
+  <svg>
+    <use href="#hidden-svg"></use>
+  </svg>
 
 
-
-  <div class="svg-container">
-  <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm75.31 260.69a16 16 0 11-22.62 22.62L256 278.63l-52.69 52.68a16 16 0 01-22.62-22.62L233.37 256l-52.68-52.69a16 16 0 0122.62-22.62L256 233.37l52.69-52.68a16 16 0 0122.62 22.62L278.63 256z"/></svg>
+  <div class="svg-container3">
   </div>
 
+  <svg>
+    <use href="#hidden-svg"></use>
+  </svg>
 
 
-  <img src="../images/close-circle.svg" width="100px">
-  <img src="../images/menu.svg" width="100px">
 
-  <br>
-  <img src="../images/close_X.svg" width="100px">
-  <img src="../images/menu3lines.svg" width="100px">
+  <div class="svg-container-hidden">
+  </div>
 
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <symbol id="hidden-svg"  viewBox="0 0 512 512">
+    <path d="M256 48C141.31 48 48 141.31 48 256s93.31 208 208 208 208-93.31 208-208S370.69 48 256 48zm75.31 260.69a16 16 0 11-22.62 22.62L256 278.63l-52.69 52.68a16 16 0 01-22.62-22.62L233.37 256l-52.68-52.69a16 16 0 0122.62-22.62L256 233.37l52.69-52.68a16 16 0 0122.62 22.62L278.63 256z"/>
+    </symbol>
+  </svg>
 </body>
 </html>
+<!-- class="icon-hidden" -->
