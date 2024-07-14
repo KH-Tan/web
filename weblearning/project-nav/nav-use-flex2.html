@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nav - Using Flex 2</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 35rem;
+}
+body {
+  background-color: antiquewhite;
+  color: darkslategray;
+
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 5vw, 12rem);
+  font-weight: 800;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+nav {
+  background-color:lightgrey ;
+  border-radius: 0.75rem;
+
+  position: fixed;
+  inset: 1rem 2.5% auto;
+  padding: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(1rem, 5vw, 8rem);
+
+
+  a {
+    font-size: clamp(1.15rem, 2.5vw, 3.15rem);
+    font-weight: 500;
+    color: darkslategray;
+
+    text-decoration: none;
+    transition: color 1.5s ease;
+
+    &:hover {
+      color: blueviolet;
+      text-decoration: overline;
+    }
+    &:focus-visible {
+      color: blueviolet;
+    }
+  }
+
+}
+
+section {
+  /* height: 100svh; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+
+  /* flex-flow: column; */
+
+  padding: 15%;
+  text-align: justify;
+
+  /* overflow: hidden; */
+}
+
+#section-about {
+  background-color: mistyrose;
+}
+#section-explore {
+  background-color: skyblue;
+}
+#section-integrate {
+  background-color: lavender;
+}
+#section-community {
+  background-color: peachpuff;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<header id="page-header">
+
+  <nav>
+    <a href="#section-about">About</a>
+    <a href="#section-explore">Explore</a>
+    <a href="#section-integrate">Integrate</a>
+    <a href="#section-community">Community</a>
+  </nav>
+
+
+</header>
+
+
+<main>
+
+  <section id="section-about">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, tempore.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus vero, voluptates incidunt porro rem corrupti obcaecati eum corporis iste itaque quam nobis quisquam quidem ex nostrum inventore consectetur ipsum ab quas, impedit necessitatibus tempore! Perferendis dignissimos, eveniet cumque ad suscipit quod laudantium voluptas hic ipsam fuga nobis tenetur ex, voluptatum optio molestias esse cupiditate veniam rem earum repellat porro iste quo. Consequuntur sint molestiae quod modi! Maxime, cupiditate unde. Voluptatibus doloribus dolorum numquam ea dolor rem, deleniti hic, quo ut molestiae repudiandae? Enim praesentium unde voluptas numquam amet quae tempore doloribus incidunt modi obcaecati cum rerum dolore adipisci, consequatur magni alias ipsum officiis, voluptates exercitationem consequuntur, ipsam dolorem. Eum sequi aliquid culpa quaerat cupiditate exercitationem quis nesciunt. Incidunt libero provident odit quibusdam impedit possimus quod blanditiis reiciendis voluptate doloribus perferendis itaque ad, similique odio, nostrum facilis fuga inventore! Quo fugit repellendus ipsa culpa, dolores molestiae veritatis dolore nisi vero iste perspiciatis! Neque ad culpa maiores sunt aut nobis nulla.</p>
+  </section>
+
+  <section id="section-explore">
+    <h2>Explore</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione numquam suscipit earum voluptatibus facere blanditiis molestias quam ullam nobis repudiandae.</p>
+  </section>
+
+  <section id="section-integrate">
+    <h2>Integrate</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+  </section>
+
+  <section id="section-community">
+    <h2>Community</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt facilis saepe cum deleniti eligendi iste quam error hic sed aliquam, magnam quod. Dolorem a, eius aspernatur commodi odit qui voluptas ab eaque velit nam exercitationem at ullam consequuntur quam suscipit atque! Quo recusandae, deserunt impedit nemo eaque repellat ea laboriosam.</p>
+  </section>
+
+</main>
+
+
+<footer>
+  <h3>Footer Header</h3>
+  <button><a href="#page-header">Go Top</a></button>
+</footer>
+
+</body>
+</html>

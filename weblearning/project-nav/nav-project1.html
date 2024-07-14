@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav - Project1</title>
+
+<style>
+
+
+
+.navbar {
+  height: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: orange;
+  z-index: 99;
+
+  .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    .logo {
+      font-size: 58px;
+      width: 140px;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+
+      .li a {
+        font-size: 32px;
+        font-weight: 500;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        color: aquamarine;
+        padding: 0 10px;
+        /* letter-spacing: 2.6px; */
+
+        :hover {
+          text-decoration: underline;
+        }
+      }
+
+    }
+
+    .toggle-menu {
+      border: none;
+      background-color: white;
+      padding: 4px 8px;
+      outline: none;
+      cursor: pointer;
+      display: none;
+
+      i {
+        font-size: 22px;
+        color: black;
+      }
+
+    }
+  }
+
+}
+/* @media (max-width: 900px){
+  .navbar .container .links {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    opacity: 0.2;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    transform: translateX(100%);
+    z-index: 999;
+  }
+} */
+
+
+</style>
+
+</head>
+<body>
+
+  
+  <div class="navbar">
+    <div class="container">
+      <div class="logo">LOGO</div>
+
+      <ul class="links">
+        <li><a href="#">home</a></li>
+        <li><a href="#">menu</a></li>
+        <li><a href="#">events</a></li>
+        <li><a href="#page-footer">order</a></li>
+      </ul>
+
+    </div>
+  </div>
+
+<main>
+  <h1>Main Heading</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quidem modi! Repudiandae molestias assumenda laboriosam beatae officia, vel enim neque!</p>
+
+  <h2>Section Heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quidem modi! Repudiandae molestias assumenda laboriosam beatae officia, vel enim neque!</p>
+
+  <h2>Section Heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quidem modi! Repudiandae molestias assumenda laboriosam beatae officia, vel enim neque!</p>
+
+  <h2>Section Heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quidem modi! Repudiandae molestias assumenda laboriosam beatae officia, vel enim neque!</p>
+
+  <h2>Section Heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis sapiente quas a debitis ratione quasi maiores vero autem eveniet fuga deserunt atque quae cum aliquid ducimus aperiam eius provident quis rem, nulla illo facere facilis iure nemo! Saepe, soluta dignissimos reprehenderit aliquam provident placeat eaque adipisci perspiciatis ipsam. Sequi, nulla.</p>
+</main>
+
+
+
+
+<footer id="page-footer">
+  <h2>Footer Heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, quidem modi! Repudiandae molestias assumenda laboriosam beatae officia, vel enim neque!</p>
+</footer>
+
+</body>
+</html>

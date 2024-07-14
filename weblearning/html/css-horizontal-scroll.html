@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Scroll - Using Javascript</title>
+
+
+<style>
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: xx-large;
+}
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+.container {
+  /* position: relative; */
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  overflow-x: hidden;
+
+
+  .box {
+    min-width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    /* background-color: lightblue; */
+
+
+    
+  }
+  .box1 { background-color: aqua; } 
+  .box2 { background-color: green; } 
+  .box3 { background-color: orange; } 
+}
+
+header {
+  height: 10%;
+}
+footer {
+  height: 10%;
+}
+.scroll {
+  position: absolute;
+  height: 15px;
+  width: 0px;
+  background-color: darkred;
+  top: 10%;
+  left: 0;
+}
+
+
+
+
+</style>
+
+
+</head>
+<body>
+<header>Header</header>
+  
+<div class="scroll"></div>
+<div class="container">
+  <div class="box box1">Box1</div>
+  <div class="box box2">Box2</div>
+  <div class="box box3">Box3</div>
+</div>
+
+
+
+<footer>Footer</footer>
+</body>
+
+<script>
+
+const container = document.querySelector('.container');
+let scrollLine = document.querySelector('.scroll');
+
+container.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  container.scrollLeft += e.deltaY;
+  scrollLine.style.width = container.scrollLeft / 2 + 'px';
+})
+
+</script>
+
+
+
+</html>

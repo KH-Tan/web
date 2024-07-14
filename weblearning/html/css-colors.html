@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <meta name="color-scheme" content="light dark"> -->
+  <!-- <script src="/js/useLocalStorage.js"></script>  -->
+  <title>CSS - Colors</title>
+
+<style>
+
+:root {
+  color-scheme: light dark;
+
+
+  --clr-white-1: white;
+  --clr-white-2: ghostwhite;
+  --clr-white-3: whitesmoke;
+  --clr-white-4: snow;
+  --clr-white-5: floralwhite;
+  --clr-white-6: antiquewhite;
+  --clr-white-7: ;
+  --clr-white-8: ;
+  --clr-white-9: ;
+
+  --clr-blue-1: aliceblue;
+  --clr-blue-2: azure;
+  --clr-blue-3: cadetblue;
+  --clr-blue-4: cyan;
+  --clr-blue-5: darkcyan;
+  --clr-blue-6: aqua;
+
+  --clr-blue-8a: lightsteelblue;
+  --clr-blue-8b: lightskyblue;
+  --clr-blue-8c: skyblue;
+  --clr-blue-8d: powderblue;
+  --clr-blue-8e: deepskyblue;
+  --clr-blue-8f: steelblue;
+  --clr-blue-8g: cornflowerblue;
+  --clr-blue-8h: dodgerblue;
+  --clr-blue-8i: royalblue;
+  --clr-blue-8j: mediumslateblue;
+  --clr-blue-8k: slateblue;
+  --clr-blue-8l: darkslateblue;
+
+  --clr-blue-9a: blue;
+  --clr-blue-9b: mediumblue;  
+  --clr-blue-9c: darkblue;
+  --clr-blue-9d: navy;
+  --clr-blue-9e: midnightblue;
+
+
+  --clr-purple-5: purple;
+  --clr-purple-9: rebeccapurple;
+
+  --clr-scheme-muted-red: tomato;
+  --clr-scheme-muted-green: mediumseagreen;
+  --clr-scheme-muted-blue: dodgerblue;
+  --clr-scheme-muted-purple: violet;
+  --clr-scheme-muted-orange: orange;
+  --clr-scheme-muted-mix: slateblue;
+  --clr-scheme-muted-light: lightgray;
+  --clr-scheme-muted-dark: gray;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+@media (prefers-color-scheme: dark) {
+  * { color: antiquewhite; }
+}
+@media (prefers-color-scheme: light) {
+  * { color: darkmagenta; }
+}
+
+/* test   (prefers-contrast: custom) to mimick forced-colors */
+@media (prefers-contrast: more) {
+  html {
+    font-size: 32px;
+  }
+}
+/* on Windows only ???????? */
+@media (forced-colors: active) {
+  * { color: red; }
+}
+
+.darkmode {
+  * {
+    background-color: navy;
+    color: antiquewhite;
+  }
+}
+.lightmode {
+  * {
+    background-color: lightskyblue; 
+    color: darkmagenta;
+  }
+}
+
+
+html { }
+body {
+  font-family: sans-serif;
+  /* background-color: lightgray; */
+  /* color: darkred; */
+
+
+  /* background-color: antiquewhite; */
+}
+header {
+
+}
+main {
+
+}
+footer {
+
+}
+
+
+.white {
+  background-color: var(--clr-purple-9);
+
+  h2 {
+    background-color: var(--clr-blue-8h);
+  } 
+  p:nth-child(1) {
+    background-color: blue;
+  }
+  p:nth-child(2) {
+    background-color: red;
+  }
+  p:last-child {
+    background-color: var(--clr-blue-6);
+  }
+
+
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>CSS Colors & Schemes</h1>
+</header>
+<main>
+
+  <!-- <div class="white">
+  <h2>Whites</h2>
+  <p>1</p>
+  <p>2</p>
+  <p>3</p>
+  <p>4</p>
+  <p>5</p>
+  <p>6</p>
+  </div> -->
+
+<section>
+
+</section>
+<aside>
+
+</aside>
+<section>
+<button id="dark-mode-toggle" class="dark-mode-toggle">Change Dark/Light Mode</button>
+</section>
+
+</main>
+<footer>
+  <h2>Footer Info</h2>
+</footer>
+
+<script src="/js/useLocalStorage.js"></script> 
+</body>
+</html>

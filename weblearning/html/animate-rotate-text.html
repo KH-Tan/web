@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" href="/css/reset.css">
+
+  <title>Text Rotate</title>
+
+<!-- css -->
+  <style>
+body {
+  font-family: sans-serif;
+}
+
+
+.contain-text-rotate {
+/* height: 100vh; */
+
+/* display: flex;
+flex-direction: column;
+justify-content: center; */
+align-items: center;
+
+}
+
+h2 {
+  font-size: 45px;  
+}
+
+.text-rotate {
+  border: 0px solid black;
+  height: 50px;
+  line-height: 50px;
+  font-size: 45px;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.text-rotate span {
+  position: relative;
+  color: crimson;
+  animation: rotate 10s ease infinite;
+}
+@keyframes rotate {
+  0%, 100% {
+    top: 0;
+  }
+  20% { top: 0;}
+  25% { top: -50px;}
+  45% { top: -50px;}
+  50% { top: -100px;}
+  70% { top: -100px;}
+  75% { top: -150px;}
+  95% { top: -150px;}
+}
+
+  </style>
+
+</head>
+<body>
+
+  <!-- <header>
+    <h1>HEADER</h1>
+  </header> -->
+  
+  <!-- <main> -->
+
+    <div class="contain-text-rotate"></div>
+    <h2>Item - <div class="text-rotate">
+      <span>
+        One <br>
+        Two <br>
+        Three <br>
+        Four <br>
+      </span>
+    </div>
+    </h2>
+    </div>
+
+
+
+
+    <!-- <button onclick="helloWorld();">Hello, World! in script.js</button> -->
+    <!-- <button onclick="localAlert();">localAlert in html!</button> -->
+
+  <!-- </main> -->
+
+  <!-- <footer>
+    <p>FOOTER</p>
+  </footer> -->
+
+<!-- javascript   -->
+  <script>
+    function localAlert() {
+      alert("localAlert");
+    }
+  </script>
+
+</body>
+</html>

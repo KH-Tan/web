@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" href="/css/reset.css">
+
+  <title>images</title>
+
+<!-- css -->
+  <style>
+
+header {
+  outline:  5px solid green;
+  outline-offset: -5px;
+
+  border: 0px solid black;
+  border-radius: 25px;
+
+  background-color: rgba(0, 255, 0, 0.25);
+
+  /* background-image: image("/images/softwatercolorwallpaper2.jpg");   */
+  background-image: url("/images/softwatercolorwallpaper1.jpg");
+  /* background-repeat: repeat; */
+  background-position: top left;
+  /* background-position: 3rem 3rem; */
+  /* background-size: contain; */
+  /* background-size: cover; */
+  background-size: 100% 100%;
+  background-blend-mode: normal ;
+  background-attachment: fixed;
+  /* background-clip: border-box; */
+
+  padding: 5rem;
+  text-align: center;
+
+  font-size: 5rem;
+}
+
+img {
+  outline: 2px solid purple;
+  outline-offset: -10px;
+
+  border: 1px solid black;
+
+  /* images with style attribute will override this */
+  width: 350px;
+  height: 350px;
+
+}
+
+
+
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>HEADER TEXT</h1>
+  </header>
+  
+  <main>
+
+
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, amet asperiores voluptatem aperiam odio consequatur incidunt provident veritatis doloribus, magnam illum ipsam laboriosam mollitia reiciendis corrupti aliquid, suscipit aut officia?</p>
+    </div>
+
+    <div>
+
+ 
+      <img
+       loading="lazy"
+       decoding="async"
+       fetchpriority="high"
+       role="presentation"
+       src="/images/tampinesparkslogo2.jpg"
+       alt="Park Logo"
+       title="Tampines Park Image Large"
+       style="width:500px;height:500px;" />
+ 
+
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+    </div>
+
+    <figure>
+      <figcaption>Figure A - Logo</figcaption>
+      
+      <img
+       loading="lazy"
+       decoding="async"
+       fetchpriority="high"
+       role="presentation"
+       src="/images/tampinesparkslogo1.jpg"
+       alt="Park Logo"
+       title="Tampines Park Image"
+       width="500" height="500">
+
+    </figure>
+
+    </div>
+
+<hr>
+
+    <div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, amet asperiores voluptatem aperiam odio consequatur incidunt provident veritatis doloribus, magnam illum ipsam laboriosam mollitia reiciendis corrupti aliquid, suscipit aut officia?</p>
+    </div>
+
+    <!-- <button onclick="helloWorld();">Hello, World! in script.js</button> -->
+    <!-- <button onclick="localAlert();">localAlert in html!</button> -->
+
+  </main>
+
+  <footer>
+    <p>FOOTER</p>
+  </footer>
+
+<!-- javascript   -->
+  <script>
+    function localAlert() {
+      alert("localAlert");
+    }
+  </script>
+
+</body>
+</html>

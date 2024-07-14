@@ -1,0 +1,30 @@
+/* self hosted google fonts */
+/* -------------------------------------------------------- */
+
+/* Lexend Variable Fonts (sans) */
+/* font-weight: 100 900;  1-axis must be declared for use */
+@font-face {
+  font-family: "Lexend";
+  src: url("/fonts/Lexend/Lexend-VariableFont.ttf"); 
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LexendExa";
+  src: url("/fonts/Lexend/LexendExa-VariableFont.ttf"); 
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: "LexendGiga";
+  src: url("/fonts/Lexend/LexendGiga-VariableFont.ttf");
+  font-weight: 100 900;  
+}
+
+@font-face {
+  font-family: "LexendMega";
+  src: url("/fonts/Lexend/LexendMega-VariableFont.ttf");
+  font-weight: 100 900;
+}
+

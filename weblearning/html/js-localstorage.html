@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <script src="/js/script.js"></script> -->
+  <!-- <link rel="stylesheet" href="/css/reset.css"> -->
+
+  <title>js-localstorage</title>
+
+<!-- css -->
+  <style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+form {
+  background-color: orange;
+}
+fieldset {
+  background-color: aquamarine;
+  display: block;
+  border: 2px solid darkslateblue;
+  padding: 1.5em;
+  margin: 1em;
+}
+legend {
+  background-color: aqua;
+  color: violet;
+  border: 1px solid red;
+  padding: 5px 15px;
+}
+label {
+  color: blue;
+}
+input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: red;
+
+  /* margin: 5px; */
+  padding: 10px;
+
+  &[type=text] {
+     width: 75ch;
+  }
+  &[type=text]:focus {
+    outline: none;
+  }  
+    
+  &[type=password] { width: 15ch; }
+  &[type=email] { width: 45ch; }
+  &[type=tel] { width: 15ch; }
+  &[type=date] { width: 25ch; }
+  &[type=time] { width: 25ch; }
+  &[type=color] { width: 25ch; }
+  &[type=number] { width: 10ch; }
+
+  &[type=button], &[type=reset], &[type=submit] {
+    width: 15ch;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+}
+select {
+  border-radius: 5px;
+  background-color: whitesmoke;
+  padding: 10px;
+
+}
+optgroup {
+  color: brown;
+}
+option {
+  width: 25ch;
+  color: blueviolet;
+}
+textarea {
+  border-radius: 15px;
+  background-color: whitesmoke; color: blue;
+
+  width: 75ch; height: 25ch; padding: 1ch;
+  resize: none;
+
+  /* not working ??????????? */
+  &:focus {
+    border: none;
+  }
+}
+
+
+
+button {
+  width: 15ch;
+  padding: 5px;
+}
+
+
+hr { height: 2px; background-color: darkslateblue; border: 1px solid black; }
+
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>HEADER</h1>
+  </header>
+  
+  <main>
+
+
+
+    <!-- <button onclick="helloWorld();">Hello, World! in script.js</button> -->
+    <!-- <button onclick="localAlert();">localAlert in html!</button> -->
+
+
+    <form action="https://httpbin.org/get" method="get">
+
+      <fieldset>
+        <legend>Contact Form X</legend>
+
+        <label for="fullfame">Name: </label>
+        <input id="fullname" type="text" name="fullname" placeholder="Name" autocomplete="on" required><br><br>
+
+        <label for="pword">Password: </label>
+        <input id="pword" type="password" name="password" placeholder="Password" minlength="8" maxlength="12"><br><br>
+
+        <label for="email">EMail: </label>
+        <input id="email" type="email" name="email" placeholder="EMail" autofocus><br><br>
+
+        <label for="phone">Phone: </label>
+        <input id="phone" type="tel" name="phone" pattern="[0-9]{4}-[0-9]{4}" disabled><br><br>
+
+        <label for="bdate">Birth Date: </label>
+        <input id="bdate" type="date" name="DOB"><br><br>
+
+        <label for="btime">Birth Time: </label>
+        <input id="btime" type="time" name="TOB"><br><br>
+
+        <label for="color">Color: </label>
+        <input id="color" type="color" name="color"><br><br>
+
+        <label for="children">Children: </label>
+        <input id="children" type="number" name="children" min="0" max="9" value="0" step="2"><br><br>
+
+        <label>Children+1:</label>
+        <output name="outputX"></output>
+        <br><br>
+
+
+
+
+        <label for="payment">Payment:</label>
+        <select name="payment" id="payment" multiple size="3">
+          <optgroup label="CCards">
+            <option value="visa">Visa</option>
+            <option value="mastercard" selected>MasterCard</option>
+          </optgroup>
+          <optgroup label="Others">
+            <option value="giftcard">Giftcard</option>
+          </optgroup>
+        </select><br><br>
+
+        <!-- <label for="payment">Payment:</label>
+        <input name="payment" id="payment" list="payment-list">
+        <datalist id="payment-list">
+          <option value="visa">Visa</option>
+          <option value="mastercard" selected>MasterCard</option>
+          <option value="giftcard">Giftcard</option>
+        </datalist><br> -->
+        <hr><br>
+
+        <label>Comments</label><br>
+        <textarea name="comments" placeholder="Your comments here"></textarea><br>
+
+        <fieldset>
+          <legend>Additional Info:</legend>
+
+          <label for="subscribe">Subscribe: </label>
+          <input id="subscribe" type="checkbox" name="subscribe"><br>
+
+          <label for="title">Title:</label>
+          <label>Mr.</label>
+          <input type="radio" name="title" value="Mr.">
+          <label>Mrs.</label>
+          <input type="radio" name="title" value="Mrs.">
+          <label>Dr.</label>
+          <input type="radio" name="title" value="Dr."><br>
+      
+          <hr>
+          <label for="hobbies">Hobbies:</label>
+
+          <label">Coding</label>
+          <input type="checkbox" name="hobbies" value="Coding">
+          <label">Music</label>
+          <input type="checkbox" name="hobbies" value="Music"><br>
+      
+        </fieldset>
+        <br>
+        <fieldset name="last" form="lastpart" disabled>
+          <legend>One Last Thing:</legend>
+
+          <label>Class A</label>
+          <input type="checkbox" name="class" value="A"><br>
+          <label>Class B</label>
+          <input type="checkbox" name="class" value="B">
+
+        </fieldset>
+
+        <br><hr><br>
+
+        <!-- <input type="button" value="Button"> -->
+        <button type="button" disabled autofocus>Button</button>
+
+        <!-- <input type="reset" value="Reset"> -->
+        <button type="reset">Reset</button>
+
+        <!-- <input type="submit" value="Send"> -->
+        <button type="submit">
+          Submit Get
+        </button>
+        <button type="submit"
+                formaction="https://httpbin.org/post"
+                formmethod="post">
+          Submit Post
+        </button>
+
+      </fieldset>
+
+      <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque magni totam ratione beatae dolorum, nostrum suscipit facilis dolorem ex corporis.</p>
+      </div>
+
+    </form>
+
+    <section>
+      <h2>Heading</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus temporibus eligendi odio quia delectus? Perspiciatis atque impedit dolorem assumenda ea porro obcaecati quidem maiores tempora.</p>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <p>FOOTER</p>
+  </footer>
+
+<!-- javascript   -->
+  <script>
+    function localAlert() {
+      alert("localAlert");
+    }
+
+    function myStoreCreate() {
+      localStorage.setItem("myID","myName")
+    }
+    function myStoreRead() {
+      localStorage.setItem("myID","myName")
+    }
+    function myStoreUpdate() {
+      localStorage.setItem("myID","myName")
+    }
+    function myStoreDelete() {
+      localStorage.setItem("myID","myName")
+    }
+
+  </script>
+
+</body>
+</html>

@@ -4,14 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <link rel="stylesheet" href="/css/fonts.css">
   <title>Text Styling</title>
 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Poppins">
 <style>
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+@font-face {
+  font-family: myGZen;
+  src: url('https://fonts.googleapis.com/css?family=Zen Dots');
+}
+@font-face {
+  font-family: myGSuwan;
+  src: url('https://fonts.googleapis.com/css?family=Suwannaphum');
+}
+@font-face {
+  font-family: "myRoboto";
+  font-weight: 900;
+  src: url('/fonts/Roboto/Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: "myNGModern";
+  font-weight: 500;
+  src: url('/fonts/Playwrite_NG_Modern/PlaywriteNGModern-VariableFont_wght.ttf');
+}
+
+
+
 body {
   width: 90%;
   margin-left: auto;
@@ -22,7 +45,9 @@ body {
   color: darkslategray;
 
 
-  font-family: system-ui, Arial, Helvetica, sans-serif;
+
+
+  font-family: Poppins, system-ui, Arial, Helvetica, sans-serif;
   font-size: 1.25rem;
   font-weight: 300;
 
@@ -48,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
 }
 .text-h1 {
+  font-family: 'myNGModern', "Abril Fatface", serif;
   margin-bottom: 1rem;
   /* font-size: 4rem;
   line-height: 8rem; */
@@ -127,6 +153,68 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.lexend {
+  font-family: Lexend;
+  font-weight: 400;
+
+}
+.lexendexa {
+  font-family: LexendExa;
+  font-weight: 500;
+}
+.lexendgiga {
+  font-family: LexendGiga;
+  font-weight: 700;
+}
+.lexendmega {
+  font-family: LexendMega;
+  /* font-weight: 900; */
+  font-variation-settings: "wght" 700;
+
+  font-size: 5rem;
+  line-height: 1.1;
+}
+
+.p-first-letter-line {
+  background-color: pink;
+  color: darkslategray;
+
+  border-left: 15px solid black;
+
+
+  width: 80%;
+  margin-inline: auto;
+  padding-inline: 5em 5em;
+  padding-block: 1em;
+
+
+  line-height: 1.3;
+
+  letter-spacing: 0.15em;
+
+  /* pseudo-elements */
+  &::first-line {
+    font-size: 2.5rem;
+    background-color: lightseagreen;
+    color: darkgreen;
+  }
+  &::first-letter {
+    line-height: 0.85;
+    font-size: 6rem;
+    font-weight: 800;
+    float: left;
+    border: 8px solid;
+    padding: 0.1em;
+    margin-right: 0.15em;
+
+    background-color: pink;
+    color: darkslateblue;
+
+  }
+
+}
+
+
 
 </style>
 
@@ -145,11 +233,21 @@ h1, h2, h3, h4, h5, h6 {
   <h2 class="text-h2 text-style-o">Heading</h2>
   <p><strong>Lorem</strong> <em>ipsum</em> dolor sit amet consectetur, adipisicing elit. Provident facere saepe blanditiis, rerum culpa velit minima vitae laborum itaque officia assumenda fuga quod repellendus iste laboriosam omnis dolore! Possimus, nihil.</p>
 
+  <h3>Using Special Text Styling</h3>
+  <p class="p-first-letter-line"><b>Lorem</b> <i>ipsum</i> <u>dolor</u> sit amet consectetur, adipisicing elit. Provident facere saepe blanditiis, rerum culpa velit minima vitae laborum itaque officia assumenda fuga quod repellendus iste laboriosam omnis dolore! Possimus, nihil.</p>
+
+  <h2 class="lexendexa">Using Lexend Google Fonts</h2>
+  <p class="lexend">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  <p class="lexendexa">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  <p class="lexendgiga">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+  <p class="lexendmega">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+
+  
+
+
   <h3>Heading</h3>
   <p><b>Lorem</b> <i>ipsum</i> <u>dolor</u> sit amet consectetur, adipisicing elit. Provident facere saepe blanditiis, rerum culpa velit minima vitae laborum itaque officia assumenda fuga quod repellendus iste laboriosam omnis dolore! Possimus, nihil.</p>
 
-  <h2></h2>
-  <p></p>
 
 </main>
 

@@ -3,9 +3,7 @@
 /* ------------------------------------------- */
 
 /* makes sizing simpler */
-*,
-*::before,
-*::after {
+*,*::before,*::after {
   box-sizing: border-box;
 }
 
@@ -17,7 +15,6 @@
 
   font: inherit;
 }
-
 html {
   /* dark mode user-agent-styles */
   /* color-scheme: dark light; */
@@ -29,33 +26,46 @@ html {
   /* webkit support only ??? */
   hanging-punctuation: first last;
 }
-
 /* min body height*/
 body {
+  /* line-height: 1.3; */
+  /* letter-spacing: 0.1em; */
+  /* word-spacing: 0.15em; */
+
   min-height: 100svh;
 }
-
+input,button {
+  font: inherit;
+}
 /* responsive images, videos, ... */
-img,
-picture,
-svg,
-video {
+img,picture,svg,video {
   display: block;
   max-width: 100%;
 }
-
 /* balanced heading displays for wordy headings */
-h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
   text-wrap: balance;
 }
-
 p {
   /* default sizing - change as desired */
-  max-width: 75ch;
-  margin-bottom: 2rem;
+  /* max-width: 75ch; */
+  margin-bottom: 1rem;
 
   /* prevent orphans */
   text-wrap: pretty;
+
+  /* text-decoration: double; */
+  /* text-decoration-color: aqua; */
+  /* text-decoration-line: overline; */
+  /* text-decoration-thickness: 2px; */
+  /* text-decoration-style: wavy ; */
+  /* text-decoration-skip-ink:  ; */
+  /* text-decoration-skip: ; */
+  /* text-transform: capitalize; */
+  /* text-align: left; */
+  /* text-indent: 2em; */
+  /* text-overflow: clip; */
+
 }
 
 @media (prefers-reduced-motion: no-preferance) {

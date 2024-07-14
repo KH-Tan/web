@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nav - Sticky Sidebar</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding-top: 5rem; */
+
+  /* FireFox only support the following:  */  
+  /* scrollbar-width: thin   auto/thin/none          ; */
+  /* scrollbar-color: gray antiquewhite; */
+  /* scrollbar-track-color: aqua; */
+
+}
+
+/* Safari & Chrome support the following:  */  
+::-webkit-scrollbar {
+  width: 2vw;
+  height: 2vw;   /* applies to horizontal */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, gray, olive );
+  border-radius: 50vw;
+}
+::-webkit-scrollbar-thumb:hover {
+
+  border: 0.25em solid lightgray;
+  border-radius: 50vw;
+}
+
+::-webkit-scrollbar-track {
+  background-color: lightgray;
+  border-radius: 50vw;
+  margin-block: 1em ;     /* can be negative */
+}
+
+.div-scroll {
+  height: 500px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  background-color: antiquewhite;
+  color: darkslategray;
+
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+header, footer {
+  padding-block: 2rem;
+  background: linear-gradient(90deg, darkgreen 0%, antiquewhite);
+  color: aliceblue;
+}
+
+main, .page-width {
+  max-width: 1200px;
+  padding-inline: 3rem;
+  margin-inline: auto;
+}
+main {
+  padding-block: 2rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+
+
+
+  /* ************************** */
+  /* align-items must be start(not default) for sticky sidebar to work */
+  align-items: start;
+  /* ************************** */
+  /* overflow must be visible (default) for sticky sidebar to work */
+  overflow: visible;
+  /* ************************** */
+}
+
+
+aside {
+  position: sticky;
+  top: 2rem;
+
+  min-width: 150px;
+}
+
+.widget {
+  min-height: 300px;
+  border-radius: 8px;
+
+  margin-block-end: 1rem;
+}  
+
+.widget.golden {
+  background-color: gold;
+}
+.widget.blue {
+  background-color: aquamarine;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+p {
+  margin-block-end: 1em;
+}
+
+article {
+  /* display: block; */
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+
+  margin-bottom: 1rem;
+}
+
+
+
+.anav {
+  background-color:lightgrey ;
+  border-radius: 0.75rem;
+
+  position: fixed;
+  inset: 1rem 2.5% auto;
+  padding: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: clamp(1rem, 5vw, 8rem);
+
+
+  a {
+    font-size: clamp(1.15rem, 2.5vw, 3.15rem);
+    font-weight: 500;
+    color: darkslategray;
+
+    text-decoration: none;
+    transition: color 1.5s ease;
+
+    &:hover {
+      color: blueviolet;
+      text-decoration: overline;
+    }
+    &:focus-visible {
+      color: blueviolet;
+    }
+  }
+
+}
+
+
+</style>
+
+</head>
+<body>
+<div id="page-top"></div>
+
+<header id="page-header">
+  <div class="page-width">
+    <h1>CSS Position Sticky</h1>
+  </div>
+</header>
+
+
+<main>
+  <!-- <aside>
+    <div class="widget golden"></div>
+    <div class="widget blue"></div>
+  </aside> -->
+
+
+  <div class="articles">
+  <article>
+    <h2 id="article-1">Article 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto explicabo magnam magni pariatur asperiores dolores cupiditate sapiente. Asperiores impedit ex aut. Ipsam debitis quos dolorem. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid, tempore.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus vero, voluptates incidunt porro rem corrupti obcaecati eum corporis iste itaque quam nobis quisquam quidem ex nostrum inventore consectetur ipsum ab quas, impedit necessitatibus tempore! Perferendis dignissimos, eveniet cumque ad suscipit quod laudantium voluptas hic ipsam fuga nobis tenetur ex, voluptatum optio molestias esse cupiditate veniam rem earum repellat porro iste quo. Consequuntur sint molestiae quod modi! Maxime, cupiditate unde. Voluptatibus doloribus dolorum numquam ea dolor rem, deleniti hic, quo ut molestiae repudiandae? Enim praesentium unde voluptas numquam amet quae tempore doloribus incidunt modi obcaecati cum rerum dolore adipisci, consequatur magni alias ipsum officiis, voluptates exercitationem consequuntur, ipsam dolorem.</p>
+  </article>
+  <article>
+    <h2 id="article-2">Article 2</h2>
+
+    <div class="div-scroll">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit eveniet, nesciunt temporibus illum doloremque maiores, dicta excepturi consequatur alias dolorem asperiores eligendi earum repudiandae mollitia aut quibusdam consectetur voluptatem aliquid sint porro repellendus eius itaque iste. Distinctio sit itaque recusandae?</p>
+    </div>
+  </article>
+  </div>
+
+  <aside>
+    <div class="widget golden">
+      <nav>
+        <a href="#page-top">Top</a>        
+        <a href="#article-1">Article 1</a>
+        <a href="#article-2">Article 2</a>
+        <a href="#page-bottom">Bottom</a>
+      </nav>
+    </div>
+    <div class="widget blue">
+      <h4>Genre</h4>
+      <ul>
+        <li>Jazz</li>
+        <li>Blues</li>
+        <li>Samba</li>
+      </ul>
+    </div>
+  </aside>
+
+</main>
+
+
+<footer>
+  <h3>Footer Header</h3>
+  <button><a href="#page-header">Go Top</a></button>
+</footer>
+
+<div id="page-bottom"></div>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS SubGrid</title>
+
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: dense;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  container-type: inline-size;
+}
+
+
+.product {
+  background-color: bisque;
+  border-radius: 0.5rem;
+  width: 250px;
+  height: 250px;
+  padding: 1rem;
+}
+.product__price {
+
+}
+.product__description {
+
+}
+
+
+</style>
+
+
+
+</head>
+<body>
+
+  
+<h1>Our Products</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, vitae.</p>
+
+<div class="layout">
+  <div class="grid">
+    <div class="product">
+      <h3 class="product__title">1. Bat Duck</h3>
+      <p class="product__price">$25</p>
+      <button class="button">Buy</button>
+    </div>
+    <div class="product">
+      <h3 class="product__title">2. Bat Chicken</h3>
+      <p class="product__price">$15</p>
+      <button class="button">Buy</button>
+    </div>
+    <div class="product">
+      <h3 class="product__title">3. Bat Cow</h3>
+      <p class="product__price">$66</p>
+      <button class="button">Buy</button>
+    </div>
+    <div class="product">
+      <h3 class="product__title">4. Bat Sheep</h3>
+      <p class="product__price">$77</p>
+      <button class="button">Buy</button>
+    </div>
+    <div class="product">
+      <h3 class="product__title">5. Bat Fish</h3>
+      <p class="product__price">$88</p>
+      <button class="button">Buy</button>
+    </div>
+    <div class="product">
+      <h3 class="product__title">6. Bat Man</h3>
+      <p class="product__price">$99</p>
+      <button class="button">Buy</button>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

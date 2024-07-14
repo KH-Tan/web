@@ -8,11 +8,37 @@
 </head>
 
 
+
 <style>
+
+/* 3 things determine the style applied */
+/* ------------------------------------ */
+/* 1. Importance: eg. {color:red!important} */
+/* 2. Specificity: see blow */
+/* 3. Source order: */
+/*  */
+/* Specificity: */
+/* a. id */
+/* b. class, pseudo-class, attribute selector  */
+/* c. type selector (element, pseudo-element ) */
+/*  */
+/* Source order: */
+/* a. user-agent (browser) stylesheet */
+/* b. author stylesheet - external, internal, inline */
+/* c. user stylesheet */
+
 /* Cascade */
 /* 1. last rule */
 /* 2. specificity - !important->id->class->element */
 /* 3. inheritance */
+
+/* @import url(); */
+/* @import ""; */
+
+
+
+
+
 
 /* universal selector - selects everything */
 * {
@@ -36,19 +62,90 @@ body {
 
   border: 5px solid red;   /* only applies to body/not inherited */
 }
-header {}
-main {}
-footer {}
+header {
+  outline: 1px solid red;
+  background-color:aqua;  
+  color: blueviolet;
+  padding: 15px;
+
+  font-family: fantasy;
+
+  p {
+    outline: 1px solid yellow;   
+    background-color:powderblue;
+    color: blue;
+
+    /* font-family: sans-serif; */
+  }
+
+  h1 {
+    outline: 1px solid orange;    
+    background-color:aquamarine;
+    color: blue;
+
+    font-family: fantasy;
+
+    ~ p {           /* all p after h1 */
+      color: red;
+    }
+    + p {            /* 1st p after h1 */
+      color: darkolivegreen;
+    } 
+  }
+  
+  h2 {
+    outline: 1px solid orange;    
+    background-color:aquamarine;
+    color: blue;
+
+    font-family: fantasy;
+  }
+
+  .sub-header {
+    color: black;
+
+    p span {
+      color: violet;
+    }
+  }
+
+}
+
+main {
+  background-color: burlywood;
+
+  p {
+    background-color: powderblue;
+  }
+
+  main > p {
+    background-color: lightpink;
+  }
+
+  h2 ~ p {
+    background-color: wheat;
+  }
+}
+
+
+
+
+footer {
+
+}
+
 h1 {
   padding-bottom: 1rem;
   color: black;
+  font-family: sans-serif;
 }
 h2, h3 {
   color: darkblue;
 }
 p {
   padding-bottom: 1rem;
-  color: gray
+  color: gray;
+  font-family: sans-serif;
 }
 /* p span {
   text-transform: uppercase;
@@ -129,11 +226,56 @@ div + .siblings {
   
 }
 
+
+.c1-parent {
+  background-color: ghostwhite;
+  color: black;
+  opacity: 1.0;
+
+  /* :nth-child(even) { color: red; } */
+  /* :nth-child(odd) { color: green; } */
+  /* :nth-child(1) { color: blue; }        first child */
+  /* :nth-last-child(1) { color: blue; }   last child */
+
+  :first-child { color: blue; }
+  :last-child { color: blue; }
+}
+
+li:nth-child(9) {
+  color: darkorange;
+}
+ol {
+  :nth-child(n+9) { color: yellow; }
+}
+li {
+  :nth-last-child() { color: blueviolet; }
+}
+
+
 </style>
 
 
 <body>
-<h1>CSS Selectors</h1>
+<header>
+  <h1>The C in CSS means Cascade</h1>
+  <p>Lorem ipsum dolor sit <span>amet</span> consectetur adipisicing elit.</p>
+  <p>Ipsum dolor sit amet consectetur adipisicing elit.</p>
+  <p>Dolor sit amet consectetur adipisicing elit.</p>
+
+  <div class="sub-header"> 
+    <h2>Header 2 in <span>header</span> element</h2>
+    <p>Dolor sit <span>amet</span> consectetur adipisicing elit.</p>
+    <p>Sit amet consectetur adipisicing elit.</p>
+  </div>
+</header>
+<main>
+
+<h2>Header 2</h2>
+<p>Lorem ipsum dolor sit amet <a href="#">consectetur</a>, adipisicing elit. Perferendis, aspernatur minima a <span>fuga</span> itaque nobis deleniti quidem libero! Amet, dolor!</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente asperiores eum, id illo ratione amet iste pariatur tempore omnis, rerum eveniet eaque corrupti tenetur earum vero quidem, itaque culpa officia!</p>
+
+
+<h2>CSS Selectors</h2>
 
 
 <div class="class-level1">
@@ -149,17 +291,40 @@ div + .siblings {
   <p>Paragraph in Level1 & Level2</p>
 </div>
 
+<!-- section c1 -->
+<section class="section-c1">
+  <h2>Section C1 (nth-child demo)</h2> 
+  <div class="c1-parent">
+    <div class="c1-siblings">One one 1</div>
+    <div class="c1-siblings">Two two 2</div>
+    <div class="c1-siblings">Three three 3</div>
+    <div class="c1-siblings">Four four 4</div>
+    <div class="c1-siblings">Five five 5</div>
+  </div>
+</section>
+
+<ol>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+  <li>Item 4</li>
+  <li>Item 5</li>
+  <li>Item 6</li>
+  <li>Item 7</li>
+  <li>Item 8</li>
+  <li>Item 9</li>
+</ol>
+
+<ul><!-- comment --></ul>
+
+
+
+
+
 <div>Something</div>
 
-<div class="container--siblings">
-  <div class="siblings">1</div>
-  <div class="siblings">2</div>
-  <div class="siblings">3</div>
-  <div class="siblings">4</div>
-</div>
 
 
-<div>Something</div>
 
 
 <article class="article--1 article--11">  
@@ -175,11 +340,18 @@ div + .siblings {
 <article class="article--1">
 <h2>Article 2</h2>
 <p id="p--2" class="clr--gray">Lorem <span>ipsum</span> dolor sit, amet consectetur adipisicing elit. Dolore laudantium maxime doloribus fugiat in, voluptatem adipisci voluptates sequi autem, esse recusandae? Cumque voluptatum modi ducimus aliquid quos, porro esse ipsam qui reiciendis doloremque numquam in?</p>
+<p>Lorem ipsum dolor sit amet.</p>
 </article>
 <article class="article--3">
 <h2>Article 3</h2>
 <p id="p--3" class="clr--gray">Lorem ipsum <span>dolor</span> sit, amet consectetur adipisicing elit. Dolore laudantium maxime doloribus fugiat in, voluptatem adipisci voluptates sequi autem, esse recusandae? Cumque voluptatum modi ducimus aliquid quos, porro esse ipsam qui reiciendis doloremque numquam in?</p>
+<p>Lorem ipsum dolor sit amet.</p>
 </article>
+
+</main>
+<footer>
+  <h3></h3>
+</footer>
 
 </body>
 </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS color-mix</title>
+
+<style>
+
+html {
+  color-scheme: light;
+}
+
+.bg-colors {
+  display: flex;
+  height: 75vh;
+  position: relative;
+
+  > * {
+    flex: 1 1 100%;
+  }
+}
+
+:root {
+  --base: orange;
+}
+
+  .area-1 {
+    background-color: color-mix(in oklab, var(--base) 15%, white 15%);    
+    /* background-color: color-mix(in oklab, var(--base) 15%, white 0%); */
+    /* if % do not total 100 --> transparency */
+  }
+  .area-2 {
+    background-color: color-mix(in oklab, var(--base) 25%, white );
+  }
+  .area-3 {
+    background-color: color-mix(in oklab, var(--base) 50%, white );
+  }
+  .area-4 {
+    background-color: color-mix(in oklab, var(--base) 75%, white  );
+  }
+  .area-5 {
+    background-color: var(--base);
+  }
+  .area-6 {
+    /* background-color: color-mix(in oklab, var(--base), black 35% ); */
+    background-color: color-mix(in oklab, var(--base) 75%, black );
+  }
+  .area-7 {
+    /* background-color: color-mix(in oklab, var(--base), black 70% ); */
+    background-color: color-mix(in oklab, var(--base) 50%, black );
+  }
+
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+  <div class="bg-colors">
+    <div class="area-1">Area1</div>    
+    <div class="area-2">Area2</div>    
+    <div class="area-3">Area3</div>
+    <div class="area-4">Area4</div>
+    <div class="area-5">Area5</div>
+    <div class="area-6">Area6</div>
+    <div class="area-7">Area7</div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
