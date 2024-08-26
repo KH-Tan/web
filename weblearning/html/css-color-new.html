@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS color-mix</title>
+
+<style>
+
+:root {
+
+  --clr-rgba-blue-500: rgba(0,0,255, .5 );
+  --clr-rgba-blue-600: rgba(0,0,255, .6 );
+  --clr-rgba-blue-700: rgba(0,0,255, .7 );
+
+  --clr-hsl-blue-500: hsl( from purple h s l / .5 );
+  --clr-hsl-blue-600: hsl( from purple h s l / .6 );
+  --clr-hsl-blue-700: hsl( from purple h s l / .7 );
+
+
+  --clr-bg-00: hsl( 100, 50%, 30% );  
+  --clr-bg-40: hsl( 100, 50%, 40% );
+  --clr-bg-50: hsl( 100, 50%, 50% );
+  --clr-bg-60: hsl( 100, 50%, 60% );
+  --clr-bg-99: hsl( 100, 50%, 70% );
+
+
+
+  --clr-lch-blue-500: oklch( from green l c h / .5 );
+  --clr-lch-blue-600: oklch( from green l c h / .6 );
+  --clr-lch-blue-700: oklch( from green l c h / .7 );
+
+}
+.color-1 {
+  background-color: var(--clr-hsl-blue-500);
+}
+.color-2 {
+  background-color: var(--clr-hsl-blue-600);
+}
+.color-3 {
+  background-color: var(--clr-hsl-blue-700);
+}
+
+.color-4 {
+  background-color: var(--clr-rgba-blue-500);
+}
+.color-5 {
+  background-color: var(--clr-rgba-blue-600);
+}
+.color-6 {
+  background-color: var(--clr-rgba-blue-700);
+}
+
+.color-7 {
+  background-color: var(--clr-lch-blue-500);
+}
+.color-8 {
+  background-color: var(--clr-lch-blue-600);
+}
+.color-9 {
+  background-color: var(--clr-lch-blue-700);
+}
+
+.hsl-1 {
+  background-color: var(--clr-bg-00);
+}
+.hsl-2 {
+  background-color: var(--clr-bg-40);
+}
+.hsl-3 {
+  background-color: var(--clr-bg-50);
+}
+.hsl-4 {
+  background-color: var(--clr-bg-60);
+}
+.hsl-5 {
+  background-color: var(--clr-bg-99);
+}
+
+html {
+  color-scheme: light;
+  font-size: 72px;
+}
+
+.bg-colors {
+  display: flex;
+  height: 75vh;
+  position: relative;
+
+  > * {
+    flex: 1 1 100%;
+  }
+}
+
+:root {
+  --base: orange;
+}
+
+  .area-1 {
+    background-color: color-mix(in oklab, var(--base) 15%, white 15%);    
+    /* background-color: color-mix(in oklab, var(--base) 15%, white 0%); */
+    /* if % do not total 100 --> transparency */
+  }
+  .area-2 {
+    background-color: color-mix(in oklab, var(--base) 25%, white );
+  }
+  .area-3 {
+    background-color: color-mix(in oklab, var(--base) 50%, white );
+  }
+  .area-4 {
+    background-color: color-mix(in oklab, var(--base) 75%, white  );
+  }
+  .area-5 {
+    background-color: var(--base);
+  }
+  .area-6 {
+    /* background-color: color-mix(in oklab, var(--base), black 35% ); */
+    background-color: color-mix(in oklab, var(--base) 75%, black );
+  }
+  .area-7 {
+    /* background-color: color-mix(in oklab, var(--base), black 70% ); */
+    background-color: color-mix(in oklab, var(--base) 50%, black );
+  }
+
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+  <div class="bg-colors">
+    <div class="area-1">Area1</div>    
+    <div class="area-2">Area2</div>    
+    <div class="area-3">Area3</div>
+    <div class="area-4">Area4</div>
+    <div class="area-5">Area5</div>
+    <div class="area-6">Area6</div>
+    <div class="area-7">Area7</div>
+  </div>
+  
+  <div class="container-colors">
+    <div class="color-1">Area1</div>    
+    <div class="color-2">Area2</div>    
+    <div class="color-3">Area3</div>
+    <div class="color-4">Area4</div>
+    <div class="color-5">Area5</div>
+    <div class="color-6">Area6</div>
+    <div class="color-7">Area7</div>
+    <div class="color-8">Area8</div>
+    <div class="color-9">Area9</div>
+
+    <div class="container-hsl">
+      <div class="hsl-1">Area1</div>    
+      <div class="hsl-2">Area2</div>    
+      <div class="hsl-3">Area3</div>
+      <div class="hsl-4">Area4</div>
+      <div class="hsl-5">Area5</div>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

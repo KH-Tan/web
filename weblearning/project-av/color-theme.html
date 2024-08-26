@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Color Theme</title>
+
+  <!-- prefered way to support OS pref for light/dark mode -->
+  <!-- <meta name="color-scheme" content="light dark"> -->
+
+<style>
+
+:root {
+  /* another way to support OS pref for light/dark mode */
+  color-scheme: light;
+
+  --cl-gray-0: rgb(255,255,255);
+  --cl-gray-1: rgb(236,236,236);
+  --cl-gray-2: rgb(224,224,224);
+  --cl-gray-3: rgb(192,192,192);
+  --cl-gray-4: rgb(160,160,160);
+  --cl-gray-5: rgb(128,128,128);
+  --cl-gray-6: rgb(96,96,96);
+  --cl-gray-7: rgb(64,64,64);
+  --cl-gray-8: rgb(32,32,32);
+  --cl-gray-9: rgb(0,0,0);
+
+  --cl-black-0: hsl( 0, 0%, 100% );  
+  --cl-black-1: hsl( 0, 0%, 90% );
+  --cl-black-2: hsl( 0, 0%, 80% );
+  --cl-black-3: hsl( 0, 0%, 70% );
+  --cl-black-4: hsl( 0, 0%, 60% );
+  --cl-black-5: hsl( 0, 0%, 50% );
+  --cl-black-6: hsl( 0, 0%, 40% );
+  --cl-black-7: hsl( 0, 0%, 30% );
+  --cl-black-8: hsl( 0, 0%, 20% );
+  --cl-black-9: hsl( 0, 0%, 0%);
+}
+html {
+  /* color-scheme: light; */
+  font-family: sans-serif;
+}
+body {
+  /* color-scheme: light; */
+}
+header {
+  text-align: center;
+}
+main {
+
+  section {
+    font-family: serif;
+  }
+}
+footer {
+  text-align: center;
+}
+h3 {
+  color: var(--cl-gray-0);
+}
+.g1 { background-color: var(--cl-gray-9); }
+.g2 { background-color: var(--cl-gray-8); }
+.g3 { background-color: var(--cl-gray-7); }
+.g4 { background-color: var(--cl-gray-6); }
+.g5 { background-color: var(--cl-gray-5); }
+.g6 { background-color: var(--cl-gray-4); }
+.g7 { background-color: var(--cl-gray-3); }
+.g8 { background-color: var(--cl-gray-2); }
+.g9 { background-color: var(--cl-gray-1); }
+
+.b1 { background-color: var(--cl-black-9); }
+.b2 { background-color: var(--cl-black-8); }
+.b3 { background-color: var(--cl-black-7); }
+.b4 { background-color: var(--cl-black-6); }
+.b5 { background-color: var(--cl-black-5); }
+.b6 { background-color: var(--cl-black-4); }
+.b7 { background-color: var(--cl-black-3); }
+.b8 { background-color: var(--cl-black-2); }
+.b9 { background-color: var(--cl-black-1); }
+
+
+
+button {
+  background-color: dimgray;
+  color: gray;
+  border: 1px solid;
+}
+#theme-switch {
+  /* background-color: gray; */
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 75%;
+    /* background-color: gray; */
+    border-radius: 50%;
+    /* color: black; */
+  }
+  img:last-child {
+    display: none;
+  }
+}
+.darkmode #theme-switch {
+  img:first-child {
+    display: none;
+  }
+  img:last-child {
+    display: block;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  footer {
+    background-color: whitesmoke;
+    color: darkolivegreen;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  footer {
+    background-color: darkolivegreen;
+    color: whitesmoke;
+  }
+}
+
+
+</style>
+
+
+
+
+
+</head>
+<body>
+<header>
+  <h1>Color Theme Demos</h1>  
+  <button id="theme-switch">
+    <img src="/images/mode_dark.png" alt="dark mode switch">
+    <img src="/images/mode_light.png" alt="light mode switch">
+  </button>
+</header>
+<main>
+  <h2>Main Content</h2>
+
+  <h3 class="b1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b3">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b4">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b5">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b7">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b8">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  <h3 class="b9">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+  
+  <section>
+  <h2>Section 1</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, labore, recusandae, iusto dicta laudantium doloremque dignissimos vero nisi dolor officia nam aliquid harum asperiores repellendus! Modi totam soluta magnam odio eius aliquid maiores repudiandae fugit accusamus distinctio, ducimus molestiae sequi veniam nam quasi doloremque autem quia fugiat consectetur. Aliquam, harum?</p>
+  </section>
+
+  <section>
+  <h2>Section 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, labore, recusandae, iusto dicta laudantium doloremque dignissimos vero nisi dolor officia nam aliquid harum asperiores repellendus! Modi totam soluta magnam odio eius aliquid maiores repudiandae fugit accusamus distinctio, ducimus molestiae sequi veniam nam quasi doloremque autem quia fugiat consectetur. Aliquam, harum?</p>
+  </section>
+
+
+
+
+
+
+
+</main>  
+<footer>
+  <p>Copyright &copy;2024 Tanaka Productions</p>
+</footer>
+</body>
+<script>
+  let darkmode = localStorage.getItem('darkmode')
+  const themeSwitch = document.getElementById('theme-switch')
+
+  const enableDarkmode = () => {
+    document.body.classList.add('darkmode')
+    localStorage.setItem('darkmode', 'active')
+  }
+  const disableDarkmode = () => {
+    document.body.classList.remove('darkmode')
+    localStorage.setItem('darkmode', null )
+  }
+
+  if(darkmode == 'active') enableDarkmode()
+
+  themeSwitch.addEventListener("click", () => {
+    darkmode = localStorage.getItem('darkmode')
+    darkmode != "active" ? enableDarkmode() : disableDarkmode()
+  })
+</script>
+</html>

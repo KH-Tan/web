@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grid 1</title>
+
+
+<style>
+:root {
+  --cl-bg: darkslategray;
+  --cl-text: whitesmoke;
+  --cl-bg-card: dimgray;
+
+  --ff-header: cursive, serif;
+  --ff-main: system-ui, sans-serif;
+  --ff-footer: cursive, serif;
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+/* standard styling */
+body {
+  background-color: var(--cl-bg);
+  color: var(--cl-text);
+
+  /* padding: 1em; */
+
+  width: 80%;
+  margin-inline: auto;
+
+  header {
+    font-family: var(--ff-header);    
+    padding: 2.5em;
+    text-align: center;
+
+    h1 {
+      font-size: 3.0rem;
+      font-weight: 800;      
+    }
+  }
+
+  main {
+    font-family: var(--ff-main);
+  }
+
+  footer {
+    font-family: var(--ff-footer);    
+    padding: 2em;
+    text-align: center;
+
+    p {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+}
+
+/* custom classes */
+.wrapper-new {
+  width: min(1280px, 100% - 0.1rem);
+  margin-inline: auto;
+}
+
+.wrapper-old {
+  padding: 0 2rem;
+  max-width: 1280px;
+  margin-inline: auto;
+}
+
+
+.wrapper-grid-01 {
+  /* outline: 1px solid orange; */
+
+  display: grid;
+  gap: 2.5em;
+  grid-template-columns: 
+      /* repeat(auto-fit, minmax(min(20em, 100%), 1fr) ); */
+      /* repeat(auto-fit, minmax(26em, 1fr) ); */
+      /* repeat(auto-fit, 24em ); */
+      repeat(auto-fit, 16rem );
+
+
+  justify-content: center;
+
+  /* grid-template-rows: 3rem auto auto; */
+  /* grid-template-rows: auto; */
+
+  .card {
+    background-color: var(--cl-bg-card);
+    border: 1px solid black;
+    border-radius: 0.5em;
+    box-shadow: 5px 8px 8px rgba(0,0,0, 0.5);
+
+    padding: 2.0em;
+    /* text-align: center; */
+
+    /* min-width: 35em; */
+
+    display: grid;
+    /* grid-template-rows: subgrid;
+    grid-row: span 2; */
+
+    grid-template-columns: subgrid;
+    grid-column: span 2;
+    grid-template-columns: 15rem 15rem; 
+    /* justify-content: stretch; */
+    /* align-items: stretch; */
+    gap: 0.5em;
+
+    h2 {
+      margin-bottom: 0.50em;
+    }
+    p {
+      /* display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;    */
+
+      margin-bottom: 1em;
+    }
+
+    img {
+      /* width: 100%; */
+      border-radius: 0.5em;
+    }
+
+  }
+
+
+
+
+
+}
+
+
+
+</style>
+
+
+</head>
+<body class="XXXXXwrapper-old">
+<header>
+  <h1>Responsive Grid</h1>
+</header>
+<main>
+
+<div class="wrapper-grid-01">
+
+  <div class="card">
+    <div>
+      <h2>Lorem</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus.</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus.</p>
+    </div>
+    <div>
+      <img src="/images/tampinesparkslogo1.jpg">
+    </div>
+  </div>
+
+  <div class="card">
+    <div>
+      <h2>Lorem Ipsum</h2>     
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus. Quia explicabo animi molestias accusantium veritatis unde, doloribus atque?</p>
+
+      <p>Quia explicabo animi molestias accusantium veritatis unde, doloribus atque?</p>      
+    </div>
+    <div>
+      <img src="/images/tampinesparkslogo2.jpg">
+    </div>
+  </div>
+
+  <div class="card">
+    <div>
+      <h2>Lorem Ipsum Dolor</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus.</p>
+
+      <p>Quia explicabo animi molestias accusantium veritatis unde, doloribus atque?</p>      
+    </div>
+    <div>
+      <img src="/images/tampinesparkslogo1.jpg">      
+    </div>
+  </div>
+
+  <div class="card">
+    <div>
+      <h2>Lorem</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus. Quia explicabo animi molestias accusantium veritatis unde, doloribus atque? Quia explicabo animi molestias accusantium veritatis unde, doloribus atque?</p>      
+    </div>
+    <div>
+      <img src="/images/tampinesparkslogo2.jpg">      
+    </div>
+  </div>
+
+  <div class="card">
+    <div>
+      <h2>Lorem Ipsum</h2> 
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus. Quia explicabo animi molestias accusantium veritatis unde, doloribus atque?</p>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus.</p>
+    </div>
+    <div>
+      <img src="/images/tampinesparkslogo1.jpg">      
+    </div>
+  </div>
+
+  <div class="card">
+    <div>
+      <h2>Lorem Ipsum Dolor</h2>  
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus sapiente odio aut temporibus sequi, vitae minus. Quia explicabo animi molestias accusantium veritatis unde, doloribus atque?</p>      
+    </div>
+    <div>
+      <img src="/images/tampinesparkslogo2.jpg">      
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+</main>
+<footer>
+  <p>Tanaka Productions</p>
+</footer>
+</body>
+</html>

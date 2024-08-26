@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resposive Images</title>
+</head>
+
+<style>
+
+/* blur background */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  /* background: linear-gradient(to right, whitesmoke, lightgray, gray); */
+  /* background-image: url(/images/softwatercolorwallpaper2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center; */
+  /* opacity: 0.5; */
+}
+
+header {
+  background: linear-gradient(to right, whitesmoke, lightgray, gray);
+  opacity: 0.8;
+  height: 100px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.image-container {
+  /* border-radius: 15px; */
+  margin: 20px 35px;
+  /* width: 750px; */
+  /* padding: 3rem; */
+  /* height: 300px; */
+}
+image {
+  width: 100%;
+  height: auto;
+  /* border-radius: 13px; */
+  /* object-fit: scale-down; */
+}
+
+
+</style>
+
+<body>
+  <header><h1>Responsive Images</h1></header>
+  <div>
+    <h2>Canals in Kyoto</h2>
+    <div class="image-container">
+      <img class="image" src="/images/japan/CanalFlower.jpg" alt="Canal in Kyoto">
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque earum distinctio aut minus deserunt at nisi magnam atque, rerum fugit libero ratione quidem, architecto alias.</p>
+  </div>
+
+
+  <footer><h3>@Tanaka Productions</h3></footer>
+</body>
+</html>

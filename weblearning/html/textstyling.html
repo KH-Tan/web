@@ -72,7 +72,88 @@ h1, h2, h3, h4, h5, h6 {
 
   text-align: center;
 }
+
+.wrapper-typewriter {
+  display: inline-block;
+  /* height: 5rem; */
+  padding: 1rem;
+
+  background-color: white;
+  color: black;
+
+  .typewriter-text {
+    /* display: inline-block; */
+    height: 3rem;
+
+    font-family: monospace;
+    font-size: 3rem;
+    /* letter-spacing: 1.35rem; */
+
+    padding: 2rem;
+    width: 100%;
+    /* width: max-content; */
+    border-right: 5px solid black;
+
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+     /* animation: typing 5s linear; */   
+    animation:
+        type-text 22s steps(22),
+        blink-cursor 1s infinite step-end;
+
+    /* &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      background-color: black;
+
+      height: 100%;
+      width: 3px;
+      right: 0;
+      top: 0;
+      animation: cursor 0.5s infinite;
+    } */
+
+  }  
+
+}
+@keyframes type-text {
+  0% { width: 0ch; }
+  50% { width: 22ch; }
+  90% { width: 0ch; }
+  100% { width: 0ch;}
+}
+@keyframes blink-cursor {
+  /* 0% { opacity: 1; } */
+  50% { border-color: transparent; }
+  /* 100% { opacity: 1; } */
+}
+
+
 .text-h1 {
+
+  /* display: inline-block; */
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    bottom: 0;
+    left: 0;
+    background-color: purple;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-out;
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
   font-family: 'myNGModern', "Abril Fatface", serif;
   margin-bottom: 1rem;
   /* font-size: 4rem;
@@ -210,6 +291,11 @@ h1, h2, h3, h4, h5, h6 {
     background-color: pink;
     color: darkslateblue;
 
+    /* new - test ??????????????????  */
+    /* initial-letter: 3;
+    initial-letter-align: 5 ;
+    initial-value: 3; */
+
   }
 
 }
@@ -227,6 +313,11 @@ h1, h2, h3, h4, h5, h6 {
 </header>
   
 <main>
+  <div class="wrapper-typewriter">
+    <div class="typewriter-text">Welcome to this place.</div>
+  </div>
+
+
   <h2 class="text-h2 text-style-i">Heading</h2>
   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident facere saepe blanditiis, rerum culpa velit minima vitae laborum itaque officia assumenda fuga quod repellendus iste laboriosam omnis dolore! <span class="text-decoration">Possimus</span> , nihil.</p>
 

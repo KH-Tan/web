@@ -1,0 +1,144 @@
+
+* {
+  box-sizing: border-box;
+
+}
+html {
+  font-family: serif;
+  font-size: 18px;
+}
+body {
+  background-color: papayawhip;
+  color: black;
+
+}
+main {
+  font-family: sans-serif;
+}
+header, footer {
+  text-align: center;
+}
+
+
+button, textarea, input, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+
+
+p span {
+  text-transform: uppercase;
+  background-color: gold;
+  color: red;
+}
+.highlight {
+  text-transform: uppercase;
+  background-color: gold;
+  color: red;
+}
+
+img {
+  width: 100%;
+  border-radius: 15px;
+}
+.container-for-images {
+  margin-inline: 10vw;
+  margin-block: 5vw;
+}
+
+.container-for-bg-images {
+  border-radius: 15px;
+  background-image: linear-gradient(to right, red, green, blue);
+
+  /* background-color: salmon; */
+  /* width: 800px; */
+  /* min-height: 600px;   */
+  min-height: 50vw;
+
+  margin-inline: 10vw;
+  margin-block: 5vw;
+  text-align: center;
+
+  /* align-content: center; */
+  place-content: center;       /* also works ??????   */
+
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    /* top: 0;left: 0;right: 0;bottom: 0; */
+    inset: 0;
+    z-index: -1;
+
+    border-radius: 15px;
+    background-image: url("/images/thailand/WatArun.jpg");
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.7;
+    transform: scaleX(-1);
+  }
+
+}
+
+.container-for-images2 {
+  /* width: 800px; */
+  /* height: 600px;   */
+   min-height: 55vw;
+
+  margin-inline: 10vw;
+  margin-block: 5vw;
+  text-align: center;
+
+  align-content: center;
+  place-content: center;         
+  /* also works ?????? */
+
+  position: relative;
+
+  .gradient {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    border-radius: 15px;
+    background-image: linear-gradient(to right, red, green, blue);
+    /* top: 0;left: 0;right: 0;bottom: 0; */
+    inset: 0;
+
+    opacity: 0.5;
+  }
+  .label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+
+    /* align-content: center; */
+
+  }
+
+  .image {
+    width: 85%;
+    border-radius: 15px;
+  }
+
+
+
+
+
+}
+
+.text-large {
+  position: absolute;
+  top: -60px;
+  right: 0;
+  /* inset: 0; */
+  background-color: lightgray;
+  color: antiquewhite;
+  font-size: 5rem;
+  opacity: 0.7;
+}

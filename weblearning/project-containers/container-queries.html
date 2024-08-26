@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Container Queries</title>
+
+<style>
+/* declares sequence of layers */
+/* names are author defined */
+/* to right more specific - regardless of order of layers created */
+/* except !important - which is to left */
+@layer reset, base, layout, components, utilities;
+
+/* created layers */
+@layer reset {}
+@layer base {}
+@layer layout {}
+@layer components {}
+@layer utilities {}
+
+
+* {
+  padding: 0; margin: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+  color-scheme: dark;
+}
+body {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+.container[data-type="narrow"] {
+  max-width: 350px;
+}
+.container[data-type="medium"] {
+  max-width: 600px;
+}
+.container[data-type="wide"] {
+  max-width: 850px;
+}
+
+.super-simple-example {
+  padding-block: 20vh;
+  display: grid;
+  gap: 3rem;
+}
+
+.super-simple-example > .container {
+  container-type: inline-size;
+
+  width: 100%;
+  margin-inline: auto;
+  padding: 2rem;
+  border: 5px solid gray;
+  
+  /* hsl(0, 0%, 95% / 0.2); */
+}
+
+.super-simple-example p {
+  padding: 0.5em;
+  background-color: orange;
+  color: black;
+}
+
+@container (min-width: 375px) {
+  .super-simple-example p {
+    background-color: lime;
+  }
+}
+@container (min-width: 625px) {
+  .super-simple-example p {
+    background-color: red;
+  }
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+  <div class="super-simple-example">
+    <div class="container" data-type="narrow">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="container" data-type="medium">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="container" data-type="wide">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+
+
+
+  </div>
+
+
+
+</body>
+</html>

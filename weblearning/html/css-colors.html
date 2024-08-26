@@ -11,7 +11,7 @@
 <style>
 
 :root {
-  color-scheme: light dark;
+  /* color-scheme: light dark; */
 
 
   --clr-white-1: white;
@@ -62,28 +62,66 @@
   --clr-scheme-muted-mix: slateblue;
   --clr-scheme-muted-light: lightgray;
   --clr-scheme-muted-dark: gray;
+
+
+
+  --clr-body-bg: hsl(0 0% 90%);
+  --clr-card-bg: hsl(0 0% 100%);
+  --clr-text: hsl(0 0% 15%);
+  --clr-heading: hsl(0 0% 25%);
+
 }
+
+
+.blue {
+  --clr-body-bg: hsl(209 50% 90%);
+  --clr-card-bg: hsl(209 50% 100%);
+  --clr-text: hsl(209 50% 15%);
+  --clr-heading: hsl(209 50% 25%);
+}
+
+:root:has(#blue:checked) {
+  --clr-body-bg: hsl(209 50% 90%);
+  --clr-card-bg: hsl(209 50% 100%);
+  --clr-text: hsl(209 50% 15%);
+  --clr-heading: hsl(209 50% 25%);
+}
+
+.dark {
+  --clr-body-bg: hsl(209 50% 10%);
+  --clr-card-bg: hsl(209 50% 5%);
+  --clr-text: hsl(209 50% 90%);
+  --clr-heading: hsl(209 50% 80%);
+}
+:root:has(#dark:checked) {
+  --clr-body-bg: hsl(209 50% 10%);
+  --clr-card-bg: hsl(209 50% 5%);
+  --clr-text: hsl(209 50% 90%);
+  --clr-heading: hsl(209 50% 80%);
+}
+
+
 
 *, *::before, *::after {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-@media (prefers-color-scheme: dark) {
+@media (Xprefers-color-scheme: dark) {
   * { color: antiquewhite; }
 }
-@media (prefers-color-scheme: light) {
+@media (Xprefers-color-scheme: light) {
   * { color: darkmagenta; }
 }
 
 /* test   (prefers-contrast: custom) to mimick forced-colors */
-@media (prefers-contrast: more) {
+@media (Xprefers-contrast: more) {
   html {
     font-size: 32px;
   }
 }
 /* on Windows only ???????? */
-@media (forced-colors: active) {
+@media (Xforced-colors: active) {
   * { color: red; }
 }
 
@@ -104,20 +142,22 @@
 html { }
 body {
   font-family: sans-serif;
-  /* background-color: lightgray; */
-  /* color: darkred; */
+  background-color: var(--clr-body-bg);
+  color: var(--clr-text);
 
-
-  /* background-color: antiquewhite; */
 }
 header {
-
+  text-align: center;
 }
 main {
-
+  text-align: left;
+}
+h1, h2, h3, h4 {
+  color: var(--clr-heading);
+  line-height: 1.1
 }
 footer {
-
+  text-align: center;
 }
 
 
@@ -137,10 +177,33 @@ footer {
     background-color: var(--clr-blue-6);
   }
 
-
 }
 
 
+.grid-auto {
+  --min-column-size: 225px;
+
+  display: grid;
+  gap: clamp(1rem, 5vmax, 1.625rem);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--min-column-size)), 1fr)
+  );
+}
+.card {
+  padding: 1rem;
+  background-color: var(--clr-card-bg);
+  border-block-start: 1.5rem solid;
+  border-radius: 0.5rem;
+
+  /* border-bottom: 1px solid; */
+  /* border-inline: 1px solid ; */
+}
+.wrapper-color-theme {
+  --max-width: 55rem;
+  width: min(100% - 2rem, var(--max-width) );
+  margin-inline: auto;
+}
 
 </style>
 
@@ -149,8 +212,64 @@ footer {
 
 <header>
   <h1>CSS Colors & Schemes</h1>
+
+  <form class="theme-picker" action="">
+    <fieldset>
+      <legend>Pick a color scheme</legend>
+      <label for="theme">Light</label>
+      <input type="radio" name="theme" id="light" checked>
+      <label for="theme">Blue</label>
+      <input type="radio" name="theme" id="blue">
+      <label for="theme">Dark</label>
+      <input type="radio" name="theme" id="dark">
+    </fieldset>
+  </form>
+
 </header>
 <main>
+  <div class="wrapper-color-theme">
+    <h2>Lorem ipsum dolor sit amet.</h2><br>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ratione recusandae error fuga! Nemo commodi mollitia consequatur et officiis nihil tempore enim odit architecto voluptatibus quibusdam voluptatum reprehenderit itaque ex magnam ab, error dolor neque?</p>
+    <p>
+    Tenetur ducimus officiis voluptas laboriosam, delectus, pariatur itaque aliquam, assumenda eveniet beatae officia esse totam?</p>
+    <br>
+  
+    <h3>Lorem, ipsum.</h3><br>
+    <div class="grid-auto">
+      <div class="card">
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus explicabo amet excepturi eius similique odio?</p>
+      </div>
+      <div class="card">
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus explicabo amet excepturi eius similique odio?</p>
+      </div>
+      <div class="card">
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus explicabo amet excepturi eius similique odio?</p>
+      </div>
+      <div class="card">
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus explicabo amet excepturi eius similique odio?</p>
+      </div>
+      <div class="card">
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus explicabo amet excepturi eius similique odio?</p>
+      </div>
+      <div class="card">
+        <h4>Lorem ipsum dolor sit amet.</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus explicabo amet excepturi eius similique odio?</p>
+      </div>
+    </div>
+
+    <br>
+    <p>Rerum, neque! Consequuntur obcaecati beatae dolorum, fuga itaque iusto dicta et corporis facere ea necessitatibus
+    odit cum, voluptates harum, dolore maiores aliquid distinctio repellendus nesciunt!</p>
+    <p>Unde dolor quod delectus obcaecati labore laboriosam optio sit eligendi. Excepturi explicabo quod obcaecati
+    pariatur error, in, accusantium eum omnis repellat qui, aliquid magnam odit?</p>
+  
+  </div>
+
 
   <!-- <div class="white">
   <h2>Whites</h2>
@@ -162,15 +281,11 @@ footer {
   <p>6</p>
   </div> -->
 
-<section>
-
-</section>
-<aside>
-
-</aside>
+<!-- <section></section>
+<aside></aside>
 <section>
 <button id="dark-mode-toggle" class="dark-mode-toggle">Change Dark/Light Mode</button>
-</section>
+</section> -->
 
 </main>
 <footer>

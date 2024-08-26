@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text on Graphics</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Angkor&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+  /* display: flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column; */
+}
+
+.bg-text {
+  /* min-height: 33vh; */
+  /* position: relative; */
+
+  /* background-color: salmon; */
+  /* background: linear-gradient(to right, red, green, blue); */
+
+  background:
+   /* url(/images/transparent/png-image.png),  */
+   url(/images/scottwebbunsplash-mlgreen.jpg);
+   background-position: center;
+  /* opacity: 0.99; */
+  background-size: cover;
+
+  font-family: sans-serif;
+  text-align: center;
+
+  > .bg-text-large {
+    font-size: 13vw;
+    font-weight: 900;
+
+    width: fit-content;
+    height: fit-content;
+    margin-inline: auto;
+
+    background-color: dimgray;
+    color: white;
+    opacity: 0.39;
+
+    /* position: absolute; */
+    /* inset: 8rem; */
+  }
+
+  > p {
+    font-size: 2.25vw;
+    font-weight: 400;
+
+    color: darkblue;
+  }
+}
+
+.bg-text-clip {
+  /* the following properties make background thru text work */
+  background-image: url(/images/scottwebbunsplash-mlgreen2.jpg);
+
+  background-clip: text;
+  color: transparent;  
+}
+
+
+
+.bg-clip {
+  font-size: 13vw;
+  /* font-family: sans-serif;   */
+  font-family: "Angkor", serif;
+  /* font-family: "Permanent Marker", cursive; */
+}
+
+.bg-clipv1 {
+
+  /* linear-gradient(to left, rgba(255,0,0,0.3),rgba(0,255,0,0.3),rgba(0,0,255,0.3)),   */
+  background-image:
+   url(/images/japan/NightStreetLanterns.jpg),
+   url(/images/japan/Garden.jpg);
+   background-position: center, center;
+   background-size: cover, cover;
+
+  .bg-clip-text {
+    /* background-image: url(/images/scottwebbunsplash-mlgreen2.jpg); */
+    background-image: url(/images/japan/RedTori.jpg);
+
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.bg-clipv2 {
+  background-image: url(/images/japan/Garden.jpg);
+  background-position: center;
+  background-size: cover;
+  /* background-color: black; */
+  /* opacity: 0.75; */
+
+  .bg-clip-text {
+    background-image: linear-gradient(to right, orange, green, purple);
+    /* background-image: url(/images/scottwebbunsplash-mlgreen.jpg); */
+
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.bg-clipv3 {
+  background-color: lightcoral;
+  background-image:
+   /* url(/images/japan/CanalFlower.jpg), */
+   url(/images/japan/Garden.jpg);
+
+  background-position: center, center;
+  background-size: cover, cover;
+  /* background-color: black; */
+  /* opacity: 0.75; */
+
+  /* background-blend-mode: color; */
+  /* background-blend-mode: color-burn; */
+  /* background-blend-mode: color-dodge; */
+  /* background-blend-mode: darken; */
+  /* background-blend-mode: difference; */
+  /* background-blend-mode: exclusion; */
+  /* background-blend-mode: hard-light; */
+  /* background-blend-mode: hue; */
+  /* background-blend-mode: lighten; */
+  /* background-blend-mode: luminosity; */
+  /* background-blend-mode: multiply; */
+  /* background-blend-mode: normal; */
+  /* background-blend-mode: overlay; */
+  /* background-blend-mode: saturation; */
+  /* background-blend-mode: screen; */
+  background-blend-mode: soft-light;
+
+  .bg-clip-text {
+    /* background-color: brown; */
+    background-image:
+     linear-gradient(to right, red, green, blue, green ),
+     url(/images/scottwebbunsplash-mlgreen.jpg);
+     background-blend-mode: color;
+
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+
+.container-image {
+  background-color: lavender;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+
+
+  width: 45%;
+  height: auto;
+
+  p {
+    background-color: black;
+    color: aliceblue;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+
+.container-bgcolor {
+  background-color: lightpink;
+  border-radius: 1rem;
+
+  /* background-image: linear-gradient(red,green,blue); */
+
+
+  width: 45%;
+  height: 250px;
+
+  p {
+    background-color: gray;
+    color: aliceblue;
+    font-size: 1.5rem;
+    text-align: center; 
+  }
+
+
+}
+
+.image-transparent {
+  width: 100%;
+  height: auto;  
+}
+
+.image-clip-circle {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+  /* clip-path: circle(39%); */
+  /* clip-path: circle(39% at top center);  */
+  clip-path: circle(56% at 50% 75%);
+
+}
+.image-clip-ellipse {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+
+  clip-path: ellipse(45% 50% at 50% 50%);
+}
+.image-clip-polygon {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+
+   clip-path: polygon(
+    25% 0%,
+    75% 0%,
+
+    90% 25%,
+    90% 75%,
+
+    75% 100%,
+    25% 100%,
+
+    10% 75%,
+    10% 25%
+    ); 
+}
+.not-in-use {
+  /* chevron shape */
+  clip-path: polygon(
+    20% 0%,
+    100% 0%,
+    80% 50%,
+    100% 100%,
+    20% 100%,
+    0% 50%
+  );
+
+
+
+}
+
+
+
+
+
+
+.hero {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  color: aliceblue;
+
+  padding: 8em 39% 13em 9%;
+/* height: fit-content; */
+
+  background-color: salmon;
+  background-image: url(/images/japan/RedTori.jpg);
+
+  /* background-size: 50% 50%; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: 40px 100px; */
+  /* background-position: top 50px right 50px;   */
+  background-position: top right;
+  background-position: center;
+
+  background-blend-mode: multiply;
+
+     /* flips horizontally */
+  /* transform: scaleX(-1); */
+
+  h1 {
+    font-size: 6rem;
+  }
+
+}
+.overlay {
+  /* border-radius: 1rem; */
+  border-width: 1.6rem;
+  border-style: solid;
+  border-color: rebeccapurple;
+
+  border-image-source:
+   linear-gradient(
+    rgba(255,0,0,0.8),
+    rgba(0,255,0,0.8),
+    rgba(0,0,255,0.8));
+
+  /* border-image-slice: fill 1; */
+  border-image-slice: 1;
+}
+
+
+
+</style>
+
+
+</head>
+<body>
+<hr>
+<h1>Text on Graphics</h1>
+<hr>
+
+<div class="hero overlay">
+  <h1 class="bg-text-clip">Hero Header</h1>
+  <p>Hero Text</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, sint? Ex laboriosam officia adipisci earum.</p>
+</div>
+
+<div class="bg-text">
+  <p>Lorem ipsum dolor sit amet.</p>
+  <div class="bg-text-large"> MONDAY! </div>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus consectetur eligendi voluptatem consequatur, odio nam.</p>
+</div>
+
+<div class="bg-clip bg-clipv1">
+  <div class="bg-clip-text"><p> FRIDAY! </p></div>
+</div>
+
+<div class="bg-clip bg-clipv2">
+  <div class="bg-text-clip"><p> SATURDAY! </p></div>
+</div>
+
+<div class="bg-clip bg-clipv3">
+  <div class="bg-clip-text"><p> SUNDAY! </p></div>
+</div>
+
+
+
+
+
+<div class="container-image">
+  <img class="image-clip-circle" src="/images/thailand/WatArun.jpg" alt="Wat Arun">
+  <p>Wat Arun</p>
+</div>
+
+<div class="container-image">
+  <img class="image-clip-ellipse" src="/images/thailand/Erawan.jpg" alt="Erawan">
+  <p>Erawan</p>
+</div>
+
+<div class="container-image">
+  <img class="image-clip-polygon" src="/images/thailand/LohaPrasat.jpg" alt="Loha Prasat">
+  <p>Loha Prasat</p>
+</div>
+
+<div class="container-bgcolor image-clip-circle">
+  <div class="image-clip-circle">X</div>
+    <p>BGColor</p>
+
+</div>
+
+
+<div class="container-image">
+  <img class="image-transparent" src="/images/transparent/png-image.png" alt="Holi Splash">
+  <p>Transparent Backgrounds</p>
+</div>
+
+<div class="container-image">
+  <img class="image-transparent" src="/images/transparent/vecteezy_ai-generated-colorful-splash.png" alt="Holi Splash">
+  <p>Transparent Backgrounds</p>
+</div>
+
+<div class="container-image">
+  <img class="image-transparent" src="/images/transparent/vecteezy_purple-water-splash-transparent-bg.png" alt="Holi Splash">
+  <p>Transparent Backgrounds</p>
+</div>
+
+
+
+
+
+
+<hr>
+<h2 class="use-Mask-Image"> What DAY! </h2>
+</body>
+</html>

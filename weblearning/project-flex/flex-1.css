@@ -1,0 +1,276 @@
+/* ------------------------------------ */
+/* General */
+/* ------------------------------------ */
+
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --clr-gray-300: hsl(from gray h s l / 0.30);
+  --clr-gray-800: hsl(from gray h s l / 0.80);
+}
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+body {
+  margin-inline: 0.5rem;
+}
+header, footer {
+  background-color: lightgray;
+
+}
+header {
+  background-color: darkgray;
+  margin-bottom: 2rem;
+}
+footer {
+  background-color: lightgray;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* ------------------------------------ */
+/* Header */
+/* ------------------------------------ */
+
+.flex-header {
+
+
+
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+
+  .h-item {
+    color: aliceblue;
+    font-size: 1.75rem;
+  }
+  .h-logo {
+
+    color: aliceblue;
+    font-size: 3rem;
+    text-align: start;
+
+    /* margin-right: auto; */
+
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    /* flex-basis: max(480px, 45vw); */
+  }
+  .h-item-1 {
+    flex: 0 0 auto;
+  }
+  .h-item-2 {
+    flex: 0 0 auto;
+  }
+  .h-item-3 {
+    flex: 0 0 auto;
+  }
+}
+
+
+
+/* ------------------------------------ */
+/* Example 0 */
+/* ------------------------------------ */
+
+.parent {
+  border: 1px solid black;
+  font-size: 32px;
+  padding: 5px;
+
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+
+  /* align-content: center;  works for wrap only */
+}
+.child {
+  border: 2px solid red;
+  margin: 5px;
+
+  /* width: 300px; */
+  flex-basis: content;   /*will override width;*/ 
+  flex-basis: auto;      /*will respect width;*/
+
+  /* flex-basis: 0;  */
+
+  flex-shrink: 1;
+  flex-grow: 0;
+
+}
+.child-1 {
+  flex: 0 1 auto;
+}
+.child-2 {
+  flex: 0 1 auto;
+}
+.child-3 {
+  flex: 0 1 auto;
+  align-self: start;
+}
+
+/* ------------------------------------ */
+/* Flex Example 1 */
+/* ------------------------------------ */
+
+.Xcontainer {  
+  background-color: var(--clr-gray-300);
+  margin-block: 1rem;
+  padding: 1rem;
+
+  width: auto;
+  height: fit-content;
+
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2.5rem 1rem; 
+
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  h3 {
+    background-color: var(--clr-gray-800);
+    color: white;
+    padding-block: 0.25em;
+    padding-left: 0.25em;
+    margin-bottom: 0.75em;
+  }
+
+  .box {
+    background-color: whitesmoke;
+    border-radius: 0.35rem;
+    padding: 1rem;
+    /*flex-grow: 0; flex-shrink: 1; flex-basis: auto; */
+    flex: 0 1 auto;
+  }
+
+  .box-1 {
+    flex: 1;
+    align-self: center;
+  }
+  .box-2 {
+    flex: 2;
+    align-self: flex-end;
+  }
+  .box-3 {
+    flex: 1;
+  }
+  .box-4 {
+    flex: 2;
+  }
+}
+
+
+/* ------------------------------------ */
+/* Flex Example 2 */
+/* ------------------------------------ */
+
+.section-flex-2 {
+  container-type: inline-size;
+  container-name: container-2;
+
+  @container container-2 (width <= 768px) {
+    .flex-container {
+      flex-flow: column nowrap;
+    }
+  }
+}
+
+.Xflex-container {
+  background-color: lightgray;
+  border-radius: 0.35rem;
+  margin-block: 1rem;
+  padding: 1rem;
+
+  width: auto;
+  height: fit-content;
+
+  /* display: inline-flex; */
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: wrap;  */
+  flex-flow: row wrap;
+
+  /* row-gap: 2.5rem; */
+  /* column-gap: 1rem; */
+  gap: 2.5rem 1rem; 
+
+  /* flex-start/flex-end/center/space-around/space-between/space-evenly; */
+  justify-content: flex-end;
+  /* align-items: stretch/flex-start/flex-end/center/baseline; */
+  align-items: flex-start;
+
+  .flex-item {
+    background-color: whitesmoke;
+    border-radius: 0.35rem;
+    padding: 1rem;
+
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    flex: 0 1 auto;
+
+  }
+  h3 {
+    background-color: darkslategray;
+    color: white;
+    padding-block: 0.25em;
+    padding-left: 0.25em;
+    margin-bottom: 0.75em;
+  }
+  .flex-item-1 {
+    background-color: hsl(from purple h s l / 0.20);
+    flex: 1 1 35%;
+    order: 1;
+  }
+  .flex-item-2 {
+    flex: 0 1 20%;
+    order: 2;
+  }
+  .flex-item-3 {
+    flex: 0 1 25%;
+    order: 3;
+  }
+  .flex-item-4 {
+    flex: 0 1 20%;
+    order: 4;
+  }
+  .flex-item-5 {
+    flex: 0 1 25%;
+    order: 5;
+  }
+  .flex-item-6 {
+    background-color: hsl(from purple h s l / 0.30);
+    flex: 0 1 25%;
+    order: 6;
+  }
+
+}
+
+/* ------------------------------------ */
+
+
+
+.container-2 {
+  display: grid;
+  background-color: aliceblue;
+  border: 1px solid green;
+}
+
+
+
+
+
+
+

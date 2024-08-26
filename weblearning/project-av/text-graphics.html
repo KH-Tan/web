@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text and Graphics</title>
+
+
+<style>
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+  line-height: 1.3;
+  font-size: 1.2rem;
+
+  header {
+    background-color: darkslategray;
+    color: whitesmoke;
+    min-height: 12vh;    /************/
+    text-align: center;
+
+    font-size: calc(1vw + 1rem) 
+  }
+  main {
+    max-width: 1280px;
+    width: calc(100vw - 2em);
+    margin: 0 auto;
+
+    /* width: 90vw; */
+    /* margin-inline: auto; */
+
+    /* overflow-x: hidden; */
+  }
+  footer {
+    background-color: darkslategray;
+    color: whitesmoke;
+    height: 5vh;
+    text-align: center;  
+  }
+
+  h1, h2, h3 {
+    margin-bottom: .25em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+
+}
+
+
+article {
+  background-color: antiquewhite;
+
+  /* min-width: 500px; */
+  max-width: 900px;     /*************/
+  max-width: 85vw;     /*************/
+  /* min-width: fit-content; */
+  /* ????????? */  
+
+  margin-inline: 1em;
+  margin-bottom: 2em;
+  padding: 2em;
+  text-wrap: balance;  
+
+  overflow: hidden;
+  /* ?????????? */
+
+  img {
+    width: 350px;
+    height: 350px;    
+    object-fit: cover;
+
+    float: left;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    margin-top: .5em;
+  }
+
+}
+
+
+.article-1 {
+
+  img {
+    border: 10px solid dimgray;
+    border-radius: 50%;
+    /* shape-outside: circle(); */
+  }
+}
+.article-2 {
+  img {
+    height: auto;
+    object-fit: fill;
+
+    clip-path: ellipse(50% 30%);
+    /* shape-outside: ellipse();     */
+    shape-outside: ellipse(50% 30%);
+
+    /* animation: egg 3s ease-in-out infinite; */
+  }
+}
+@keyframes egg {
+  /* 0% { clip-path: ellipse(25% 50%); */
+       /* shape-outside: ellipse(25% 50%); } */
+  25% { clip-path: ellipse(50% 50%);
+        shape-outside: ellipse(50% 50%); }
+  50% { clip-path: ellipse(25% 50%);
+        shape-outside: ellipse(25% 50%); }
+  75% { clip-path: ellipse(50% 25%);
+        shape-outside: ellipse(50% 25%); }
+  /* 100% { clip-path: ellipse(25% 50%); */
+         /* shape-outside: ellipse(25% 50%); } */
+}
+
+.article-3 {
+
+  img {
+    clip-path: inset(20% 0% round 100%);
+    shape-outside: inset(17% 0% round 100%);
+  }
+}
+
+.shape-container-1 {
+  border: 1px solid black;
+  display: inline-flex;
+
+  width: 25%;
+  aspect-ratio: 1;
+
+  .shape-inset {
+    width: 100%; height: 100%;
+    background-color: olive;
+
+    /* clip-path: inset(2rem); */
+    /* clip-path: inset(1rem 2rem 3rem 4rem); */
+    /* clip-path: inset(1rem 2rem round 35px); */
+    clip-path: inset(29% 5% round 100%);
+    /* clip-path: inset(50px 25px round 15% 3% 50% 0%); */
+  }
+
+  .shape-circle {
+    width: 100%; height: 100%;
+    background-color: lightcoral;
+
+    /* clip-path: circle(50% at center); */
+    /* clip-path: circle(50% at 0 0);     */
+    /* clip-path: circle(25% at 100% 0%); */
+    /* clip-path: circle(25% at 100% 0%); */
+    /* clip-path: circle(55% at center); */
+  
+    /* clip-path: circle(50% at top right); */
+    clip-path: circle(35%);
+  }
+
+  .shape-ellipse {
+    width: 100%; height: 100%;
+    background-color: dodgerblue;
+
+    /* clip-path: ellipse(40% 30% at center); */
+    /* clip-path: ellipse(40% 30% at top); */
+    clip-path: ellipse(25% 45%);
+  }
+
+  .shape-polygon1 {
+    width: 100%; height: 100%;
+    background-color: gray;
+
+    /* clip-path: polygon(0 0, 100% 0%, 50% 100%); */
+    /* clip-path: polygon(0 0, 100% 50%, 0% 100%); */
+    /* clip-path: polygon(50% 0, 100% 100%, 0 100%); */
+    clip-path: polygon(50% 10%, 90% 90%, 10% 90%);
+  }
+  .shape-polygon2 {
+    width: 100%; height: 100%;
+    background-color: gray;
+
+    clip-path: polygon(-25% 50%, 50% -25%, 125% 50%, 50% 125%);
+  }
+  .shape-polygon3 {
+    width: 100%; height: 100%;
+    background-color: gray;
+
+    /* clip-path: polygon(0 100%, 50% -100%, 100% 100%); */
+    /* clip-path: polygon(25% 25%, 75% 25%, 90% 90%, 10% 90%); */
+    clip-path: polygon(50% 10%, 75% 50%, 50% 90%, 25% 50%);
+  }
+}
+
+.shape-container-2 {
+  border: 1px solid black;
+  display: inline-flex;
+
+  width: 50%;
+  aspect-ratio: 1;
+
+  .shape-animate {
+    width: 100%; height: 100%;
+
+    background-image: url(/images/FujiTemple-P.jpg);
+    background-size: cover;
+
+    clip-path: circle(100% at center);
+    animation: move-shape 10s infinite alternate;
+  }
+}
+@keyframes move-shape {
+  25% { clip-path: circle(25%); }
+  50% { clip-path: circle(25% at bottom left ); }
+  75% { clip-path: circle(25% at right center); }
+  90% { clip-path: circle(25% at top right); }
+}
+
+.shape-container-3 {
+  border: 1px solid black;
+  display: inline-flex;
+
+  /* margin: 0 -5%; */
+
+  width: 100%;
+  aspect-ratio: 5/1;
+
+  .shape-banner {
+    width: 100%; height: 100%;
+
+    background-image: url(/images/scottwebbunsplash-mlgreen.jpg);
+    background-size: cover;
+    background-position: bottom;
+    /* object-fit: contain; */
+    /* object-position: bottom; */
+
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.divider {
+  max-width: 100vw;
+  width: 100vw;
+  margin: 2rem calc(-50vw + 50%);
+
+  height: 15vh;
+  object-fit: cover;
+
+  background-image: linear-gradient(to right, skyblue, pink, purple);
+
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+  clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 60% 50%, 50% 100%, 40% 50%, 0 50% );
+
+}
+
+</style>
+
+
+</head>
+<body>
+<header>
+<h1>Text and Graphics, more text and graphics</h1>  
+</header>
+<main>
+<h2>Heading Main</h2>
+
+<section>
+<h2>Heading Section</h2>
+</section>
+
+
+
+<article class="article-1">
+
+  <img src="/images/thailand/WatArun.jpg">
+  <h2>Wat Arun</h2>  
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+</article>
+
+
+<article class="article-2">
+  <h2>Mt. Fuji</h2>
+  <img src="/images/FujiPark-P.jpg">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+</article>
+  
+
+<article class="article-3">
+  <h2>Erawan</h2>
+  <img src="/images/thailand/Erawan.jpg">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam molestias fugiat incidunt blanditiis perspiciatis unde quo ullam, sit neque tempora sequi, sint quod repellendus iusto consequatur, quos nam labore distinctio.</p>
+</article>
+
+<h2>Using clip-path</h2>
+
+  <div class="shape-container-1">
+    <div class="shape-inset"></div>
+  </div>
+
+  <div class="shape-container-1">
+    <div class="shape-circle"></div>
+  </div>
+
+  <div class="shape-container-1">
+    <div class="shape-ellipse"></div>
+  </div>
+
+  <div class="shape-container-1">
+    <div class="shape-polygon1"></div>
+  </div>
+  <div class="shape-container-1">
+    <div class="shape-polygon2"></div>
+  </div>
+  <div class="shape-container-1">
+    <div class="shape-polygon3"></div>
+  </div>
+
+  <div class="shape-container-2">
+    <div class="shape-animate"></div>
+  </div>
+  <div class="shape-container-3">
+    <div class="shape-banner"></div>
+  </div>
+
+   <div class="divider">
+    <p>Divider</p>
+   </div>
+
+
+<div>
+  <h2>Last Heading</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam omnis ab minima ea voluptatum adipisci cumque ullam maiores molestiae officia, libero a in sit. Repellendus?</p>
+</div>
+
+
+</main>
+<footer>&copy; Tanaka Productions</footer>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V Scroll</title>
+
+
+<style>
+
+:root {
+  --header-height: 150px;
+  --footer-height: 250px;
+
+  scroll-behavior: smooth;
+  /* scroll-snap-type: y proximity; */
+  scroll-padding-top: var(--header-height); 
+}
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+html {
+
+}
+body {
+  background-color: aliceblue;
+  font-family: sans-serif;
+  font-weight: 300;
+
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+a {
+  padding-inline: 0.5rem ;
+}
+header, footer {
+  border-radius: 1rem;
+  background-color: antiquewhite;
+  text-align: center;
+  align-content: center;
+  width: 100%;
+}
+header {
+  z-index: 9;  
+  height: var(--header-height);
+
+  position: sticky;
+  top: 0; 
+}
+footer {
+  height: var(--footer-height);
+}
+h1 {
+
+}
+h2 {
+  font-size: clamp( 1.5rem, 2.5vw, 3.0rem );
+  line-height: 2;
+}
+
+.pages {
+  /* height: 100vh; */
+  /* height: 100dvh; */
+  margin-inline: auto;
+  width: clamp( 45ch, 90vw, 150ch );
+
+
+
+  /* margin-top: 50px;
+  margin-bottom: 50px; */
+}
+
+.page {
+  border-radius: 1rem;
+  /* width: 1024px; */
+  /* height: 720px; */
+  padding: 0.95rem;
+  margin-bottom: 1rem;
+
+  min-height: 75vh;
+  /* scroll-snap-align: start; */
+  /* scroll-snap-stop: always; */
+  font-size: clamp( 0.95rem, 1.8vw, 1.75rem );
+  line-height: 1.5;
+
+}
+
+.page-1 { background-color: aqua;
+  /* scroll-snap-align: none;   */
+ }
+.page-2 { background-color: lightpink; }
+.page-3 { background-color: lightsalmon; }
+.page-4 { background-color: lightseagreen; }
+.page-5 { background-color: skyblue;
+  /* scroll-snap-align: none; */
+}
+
+
+
+.page-1 {
+
+  h2 {
+    /* display: block; */
+    background-color: lightgray;
+    width: max-content;
+  }
+  p {
+    margin-block: 20px;
+    margin-inline: 30px;
+    /* display: inline-block; */
+    background-color: lightcoral;
+    width: 100%;
+  }
+
+
+}
+
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <h1>Header Text</h1>
+  <a href="#p-1">Page 1</a>
+  <a href="#p-2">Page 2</a>
+  <a href="#page-3">Page 3</a>
+  <a href="#page-4">Page 4</a>
+  <a href="#page-5">Page 5</a>
+  <a href="#my-footer">Footer</a>
+</header>
+
+<div id="my-top"></div>
+
+<main>
+
+
+<div class="pages">
+  <div id="p-0">&nbsp; </div>
+  <div id="p-1">&nbsp; </div>
+  <div class="page page-1">
+
+    <h2>Page 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat.</p>
+    <h2>Page 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat.</p>
+
+    <h2>Page 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat.</p>
+    <h2>Page 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat.</p>
+
+  </div>
+  
+  <div id="p-2">&nbsp; </div>
+  <div class="page page-2">
+    <h2>Page 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat. Neque adipisci debitis consequuntur quam cumque laudantium aliquid natus possimus expedita aliquam ipsam doloribus, dignissimos necessitatibus animi laborum est deserunt libero eius voluptatem fugit, sit cupiditate! Fugit qui minus velit eveniet beatae. Saepe iure autem veritatis nemo sed ut ratione modi tempore quisquam reprehenderit est ipsam, sit quidem in quae iste similique vel dolor! Qui ab ex nesciunt, esse nostrum aspernatur iusto?</p>
+  </div>
+  
+  <div id="page-3" class="page page-3">
+    <h2>Page 3</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat. Neque adipisci debitis consequuntur quam cumque laudantium aliquid natus possimus expedita aliquam ipsam doloribus, dignissimos necessitatibus animi laborum est deserunt libero eius voluptatem fugit, sit cupiditate! Fugit qui minus velit eveniet beatae. Saepe iure autem veritatis nemo sed ut ratione modi tempore quisquam reprehenderit est ipsam, sit quidem in quae iste similique vel dolor! Qui ab ex nesciunt, esse nostrum aspernatur iusto?</p>
+  </div>
+  
+  <div id="page-4" class="page page-4">
+    <h2>Page 4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat. Neque adipisci debitis consequuntur quam cumque laudantium aliquid natus possimus expedita aliquam ipsam doloribus, dignissimos necessitatibus animi laborum est deserunt libero eius voluptatem fugit, sit cupiditate! Fugit qui minus velit eveniet beatae. Saepe iure autem veritatis nemo sed ut ratione modi tempore quisquam reprehenderit est ipsam, sit quidem in quae iste similique vel dolor! Qui ab ex nesciunt, esse nostrum aspernatur iusto?</p>
+  </div>
+
+  <div id="page-5" class="page page-5">
+    <h2>Page 5</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae porro exercitationem fugiat. Neque adipisci debitis consequuntur quam cumque laudantium aliquid natus possimus expedita aliquam ipsam doloribus, dignissimos necessitatibus animi laborum est deserunt libero eius voluptatem fugit, sit cupiditate! Fugit qui minus velit eveniet beatae. Saepe iure autem veritatis nemo sed ut ratione modi tempore quisquam reprehenderit est ipsam, sit quidem in quae iste similique vel dolor! Qui ab ex nesciunt, esse nostrum aspernatur iusto?</p>
+  </div>
+
+</div>
+
+
+</main>
+<footer id="my-footer">
+  <h3>Footer Text</h3>
+  <p>
+    &copy;
+    <script>document.write(new Date().getFullYear())</script>
+    Tanaka Productions
+  </p>
+  <br>
+  <a href="#my-top">Top &uparrow;</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>freeCodeCamp</title>
+
+
+<style>
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+  font-family: sans-serif;
+  font-size: 1.25rem;
+
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+
+
+
+}
+
+
+.grid-container {
+  display: grid;
+  grid-gap: 5px;
+
+  /* grid-template: 1fr 4fr 1fr / 1fr 3fr ; */
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 3fr 1fr;
+
+  div {
+    /* background-color: lightsalmon; */
+    padding-inline: 2rem;
+    padding-block: 1rem;
+
+    text-align: center;
+    align-content: center;
+  }
+
+  .h {
+    background-color: cyan;
+
+  /* grid-column-start: 1; */
+  /* grid-column-end: 3; */
+  /* grid-column: 1 / 3; */
+    grid-column: 1 / -1;
+  }
+  .m {
+    background-color: lightsalmon;
+    grid-row: 2 / 3;
+  }
+  .c {
+    background-color: darkgoldenrod;
+    grid-column: 2 / -1;
+  }
+  .f {
+    background-color: cyan;
+    /* grid-column: 1 / span 2; */
+    /* -1 means last column line */
+    grid-column: 1 / -1;
+  }
+
+
+}
+
+
+
+.grid-container-2 {
+  max-width: 99ch;
+  /* margin-inline: auto; */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.25rem;
+
+  /* border: 2px solid red; */
+  min-height: 100dvh;
+  
+  display: grid;
+  grid-gap: 0.25rem;
+
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: 8rem auto 5rem;
+  grid-template-areas: 
+    "h h h h h h h h h h h h h h"
+    "m m m c c c c c c c c c c c"
+    "f f f f f f f f f f f f f f";
+
+  div {
+    /* background-color: lightsalmon; */
+    /* padding-inline: 2rem; */
+    /* padding-block: 1rem; */
+
+    text-align: center;
+    /* align-content: center; */
+  }
+
+  .h {
+    background-color: skyblue;
+    /* grid-column: 1 / -1; */
+    grid-area: h;
+  }
+  .m {
+    background-color: lightpink;
+    /* grid-row: 2 / 3; */
+    grid-area: m;
+    min-width: 13ch;
+  }
+  .c {
+    background-color: lavender;
+    /* grid-column: 2 / -1; */
+    grid-area: c;
+    min-width: 20ch;
+  }
+  .f {
+    background-color: skyblue;
+    /* grid-column: 1 / -1; */
+    grid-area: f;
+  }
+
+}
+
+
+/* @media (max-width: 600px) {
+  .header {
+    grid-column: span 6;
+  }
+  .menu {
+    grid-row: 1;
+    grid-column: span 6;
+  }
+  .content {
+    grid-column: span 12;
+  }
+
+} */
+
+
+</style>
+
+
+</head>
+<body>
+
+  <!-- <h1>CSS GRID</h1>
+
+  <div class="grid-container">
+    <div class="h">Header</div>
+    <div class="m">Menu</div>
+    <div class="c">Content</div>
+    <div class="f">Footer</div>
+  </div>
+
+  <hr> -->
+
+  <div class="grid-container-2">
+    <div class="h">Header</div>
+    <div class="m">Menu</div>
+    <div class="c">
+      <h2>Content</h2>
+      <br><hr><br>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi magnam aliquam odit accusamus, qui tempore temporibus nam optio, ab minus quos! Obcaecati blanditiis, eaque unde eos quas adipisci sed corrupti nihil architecto pariatur consectetur vero praesentium corporis nesciunt natus deserunt veniam incidunt odit deleniti. Adipisci suscipit eveniet tempore ea hic.</p>
+      <br>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi magnam aliquam odit accusamus, qui tempore temporibus nam optio, ab minus quos! Obcaecati blanditiis, eaque unde eos quas adipisci sed corrupti nihil architecto pariatur consectetur vero praesentium corporis nesciunt natus deserunt veniam incidunt odit deleniti. Adipisci suscipit eveniet tempore ea hic.</p>
+      <br>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi magnam aliquam odit accusamus, qui tempore temporibus nam optio, ab minus quos! Obcaecati blanditiis, eaque unde eos quas adipisci sed corrupti nihil architecto pariatur consectetur vero praesentium corporis nesciunt natus deserunt veniam incidunt odit deleniti. Adipisci suscipit eveniet tempore ea hic.</p>
+      <br>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi magnam aliquam odit accusamus, qui tempore temporibus nam optio, ab minus quos! Obcaecati blanditiis, eaque unde eos quas adipisci sed corrupti nihil architecto pariatur consectetur vero praesentium corporis nesciunt natus deserunt veniam incidunt odit deleniti. Adipisci suscipit eveniet tempore ea hic.</p>
+    </div>
+    <div class="f">Footer</div>
+  </div>
+
+
+</body>
+</html>

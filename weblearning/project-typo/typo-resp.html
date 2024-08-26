@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Typography</title>
+
+
+<style>
+:root {
+  --gold-ratio1: 1.618;
+  --gold-ratio2: 2.618;
+  --gold-ratio3: 4.236;
+  --gold-ratio4: 6.854;
+  --gold-ratio5: 11.089;
+  --gold-ratio6: 17.942;
+  --gold-ratio7: 29.030;
+  --gold-ratio8: 46.971;
+
+
+  --gold-ratio: 1.618;
+
+  --fs-p: 1.25rem; --fs-p-min: 0.88rem; --fs-p-max: 1.618rem;
+  --fs-p-best: calc( 1.618vw + 0.1618rem );
+
+  --fs-h3: calc( var(--fs-p) * var(--gold-ratio) );
+  --fs-h2: calc( var(--fs-h3) * var(--gold-ratio) );
+  --fs-h1: calc( var(--fs-h2) * var(--gold-ratio) );
+  --fs-h0: calc( var(--fs-p) * var(--gold-ratio6) );
+
+
+
+  /* --base-f-size: 16px; */
+  --base-f-size: 100%;
+
+  --base-l-height: 1.618;
+  --base-m-inline: 4.236vw;
+  --base-f-family: sans-serif;  
+
+  --device-phone: 480px;
+  --device-tablet: 768px;
+  --device-laptop: 1024px;
+  --device-hd: 1280px;
+  --device-fhd: 1920px;
+  --device-uhd: 3840px;
+
+  --16px: 1rem;
+  --24px: 2.5rem;
+  --32px: 2rem;
+  --300px: 18.75rem; 
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: var(--base-f-size);
+  line-height: var(--base-l-height);
+  font-family: var(--base-f-family); 
+
+  color-scheme: dark light;
+
+}
+body {
+  /* margin-inline: var(--base-m-inline); */
+  margin-inline: auto;
+  width: clamp( 50ch, 55vw, 97ch );
+
+
+  /* text-align: center; */
+
+}
+header {
+
+}
+main {
+
+}
+footer {
+
+}
+
+p {
+  font-size: clamp( var(--fs-p-min), var(--fs-p-best), var(--fs-p-max) );
+  /* padding-bottom: clamp(1rem, 1.618vw + 0.1rem, 1.5rem); */
+  margin-bottom: clamp(1rem, 1.618vw + 0.1rem, 1.5rem);
+}
+h3 {
+  /* font-size: 1.618rem; */
+  font-size: var(--fs-h3);
+}
+h2 {
+  /* font-size: 2.618rem; */
+  font-size: var(--fs-h2);
+}
+h1 {
+  /* font-size: 6.854rem; */
+  font-size: var(--fs-h1);  
+}
+.h0 {
+  font-size: var(--fs-h0);
+}
+/* h1 { font-size: var(--base-gratio4)rem; } */
+
+
+
+/* can zoom but not responsive */
+.use-rem {
+h1 { font-size: 5rem; }
+h2 { font-size: 3rem; }
+h3 { font-size: 2rem; }
+p { font-size: 1.5rem; }
+}
+
+/* cannot zoom but responsive */
+.use-vw {
+  h1 { font-size: 7.5vw; }
+  h2 { font-size: 5vw; }
+  h3 { font-size: 3.75vw; }
+  p { font-size: 2.75vw; }
+}
+
+.use-clamp {
+  border: 1px solid ;
+  /* width: 390px; */
+  /* width: 100%; */
+
+  min-width: 300px;
+  width: 1024px;
+  max-width: 3840px;
+
+  margin-inline: auto;
+  padding: 0.5rem;
+
+
+  h1 { font-size: clamp(3rem, 7.5vw, 8rem); }
+  h2 { font-size: clamp(2rem, 5vw, 5rem); }
+  h3 { font-size: clamp(1.5rem, 3.75vw, 3.5rem); }
+  p { font-size: clamp(1.0rem, 2.75vw, 2.0rem); }
+}
+
+/* var(--device-phone)
+var(--device-tablet)
+var(--device-laptop)
+var(--device-hd)
+var(--device-fhd)
+/* cannot use custom properties in @media queries */
+/* dont use px ??????? */
+/* use range */
+
+/*
+@media ( width <= 479px ) {
+  p {
+    font-size: 0.9rem;
+    padding-bottom: 0.8rem;
+  }
+}
+@media ( width >= 480px ) and ( width <= 1024px ) {
+  p {
+    font-size: 0.95rem;
+    padding-bottom: 0.85rem;
+  }
+}
+@media ( width >= 1025px ) and ( width <= 1280px ) {
+  p {
+    font-size: 1.15rem;
+    padding-bottom: 1.0rem;
+  }
+}
+@media ( width >= 1281px ) {
+  p {
+    font-size: 1.25rem;
+    padding-bottom: 1.15rem;
+  }
+}
+*/
+
+
+
+</style>
+
+
+</head>
+<body>
+  <header>
+    <h1>Header H1</h1>
+    <p>Responsive Typography using golden-ratio, rem, vw, % and clamp.</p>
+    <div class="h0">AHELLO</div>
+  </header>
+  <main>
+
+    <section>
+      <h2>Section H2</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum et recusandae numquam voluptates vel nihil ea eligendi dolore blanditiis omnis, asperiores, porro iure nobis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum et recusandae numquam voluptates vel nihil ea eligendi dolore blanditiis omnis, asperiores, porro iure nobis.</p>
+    </section>
+
+    <section>
+      <h2>Section H2</h2>
+      <h3>Section H3</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum et recusandae numquam voluptates vel nihil ea eligendi dolore blanditiis omnis, asperiores, porro iure nobis.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum et recusandae numquam voluptates vel nihil ea eligendi dolore blanditiis omnis, asperiores, porro iure nobis.</p>
+      <h3>Section H3</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nostrum et recusandae numquam voluptates vel nihil ea eligendi dolore blanditiis omnis, asperiores, porro iure nobis.</p>
+    </section>
+
+    <article>
+      <h2>Article H2</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At blanditiis doloremque magnam. Distinctio, harum eum autem velit alias earum blanditiis pariatur cupiditate modi expedita nobis ex consequatur. Enim hic impedit sed sequi, facere sit quisquam voluptates vel qui, eaque doloribus iusto? Doloribus nemo tenetur aliquid nam quae ratione nisi nostrum.</p>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. At blanditiis doloremque magnam. Distinctio, harum eum autem velit alias earum blanditiis pariatur cupiditate modi expedita nobis ex consequatur. Enim hic impedit sed sequi, facere sit quisquam voluptates vel qui, eaque doloribus iusto? Doloribus nemo tenetur aliquid nam quae ratione nisi nostrum.</p>
+    </article>
+
+  </main>
+  <footer>
+  <h3>Footer H3</h3>
+  <p>&copy;2024 Tanaka Products</p>
+  </footer>
+</body>
+</html>

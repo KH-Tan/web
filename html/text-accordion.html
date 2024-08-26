@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Expand/Collapse</title>
+
+<style>
+:root {
+  --ff: sans-serif;
+  --fs: 16px;
+  --clr-scheme: light;
+}
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+html {
+  color-scheme: var(--clr-scheme);
+  font-family: var(--ff);
+
+}
+body {
+  /* width: 80%; */
+  margin-inline: auto;
+  line-height: 1.5;
+}
+header {
+  min-height: 13vh;
+  background-color: lightgray;
+  text-align: center;
+  padding: 1rem;
+}
+main {
+  min-height: 60vh;
+  background-color:whitesmoke;
+  padding-block: 1.5rem ;
+  padding-inline: 1rem;
+
+  section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 0.33rem;    
+  }
+  h3 {
+    margin-bottom: 0.33rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+}
+footer {
+  min-height: 30vh;
+  background-color: lightgray;
+  text-align: center;
+  padding: 1rem;
+}
+.section-header {
+  background-color:aquamarine;
+  border: 1px solid lightgray;
+}
+
+.section-1 {
+  /* column-width: 45ch; */
+  /* column-count: 2; */
+  columns: 20em auto;
+
+  column-gap: 3rem;
+  column-rule: 1px solid gray;
+
+  /* column-span: all;                 ?????? */
+  /* column-fill: balance all;         ?????? */
+}
+
+
+.my-section-expandable {
+  border: 0.5px solid black;
+  border-radius: 0.5rem;
+
+  background-color: aliceblue;
+  margin: 0;
+
+  label {
+    border-radius: 0.5rem;
+    background-color: skyblue;
+    color: black;
+    /* border-bottom: 1px solid orange; */
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+
+    padding-inline: 1.0rem;
+    padding-block: 0.25rem;
+    display: block;
+    position: relative;
+
+    &::after {
+      /* + sign */
+      /* content: '\2795'; */
+
+      /* hamburger sign */
+      content: '\2630';
+
+      position: absolute;
+      right: 1rem;
+    }
+
+
+  }
+  input {
+    display: none;
+
+    &:checked + label + div {
+      max-height: 100vh;
+      visibility: visible;      
+    }
+    &:checked + label::after {
+      /* minus sign  */
+      /* content: '\2796'; */
+
+      /* X sign */
+      content: '\2715';  
+
+      position: absolute;
+      right: 1rem;
+    }
+  }
+
+  .my-section-content {
+    padding-inline: 1.5rem;
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.my-section-1,
+.my-section-2,
+.my-section-3 {
+  padding: 0;
+  margin: 0;
+}
+
+
+.container-accordian {
+  border: 1px solid darkred;
+  border-radius: 0.5rem;
+  background-color: antiquewhite;
+
+  label {
+    font-size: 1.50rem;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+
+    border-radius: 0.5rem;
+    background-color: aliceblue;
+    color: black;
+    border-bottom: 1px solid orange;
+
+    padding-inline: 1.0rem;
+    padding-block: 0.25rem;
+    display: block;
+    position: relative;
+
+    &::after {
+      /* + sign */
+      content: '\2795';
+
+      content: ' (click to open)';
+      font-size: 0.90rem;
+
+      /* position: absolute; */
+      /* right: 1rem; */
+    }
+  }
+  input {
+    display: none;
+
+    &:checked + label + div {
+      max-height: 100vh;
+      visibility: visible;      
+    }
+    &:checked + label::after {
+      /* X sign */
+      /* content: '\2715'; */
+      content: '';
+
+      position: absolute;
+      right: 1rem;
+    }
+  }
+
+  .part-content {
+    padding-inline: 1.5rem;
+
+    max-height: 0;
+    visibility: hidden;
+    overflow: hidden;
+
+    transition: all 0.5s ease-in-out;
+  }
+
+}
+
+
+/* simple example  */
+
+.container-simple {
+
+
+  .part-content {
+    display: none;
+  }
+  .part-header:focus + .part-content {
+    display: block;
+  }
+
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>Header 1</h1>
+</header>
+
+<main>
+
+  <h2>Expand/Collapse Text - Using Checkboxes </h2>
+  <section class="my-section-expandable  my-section-1">
+    <input id="s1-checkbox" type="checkbox">
+    <label for="s1-checkbox">Section One</label>
+
+    <div class="my-section-content">
+    <br>
+    <h3>Header 3</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, ipsa voluptate! Repudiandae quasi esse sed vitae aperiam assumenda explicabo tempore ullam dolor numquam doloremque dolores corporis obcaecati suscipit distinctio vel aliquid nobis quia, atque sunt ab omnis! Dolor pariatur odit reprehenderit fuga facere modi accusamus nesciunt necessitatibus adipisci. Distinctio assumenda, recusandae unde officia facilis a.</p>
+
+    <h3>Header 3</h3>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, ipsa voluptate! Repudiandae quasi esse sed vitae aperiam assumenda explicabo tempore ullam dolor numquam doloremque dolores corporis obcaecati suscipit distinctio vel aliquid nobis quia, atque sunt ab omnis!</p>
+    </div>
+  </section>
+
+  <section class="my-section-expandable  my-section-2">
+    <input id="s2-checkbox" type="checkbox">
+    <label for="s2-checkbox">Section Two</label>
+
+    <div class="my-section-content">
+    <br>
+    <h3>Header 3</h3>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio dolorem doloribus sunt sed velit, quam quibusdam earum consequatur quis culpa quasi iste hic temporibus iure impedit error deserunt porro saepe blanditiis perspiciatis nemo. Tempora a eaque provident labore saepe. Ea id obcaecati magnam, possimus molestiae perspiciatis hic velit facilis corrupti.</p>
+    </div>
+  </section>
+
+  <section class="my-section-expandable  my-section-3">
+    <input id="s3-checkbox" type="checkbox">
+    <label for="s3-checkbox">Section Three</label>
+
+    <div class="my-section-content">
+      <br>
+      <h3>Header 3</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio dolorem doloribus sunt sed velit, quam quibusdam earum consequatur quis culpa quasi iste hic temporibus iure impedit error deserunt porro saepe blanditiis perspiciatis nemo. Tempora a eaque provident labore saepe. Ea id obcaecati magnam, possimus molestiae perspiciatis hic velit facilis corrupti.</p>
+    </div>
+  </section>
+
+
+  <h2>Accordian Example - Using Radio Buttons</h2>
+  <div class="container-accordian">
+
+    <div class="part-1">
+      <input id="part-1-radio" type="radio" name="accordian" checked>
+      <label for="part-1-radio">Part One</label>
+
+      <div class="part-content">
+        <br>
+        <h3>Header 3</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, ipsa voluptate! Repudiandae quasi esse sed vitae aperiam assumenda explicabo tempore ullam dolor numquam doloremque dolores corporis obcaecati suscipit distinctio vel aliquid nobis quia, atque sunt ab omnis! Dolor pariatur odit reprehenderit fuga facere modi accusamus nesciunt necessitatibus adipisci. Distinctio assumenda, recusandae unde officia facilis a.</p>
+
+        <h3>Header 3</h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, ipsa voluptate! Repudiandae quasi esse sed vitae aperiam assumenda explicabo tempore ullam dolor numquam doloremque dolores corporis obcaecati suscipit distinctio vel aliquid nobis quia, atque sunt ab omnis!</p>
+      </div>
+    </div>
+
+    <div class="part-2">
+      <input id="part-2-radio" type="radio" name="accordian">
+      <label for="part-2-radio">Part Two</label>
+
+      <div class="part-content">
+        <br>
+        <h3>Header 3</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio dolorem doloribus sunt sed velit, quam quibusdam earum consequatur quis culpa quasi iste hic temporibus iure impedit error deserunt porro saepe blanditiis perspiciatis nemo. Tempora a eaque provident labore saepe. Ea id obcaecati magnam, possimus molestiae perspiciatis hic velit facilis corrupti.</p>
+      </div>
+    </div>
+
+    <div class="part-3">
+      <input id="part-3-radio" type="radio" name="accordian">
+      <label for="part-3-radio">Part Three</label>
+
+      <div class="part-content">
+        <br>
+        <h3>Header 3</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio dolorem doloribus sunt sed velit, quam quibusdam earum consequatur quis culpa quasi iste hic temporibus iure impedit error deserunt porro saepe blanditiis perspiciatis nemo. Tempora a eaque provident labore saepe. Ea id obcaecati magnam, possimus molestiae perspiciatis hic velit facilis corrupti.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <h2>Simple Example - Using TabIndex</h2>
+  <div class="container-simple">
+    <div class="part-1">
+      <div tabindex="1"  class="part-header">
+        <h3>Section Unos</h3>
+      </div>
+      <div class="part-content">
+        <p>Section Unos.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, ipsa voluptate! Repudiandae quasi esse sed vitae aperiam assumenda explicabo tempore ullam dolor numquam doloremque dolores corporis obcaecati suscipit distinctio vel aliquid nobis quia, atque sunt ab omnis! Dolor pariatur odit reprehenderit fuga facere modi accusamus nesciunt necessitatibus adipisci. Distinctio assumenda, recusandae unde officia facilis a.</p>
+      </div>
+    </div>
+
+    <div class="part-2">
+      <div tabindex="2"  class="part-header">
+        <h3>Section Duos</h3>
+      </div>
+      <div class="part-content">
+        <p>Section Duos</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, ipsa voluptate! Repudiandae quasi esse sed vitae aperiam assumenda explicabo tempore ullam dolor numquam doloremque dolores corporis obcaecati suscipit distinctio vel aliquid nobis quia, atque sunt ab omnis! Dolor pariatur odit reprehenderit fuga facere modi accusamus nesciunt necessitatibus adipisci. Distinctio assumenda, recusandae unde officia facilis a.</p>
+      </div>
+    </div>
+
+    <div class="part-3">
+      <div tabindex="3"  class="part-header">
+        <h3>Section Trios</h3>
+      </div>
+      <div class="part-content">
+        <p>Section Trios</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, ipsa voluptate! Repudiandae quasi esse sed vitae aperiam assumenda explicabo tempore ullam dolor numquam doloremque dolores corporis obcaecati suscipit distinctio vel aliquid nobis quia, atque sunt ab omnis! Dolor pariatur odit reprehenderit fuga facere modi accusamus nesciunt necessitatibus adipisci. Distinctio assumenda, recusandae unde officia facilis a.</p>
+      </div>
+    </div>
+  </div>
+
+
+
+</main>
+
+<footer>
+<h3>Footer</h3>
+<p>Copyright &copy;2024 Tanaka Productions</p>
+</footer>
+
+</body>
+</html>

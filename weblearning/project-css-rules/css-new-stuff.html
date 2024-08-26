@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CSS New Stuff</title>
+
+<!--
+  New CSS pseudo classes
+
+  :is()
+  :where()    has 0(zero) specificity 
+  :has()      family/parent selector 
+  
+-->
+
+
+<!-- @custom-media -->
+<!-- container Queries -->
+<!-- @layers -->
+<!-- css nesting -->
+<!-- @scope -->
+
+<style>
+* {
+  padding: 0; margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+h1 { font-size: 5rem; }
+h2 { font-size: 3rem; }
+p { font-size: 1.5rem; font-weight: 300; }
+
+#section-is {
+  background-color: lightpink;
+}
+/* #section-is h3, #section-is h4 {
+  font-size: 2rem;
+  color: darkblue;
+} */
+#section-is :is(h3, h4) {
+  font-size: 2.5rem;
+  color: darkred;
+}
+
+#section-where {
+  background-color: skyblue;
+}
+#section-where :where(h3, h4) {
+  color:darkviolet ;
+  font-size: 5rem;
+}
+
+#section-has:has(h4) {
+  background-color: greenyellow;
+}
+
+
+
+/* using @scope */
+/* has no specificity */
+/* @scope (.articles) {
+  :scope {
+      background-color: lightgray;
+  }
+  > h3 {
+    font-size: 10rem;
+    color: darkblue;
+  }
+  > p {
+    font-size: 5rem;
+    color: darkred;
+  }
+} */
+
+@scope (article) to (.divs) {
+  :scope {
+      background-color: lightgray;
+  }
+  h3 {
+    font-size: 10rem;
+    color: darkblue;
+  }
+  p {
+    font-size: 5rem;
+    color: darkred;
+  }
+
+}
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+  <h1>CSS / :is()/ :where()/:()has</h1>
+  <hr>
+  
+  <section id="section-is">
+    <h2><code>:is() Section</code></h2>
+
+    <h3>Lorem</h3>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <h4>Lorem, ipsum.</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos atque placeat dicta, qui aperiam explicabo harum? Doloremque necessitatibus eum placeat quas sequi quod, veniam et?</p>
+  </section>
+  <hr>
+
+  <section id="section-where">
+    <h2><code>:where() Section</code></h2>
+
+    <h3>Lorem</h3>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <h4>Lorem, ipsum.</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos atque placeat dicta, qui aperiam explicabo harum? Doloremque necessitatibus eum placeat quas sequi quod, veniam et?</p>
+  </section>
+
+  <section id="section-has">
+    <h2><code>:has() Section</code></h2>
+
+    <h3>Lorem</h3>
+    <p>Lorem ipsum dolor sit amet.</p>
+
+    <h4>Lorem, ipsum.</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos atque placeat dicta, qui aperiam explicabo harum? Doloremque necessitatibus eum placeat quas sequi quod, veniam et?</p>
+  </section>
+
+
+
+  <article class="articles">
+    <h3>Article 1</h3>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non harum provident ratione voluptates earum, architecto nobis eveniet. Temporibus impedit consectetur voluptates molestias natus, amet maiores!</p>
+    <div class="divs">
+      <div>
+        <h3>Article 1a</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, nostrum.</p>
+      </div>
+      <div>
+        <h3>Article 1b</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, nostrum.</p>
+      </div>
+    </div>
+  </article>
+
+
+
+  <footer>
+    <h3>&copy; 2024 Tanaka Productions</h3>
+  </footer>
+</body>
+</html>

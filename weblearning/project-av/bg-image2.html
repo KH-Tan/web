@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Images 2</title>
+
+
+<style>
+
+.container-img {
+   display: flex;
+}
+
+
+.container-img1 {
+  outline: 1px solid red;
+border-radius: 15px;
+
+  width: 400px;
+  height: 600px;
+  /* overflow: hidden; */
+  position: relative;
+}
+.container-img2 {
+  outline: 1px solid red;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.gradient {
+  position: absolute; top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: linear-gradient(to top, orange, yellow, white, transparent);
+  opacity: 0.8;
+}
+
+
+img {
+  border-radius: inherit;
+
+  width: 100%;
+  /* height: 100%; */
+  /* aspect-ratio: 2 / 3; */
+  /* object-fit: contain ; */
+  /* display: block; */
+}
+
+.single {
+  outline: 1px solid red;
+  background-color: aquamarine;
+
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.multiline {
+  outline: 1px solid red;
+  background-color: aquamarine;
+
+  width: 300px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+<div class="container-img">
+  <div class="container-img1">
+    <div class="gradient"></div>
+    <img src="/images/henryhanunsplash-lpdark.jpg" alt="">
+  </div>
+  <div class="container-img2">
+    <!-- <div class="gradient"></div> -->
+    <img src="/images/henryhanunsplash-lpdark.jpg" alt="">
+  </div>
+</div>
+
+<p class="single">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium eligendi laborum nam. Quo at blanditiis, quas, quibusdam error eos quisquam fuga omnis nemo, repudiandae provident cumque neque maiores laudantium quaerat.</p>
+
+<p class="multiline">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium eligendi laborum nam. Quo at blanditiis, quas, quibusdam error eos quisquam fuga omnis nemo, repudiandae provident cumque neque maiores laudantium quaerat.</p>
+
+</body>
+</html>

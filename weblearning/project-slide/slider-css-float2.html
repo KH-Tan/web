@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+
+  font-family: sans-serif;
+}
+
+p {
+  /* z-index: 99; */
+  font-size: 72px;
+  text-align: center;
+  /* position: absolute; */
+
+  /* width: 20%; */
+  /* padding-top: 100px; */
+
+  color: aliceblue;
+
+}
+
+.container {
+background-color: gray;
+
+  overflow: hidden;
+  height: 500px;
+}
+.slider {
+background-color: burlywood;
+
+
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+
+   animation: sliding 5s infinite;
+
+}
+@keyframes sliding {
+0% { left: -0%; }
+25% { left: -100%; }
+50% { left: -200%}
+75% {  left: -300%;}
+100% {  left: -400%;}
+}
+
+
+
+
+
+.slide {
+  width: 20%;
+  float: left;
+}
+#slide-1 { background-color: chocolate;}
+#slide-2 { background-color: lawngreen}
+#slide-3 { background-color: skyblue;}
+#slide-4 { background-color: palevioletred;}
+#slide-5 { background-color: red;}
+</style>
+
+
+
+</head>
+<body>
+  
+
+<div class="container">
+  <div class="slider">
+    <div class="slide" id="slide-1"><p>Slide One</p></div>
+    <div class="slide" id="slide-2"><p>Slide Two</p></div>
+    <div class="slide" id="slide-3"><p>Slide Three</p></div>
+    <div class="slide" id="slide-4"><p>Slide Four</p></div>
+    <div class="slide" id="slide-5"><p>Slide Five</p></div>
+  </div>
+</div>
+
+
+
+
+</body>
+</html>

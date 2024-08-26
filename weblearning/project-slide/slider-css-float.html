@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using Float</title>
+
+<style>
+
+.slider-container {
+border-radius: 15px;
+
+  background-color: lightgray;
+  width: 800px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  text-align: center;
+
+  /* padding: 10px; */
+}
+.image-container {
+  border-radius: 15px;
+
+  background-color: wheat;
+  width: 2400px;
+  height: 600px;
+  position: relative;
+
+  /* transition: left 3s; */
+  animation: autoslide 15s infinite;
+
+}
+@keyframes autoslide {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: -800px;
+  }
+  50% {
+    left: -1600px;
+  }
+  75% {
+    left: -800px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+
+
+
+.image {
+  border-radius: 15px;
+  width: 800px;
+  height: 600px;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.button-container {
+  top: -50px;
+  position: relative;
+}
+.button {
+  display: inline-block;
+  /* padding: 5px; */
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  background-color: salmon;
+}
+
+#image-1:target ~ .image-container {
+  left: 0px;
+}
+#image-2:target ~ .image-container {
+  left: -800px;
+}
+#image-3:target ~ .image-container {
+  left: -1600px;
+}
+
+</style>
+
+</head>
+<body>
+
+  <div class="slider-container">
+    <span id="image-1"></span>
+    <span id="image-2"></span>
+    <span id="image-3"></span>
+    <div class="image-container">
+      <img src="/images/FujiTemple-P.jpg" alt="Image 1" class="image">
+      <img src="/images/FujiPark-P.jpg" alt="Image 2" class="image">
+      <img src="/images/FujiFarmer-P.jpg" alt="Image 3" class="image">
+    </div>
+    <div class="button-container">
+      <a href="#image-1" class="button">1</a>
+      <a href="#image-2" class="button">2</a>
+      <a href="#image-3" class="button">3</a>
+    </div>
+  </div>
+
+</body>
+</html>

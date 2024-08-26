@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizontal Scroll - Using Javascript</title>
+
+
+<style>
+
+* { 
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: xx-large; */
+}
+body {
+  /* height: 100vh; */
+  /* overflow: hidden; */
+}
+
+.section-container {
+  /* position: relative; */
+  /* width: 100%; */
+
+  /* border: 2px solid gray; */
+
+  margin-inline: auto;
+
+  width: 50%;
+  /* aspect-ratio: 16 / 10; */
+  /* height: 500px; */
+  background-color: antiquewhite;
+  padding: 2rem;
+
+
+
+  /* display: grid;
+  gap: 25px;
+  grid-auto-flow: column;
+  grid-auto-columns: 29%; */
+
+  /* overflow-x: auto; */
+  /* overscroll-behavior-inline: contain; */
+
+}
+
+.slider-container {
+
+  position: relative;
+  /* max-width: 50rem; */
+  margin: 0 auto;
+
+
+
+
+
+
+
+  /* height: 100%;
+  width: 100%; */
+
+  /* border: 2px solid gray;
+  margin-inline: 5px;
+  padding: 5px;
+
+
+
+  display: grid;
+  gap: 25px;
+  grid-auto-flow: column;
+  grid-auto-columns: 29%;
+
+
+  overscroll-behavior-inline: contain; */
+
+}
+.slider {
+  display: flex;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+
+
+.slide {
+  
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+
+    width: auto;
+    height: auto;
+    padding: 25px;
+    align-content: center;
+    text-align: center;
+    /* border: 2px solid gray; */
+
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* text-align: center; */
+    /* background-color: lightblue; */
+
+    user-select: none;
+    /* aspect-ratio: 16/9; */
+    
+  }
+
+#slide-1 { background-color: aqua; } 
+#slide-2 { background-color: green; } 
+#slide-3 { background-color: orange; } 
+
+
+.slide-nav {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+
+  a {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: gray;
+    transition: opacity ease 250ms;
+
+    &:hover {
+
+    }
+  }
+
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+}
+header {
+  height: 10%;
+}
+footer {
+  height: 10%;
+}
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<header>Header</header>
+
+<section class="section-container">
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide" id="slide-1">
+      <h2>Slide 1</h2>
+      <img src="/images/Istanbul.png" alt="">
+    </div>
+    <div class="slide" id="slide-2">
+      <h2>Slide 2</h2>
+      <img src="/images/Valetta.png" alt="">
+    </div>
+    <div class="slide" id="slide-3">
+      <h2>Slide 3</h2>
+      <img src="/images/Venice.png" alt="">
+    </div>
+  </div>
+
+  <div class="slider-nav">
+    <a href="#slide-1"></a>
+    <a href="#slide-2"></a>
+    <a href="#slide-3"></a>
+  </div>
+</div>
+</section>
+
+<footer>Footer</footer>
+
+</body>
+</html>
