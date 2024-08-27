@@ -16,7 +16,7 @@ body {
   header {
     background-color: darkolivegreen;
     color: aliceblue;
-    height: 10rem;
+    min-height: 12rem;
 
     text-align: center;
     align-content: center;
@@ -38,7 +38,7 @@ body {
   footer {
     background-color: olive;
     color: antiquewhite;
-    height: 5rem;
+    min-height: 5rem;
 
     text-align: center;
     align-content: center;
@@ -46,13 +46,30 @@ body {
     font-size: 1.25rem;
   }
 
-  h1 { font-size: 3.5rem;}
+  h1 { font-size: clamp(2.5rem, 1rem + 5vw, 5rem);}
   h2 { font-size: 2rem;}
   h3 { font-size: 1.5rem;}
   p {
     margin-block-start: 0.5rem;
     margin-block-end: 1rem;
     font-size: clamp(0.95rem, 0.95vw + 0.5rem, 1.5rem);
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+@media (width > 48em) {
+  .flex-2 {
+    display: flex;
+    column-gap: 3em;
+    justify-content: center;
+    p {
+      flex-basis: 45%;
+    }
   }
 }
 
@@ -82,26 +99,38 @@ body {
   clip-path: polygon(100px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 100px) 100%, 0 100%, 0 50px);  
 }
 
+.text-center {
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+
+
 </style>
 
 
 </head>
 <body>
 <header>
-  <h1>Full-Bleed Layout</h1>
+  <h1>Full-Bleed & Grid Layout for Responsive</h1>
 </header>
 <main>
 
-  <h2>Using Grid</h2>
-  <h3>Eliminates horizontal scrolling issues</h3>
+  <h2 class="text-center">Using Grid</h2>
+  <h3 class="text-center">Eliminates horizontal scrolling issues</h3>
 
   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate iste autem, consectetur dolores quia nihil vero placeat. Earum ea sed in! Cupiditate velit expedita, similique fugit assumenda ratione ab at hic iste earum amet natus.</p>
+
+  <img src="/images/thailand/ChinaTown.jpg" alt="Chinatown in Bangkok">
+
   <p>Incidunt sit atque ipsam, beatae illum commodi explicabo error vel? Id, est quo nam optio aspernatur possimus. Hic, ipsam ad. Dicta, eveniet ratione vitae incidunt ex, similique voluptatem eius, mollitia facere nesciunt porro labore ipsam nisi distinctio cumque aut debitis impedit natus.</p>
 
   <div class="full-bleed fb-type-1">Awesome Banner</div>
 
+  <div class="flex-2">
   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate iste autem, consectetur dolores quia nihil vero placeat. Earum ea sed in! Cupiditate velit expedita, similique fugit assumenda ratione ab at hic iste earum amet natus.</p>
   <p>Unde quas ab libero tempore laborum, rem accusantium officia atque id amet repellendus. Cupiditate, nihil ducimus autem aspernatur veritatis quas eos excepturi commodi quae expedita ipsum enim, sapiente repellendus possimus odio praesentium maiores officiis id quos? Ipsum, ratione impedit aliquid dicta asperiores ut quos nemo sit ullam?</p>
+  </div>
 
   <div class="full-bleed fb-type-2">Another Awesome Banner</div>
 
