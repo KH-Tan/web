@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://kit.fontawesome.com/78d8d80c96.js" crossorigin="anonymous"></script>
+
+  <title>Tabs - Mobile</title>
+
+<style>
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: aliceblue;
+
+  header {
+    background-color: olivedrab;
+    font-family: cursive;
+    text-align: center;
+    min-height: 15vh;
+    h1 {
+      font-size: 5rem;     
+    }
+  }
+  main {
+    background-color: silver;
+    /* outline: 3px solid red; */
+    /* border: 3px solid blue; */
+    font-family: sans-serif;
+
+    max-width: 100ch;
+    margin: 2rem auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+  }
+  footer {
+    background-color: olive;
+    font-family: cursive;
+    text-align: center;
+    min-height: 10vh;
+    h2 {
+      font-size: 3rem;
+    }
+  }
+}
+
+.wrapper-tab {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* max-width: 380px; */
+  /* max-height: 720px; */
+
+  width: 400px;
+  height: 600px;
+
+  overflow: hidden;
+  background-color:floralwhite;
+  border-radius: 8px;
+  border: 1px solid lightblue;
+  /* box-shadow: inset 0px 0px 20px 20px dimgray; */
+  box-shadow: 0px 0px 20px 20px dimgray;
+
+
+  .tab-body {
+    width: 100%;
+    height: calc(100% - 70px);
+    overflow-y: auto;
+    padding-inline: 2rem;
+
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+
+    div {
+      display: none;
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  
+  }
+
+  input[type="radio"] {
+    display: none;
+  }
+
+
+  #tab-home:checked ~ .tab-body .body-home,
+  #tab-contact:checked ~ .tab-body .body-contact,
+  #tab-about:checked ~ .tab-body .body-about,
+  #tab-settings:checked ~ .tab-body .body-settings {
+    display: block;
+  }
+  #tab-home:checked ~ .tab-actions label:nth-child(1),
+  #tab-contact:checked ~ .tab-actions label:nth-child(2),
+  #tab-about:checked ~ .tab-actions label:nth-child(3), 
+  #tab-settings:checked ~ .tab-actions label:nth-child(4) {
+    color: darkred;
+    /* color: black; */
+  }
+
+  .tab-actions::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+
+    width: 25%;
+    background-color: hsl( from tomato h s l / 0.3 );
+    color: black;
+
+    border-radius: 8%;
+
+    /* bar shape */
+    height: 5px;
+    /* button shape  */
+    height: 100%;
+
+    left: 0;
+    transition: left 0.5s ease-in-out;
+  }
+
+  #tab-home:checked ~ .tab-actions::after { left: 0; }
+  #tab-contact:checked ~ .tab-actions::after { left: 25%; }
+  #tab-about:checked ~ .tab-actions::after { left: 50%; }
+  #tab-settings:checked ~ .tab-actions::after { left: 75%; }
+
+
+  .tab-actions {
+    font-size: 0.75rem;
+    color: blue;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: lightgray;
+    border: 1px solid gray;
+    height: 50px;
+    margin: 0px auto;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      width: 32px;
+      height: auto;
+      /* fill:tomato */
+    }
+    i {
+      font-size: 1rem;
+    }
+    label {
+      font-size: 1rem;
+    }
+  }
+  .tab-header {
+    font-size: 2rem;
+
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: lightgray;
+    border: 1px solid gray;
+    height: 65px;
+    margin: 0px auto;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+
+</style>
+
+</head>
+<body>
+<header><h1>Tabs</h1></header>
+<main>
+
+
+
+  <div class="wrapper-tab">
+
+  <input type="radio" name="tabs" id="tab-home" checked>
+  <input type="radio" name="tabs" id="tab-contact">
+  <input type="radio" name="tabs" id="tab-about">
+  <input type="radio" name="tabs" id="tab-settings">
+
+  <div class="tab-header">My App</div>
+
+  <div class="tab-body">
+   
+    <div class="body-home">
+      <h2>Home</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum optio ab pariatur id commodi dignissimos quo voluptatum quod. Delectus ea debitis, veniam soluta excepturi eos?</p>
+      <p>Fugit tenetur atque ratione officiis, deleniti aperiam voluptatibus sapiente odit officia, pariatur similique labore deserunt tempora reiciendis?</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, assumenda placeat ad similique porro autem deleniti hic perferendis natus, nesciunt ea totam voluptatem iste unde numquam repudiandae dolorum quaerat sed modi. Veritatis ipsa ullam sapiente hic quo dicta atque reprehenderit earum perspiciatis assumenda ut culpa nam dolore, laboriosam accusamus deserunt.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, assumenda placeat ad similique porro autem deleniti hic perferendis natus, nesciunt ea totam voluptatem iste unde numquam repudiandae dolorum quaerat sed modi. Veritatis ipsa ullam sapiente hic quo dicta atque reprehenderit earum perspiciatis assumenda ut culpa nam dolore, laboriosam accusamus deserunt.</p>
+    </div>
+
+    <div class="body-contact">
+      <h2>Contact</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum optio ab pariatur id commodi dignissimos quo voluptatum quod. Delectus ea debitis, veniam soluta excepturi eos?</p>
+    </div>
+
+    <div class="body-about">
+      <h2>About</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum optio ab pariatur id commodi dignissimos quo voluptatum quod. Delectus ea debitis, veniam soluta excepturi eos?</p>
+      <p>Fugit tenetur atque ratione officiis, deleniti aperiam voluptatibus sapiente odit officia, pariatur similique labore deserunt tempora reiciendis?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit excepturi numquam recusandae quos labore commodi architecto quam tempora praesentium veritatis consequuntur doloribus hic nulla at nihil, nisi exercitationem explicabo officiis odio consequatur! Non maiores, sunt rerum delectus ullam, officiis assumenda aspernatur facere et consequuntur quis adipisci ipsa deleniti quo soluta.</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, assumenda placeat ad similique porro autem deleniti hic perferendis natus, nesciunt ea totam voluptatem iste unde numquam repudiandae dolorum quaerat sed modi. Veritatis ipsa ullam sapiente hic quo dicta atque reprehenderit earum perspiciatis assumenda ut culpa nam dolore, laboriosam accusamus deserunt.</p>
+    </div>
+
+    <div class="body-settings">
+      <h2>Settings</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum optio ab pariatur id commodi dignissimos quo voluptatum quod. Delectus ea debitis, veniam soluta excepturi eos?</p>
+    </div>
+
+  </div>
+
+  <div class="tab-actions">
+    <label for="tab-home"><img src="/images/google-icons/house48.png"></label>
+    <label for="tab-contact"><img src="/images/google-icons/mail48.png"></label>
+    <label for="tab-about"><img src="/images/google-icons/info48.png"></label>
+    <label for="tab-settings"><img src="/images/google-icons/settings_48_000_f0_w3.png"></label>
+  </div>
+
+<!--   
+  <div class="tab-actions">
+    <label for="tab-home"><i class="fa-solid fa-home"></i> Home</label>
+    <label for="tab-contact"><i class="fa-solid fa-phone-volume"></i> Contact</label>
+    <label for="tab-about"><i class="fa-solid fa-user"></i> About</label>
+    <label for="tab-settings"><i class="fa-solid fa-gear"></i> Settings</label>
+  </div>
+ -->
+
+</div>
+
+</main>
+
+<footer>
+  <h2>Footer</h2>
+</footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs</title>
+
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box;}
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+
+  header {
+    background-color: skyblue;
+    color: slategray;    
+    text-align: center;
+
+    min-height: 15vh;
+    h1 {
+      font-size: 5rem;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+  }
+  main {
+    min-height: 75vh;
+    background-color: dimgray;
+    color: aliceblue;
+    padding: 1rem 2rem;
+    h2 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-block-end: 1em;
+    }
+    img {
+      max-width: 50%;
+      height: auto;
+    }
+  }
+  footer {
+    background-color: skyblue;
+    color: slategray;
+    text-align: center;
+    min-height: 10vh;
+
+    h2 {
+      font-size: 2.25rem;
+    }
+    p {
+      font-size: 1.0rem;
+    }
+  }
+
+}
+
+.wrapper-tabs {
+  max-width: 88ch;
+  margin: 3rem auto;
+  border-radius: 1.25rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.05rem;
+
+
+  input[type="radio"] {
+    display: none;
+
+    &:checked + label + .tab-content {
+      display: block;
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+    &:checked + label {
+      background-color: aliceblue;
+    }
+  }
+  label {
+    background-color: lightgray;
+    color: dimgray;
+
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+    font-weight: 900;
+    font-family: serif;
+    font-size: 1.5rem;
+
+    padding: 0.25em 1.5em;
+
+    transition: background-color 1.25s ease-in;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .tab-content {
+    order: 1;
+
+    padding: 2em;
+
+    background-color: aliceblue;
+    color: dimgray;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+    display: none;
+    opacity: 0;
+    transition: opacity 1.25s ease-in;
+    transition-behavior: allow-discrete;
+
+  }
+}
+
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <h1>Header</h1>
+  <h2>Simple Tabs</h2>
+</header>
+<main>
+
+
+
+<div class="wrapper-tabs">
+
+  <input type="radio" name="tabs" id="tab-1" checked>
+  <label for="tab-1">Tab1</label>
+  <div class="tab-content">
+    <h2>Uno</h2>
+    <img src="/images/thailand/Erawan.jpg">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A architecto, odio voluptatum provident enim voluptates totam repellat natus nobis maiores itaque? Similique voluptate, eaque magni itaque vero facere repellendus quae at officia quisquam asperiores, labore doloribus deleniti explicabo aliquid veniam id aperiam quasi. Exercitationem rerum in odit adipisci, temporibus atque?</p>
+  </div>
+
+  <input type="radio" name="tabs" id="tab-2">
+  <label for="tab-2">Tab2</label>
+  <div class="tab-content">
+    <h2>Dios</h2>
+    <img src="/images/thailand/ChinaTown.jpg">
+    <p>Similique voluptate, eaque magni itaque vero facere repellendus quae at officia quisquam asperiores, labore doloribus deleniti explicabo aliquid veniam id aperiam quasi. Exercitationem rerum in odit adipisci, temporibus atque?</p>
+    <p>Itaque vitae architecto quam libero! Rem culpa illo architecto alias sequi mollitia eius ipsam accusantium. Repudiandae, mollitia laboriosam repellat, natus, architecto eius quae tempora at rem aliquam quod.</p>
+  </div>
+
+  <input type="radio" name="tabs" id="tab-3">
+  <label for="tab-3">Tab3</label>
+  <div class="tab-content">
+    <h2>Trios</h2>
+    <img src="/images/thailand/LohaPrasat.jpg">
+    <p>Exercitationem rerum in odit adipisci, temporibus atque?</p>
+    <p>Libero omnis iure labore corrupti aliquam debitis iste enim quasi ex, totam quidem dolor beatae quisquam, non deserunt odit illo eius, eaque deleniti!</p>
+    <p>Modi dolor nobis et numquam ipsa illo libero impedit fugit asperiores dolorem officia at nostrum tempora ex sit mollitia doloribus quia ullam quam excepturi, similique repellat ab. Maxime dolore corporis, ipsa totam pariatur sed est temporibus ea esse voluptatem, vitae, vel perspiciatis. Fugit, assumenda.</p>
+  </div>
+  
+</div>
+
+
+</main>
+
+<footer>
+  <h2>Footer</h2>
+  <p>&copy;2024 Tanaka Productions</p>
+</footer>
+</body>
+</html>

@@ -99,12 +99,21 @@ body {
   clip-path: polygon(100px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 100px) 100%, 0 100%, 0 50px);  
 }
 
+
 .text-center {
   /* margin: 0 auto; */
   text-align: center;
 }
 
+.svg-type {
+  background-image: url(/images/wave-haikei.svg);
+  background-position: bottom;
 
+  width: auto;
+  height: 25vh;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
 
 </style>
 
@@ -113,8 +122,12 @@ body {
 <body>
 <header>
   <h1>Full-Bleed & Grid Layout for Responsive</h1>
+
+  <div class="svg-type">Another Awesome Banner</div>  
 </header>
 <main>
+
+
 
   <h2 class="text-center">Using Grid</h2>
   <h3 class="text-center">Eliminates horizontal scrolling issues</h3>

@@ -12,47 +12,69 @@
   box-sizing: border-box;
 }
 body {
-padding: 5rem;
+  padding: 5rem;
 
   background-color: skyblue;
   font-family: sans-serif;
   font-size: 1.25rem;
 
-  h1 {
-    font-size: 3rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2rem; }
 
   img {
-    /* margin: 1rem; */
-
-    width: 99%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 0.8rem;
-    /* border: 8px solid wheat; */
+    border-radius: 1rem;
+
+    padding: 0.5rem;
   }
 
-  header {
-    text-align: center;
-  }
-  footer {
-    text-align: end;
-  }
+  header { text-align: center; }
+  footer { text-align: end; }
 
 }
 
 
 .grid-reel {
-  /* outline: 1px solid red; */
-  /* padding: 3rem; */
+  /* scrollbar-width: auto;    auto/thin/none/normal */
+  /* scrollbar-shadow-color: aqua; */
+
+  /* scrollbar-gutter: black; */
+  /* scrollbar-track-color: aquamarine; */
+  /* scrollbar-color: lightgray dimgray; */
+
+  &::-webkit-scrollbar {
+    /* appearance: none; ????? */
+    width: 50px;
+    height: 40px;
+
+
+  }
+  &::-webkit-scrollbar-track {
+    background-color: aquamarine;
+    border-radius: 100vw;
+    margin-inline: 100px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: darkorange;
+    border: 5px solid black;
+    border: 5px solid aquamarine;
+    border-radius: 100vw;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: yellow;
+  }
+
+
+
+  background-color: lightgray;
+  border: 5px solid lightgray;
+  border-radius: 0.5rem;
 
   display: grid;
   /* grid-gap: .5rem; */
-
   /* grid-template-columns: repeat( auto-fit, minmax(min(250px, 100%), 1fr) );   */
   /* grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
  
@@ -61,58 +83,20 @@ padding: 5rem;
 
   grid-auto-flow: column;
   /* grid-auto-columns: calc(50% - (1rem/2)); */
-  grid-auto-columns: 50%;
+  grid-auto-columns: 30%;
+  grid-auto-columns: 44%;
 
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  /* scroll-padding: 1rem; */
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 3.5rem;
   * {
     scroll-snap-align: start;
   }
 
-  divx {
-    outline: 0px solid red;
-  }
 
-  .xlandscape {
-    /* grid-column: auto / span 2; */
-    grid-column: span 1;
-    /* grid-row: span 1; */
-  }
-  .xportrait {
-    background-color: whitesmoke;
-    border: 1rem solid whitesmoke;
-    border-radius: 0.8rem;
 
-    grid-column: span 2;
-    grid-row-end: span 2;
-  }
-  .xlarge {
-    grid-column: span 3;
-    grid-row: span 2;
-  }
-  .xsmall {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
+  
 }
-
-
-
-/* @media (max-width: 600px) {
-  .header {
-    grid-column: span 6;
-  }
-  .menu {
-    grid-row: 1;
-    grid-column: span 6;
-  }
-  .content {
-    grid-column: span 12;
-  }
-
-} */
 
 
 </style>
@@ -128,28 +112,28 @@ padding: 5rem;
 <div class="grid-reel">
 
   <div class="landscape">
-    <img src="/images/japan/StreetBicycle.jpg" loading="eager">    
+    <img src="/images/japan/StreetBicycle.jpg">    
   </div>
   <div class="landscape">
-    <img src="/images/japan/RedTori.jpg" loading="eager">
+    <img src="/images/japan/RedTori.jpg">
   </div>
   <div class="landscape">
-    <img src="/images/japan/NightStreetLanterns.jpg" loading="eager">
+    <img src="/images/japan/NightStreetLanterns.jpg">
   </div>
   <div class="landscape">
-    <img src="/images/japan/NightStreet.jpg" loading="eager">
+    <img src="/images/japan/NightStreet.jpg">
   </div>
   <div class="landscape">
-    <img src="/images/japan/Kyoto.jpg" loading="lazy">
+    <img src="/images/japan/Kyoto.jpg">
   </div>
   <div class="landscape">
-    <img src="/images/japan/KiyozumiDera.jpg" loading="lazy">
+    <img src="/images/japan/KiyozumiDera.jpg">
   </div>
   <div class="landscape">
-    <img src="/images/japan/Garden.jpg" loading="lazy">
+    <img src="/images/japan/Garden.jpg">
   </div>
   <div class="landscape">
-    <img src="/images/japan/FujiyoshidaShi.jpg" loading="lazy">
+    <img src="/images/japan/FujiyoshidaShi.jpg">
   </div>
 
 

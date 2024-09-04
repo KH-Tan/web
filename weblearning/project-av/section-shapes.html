@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section Shapes</title>
+
+<style>
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+:root {
+  --body-bg: hsl(0, 0%, 25%);
+}
+html { color-scheme: dark; }
+body {
+  background: var(--body-bg); color: antiquewhite;
+
+  font-family: sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.5;
+
+  section {
+    padding-block: 3.0rem;
+    margin-block: 2.0rem;
+  }
+  
+  p { margin-block-end: 1rem; }
+}
+.site-title { font-size: 3.5rem; text-align: center; }
+.section-title { font-size: 2.25rem; }
+.wrapper {
+  max-width: 75ch;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.shape-diagonal {
+  --sd-skew: -3deg;
+  --sd-bg: linear-gradient(45deg,
+           royalblue,darkgoldenrod,rebeccapurple);
+
+  position: relative;    /* for the absolute */
+  isolation: isolate;    /* for the z-index */
+  /* background: steelblue; */
+
+  &::after {
+    content: '';
+    background-image: var(--sd-bg);
+        
+    position: absolute;
+    z-index: -1;  
+    inset: 0;
+    transform: skewY( var(--sd-skew) );
+  }
+}
+
+.shape-spikes {
+  --spike-width: 250px;
+  --spike-height: 25px;
+  --spike-bg: linear-gradient(to right, #fdc830, #f37335);
+
+  position: relative;    /* for the absolute */
+  isolation: isolate;    /* for the z-index */
+  background: var(--spike-bg);
+  color: black;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: var(--spike-height);
+    background: var(--body-bg);
+
+    mask-repeat: repeat-x;
+    mask-size: var(--spike-width) var(--spike-height);
+  }
+  &::before {
+    top: 0;
+    /* -webkit-mask-image: url('/assets/triangle.svg'); */
+    mask-image: url('/assets/triangle-start.svg');
+  }
+  &::after {
+    bottom: 0;
+    mask-image: url('/assets/triangle-end.svg');
+  }
+}
+
+.shape-curves {
+  --curve-width: 250px;
+  --curve-height: 50px;
+  --curve-bg: linear-gradient(to right, #fdc830, #f37335);
+
+  position: relative;    /* for the absolute */
+  isolation: isolate;    /* for the z-index */
+  background: var(--curve-bg);
+  color: black;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: var(--curve-height);
+    background: var(--body-bg);
+
+    mask-repeat: repeat-x;
+    mask-size: var(--curve-width) var(--curve-height);
+  }
+  &::before {
+    top: 0;
+    mask-image: url('/assets/arc-start.svg');
+  }
+  &::after {
+    bottom: 0;
+    mask-image: url('/assets/arc-end.svg');
+  }
+}
+
+.shape-squares {
+  --ss-rotate: 180deg;
+  --ss-bg: linear-gradient(to right, #fdc830, #f37335);
+
+  position: relative;    /* for the absolute */
+  isolation: isolate;    /* for the z-index */
+  background: var(--ss-bg);
+  color: black;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: 20px;
+
+    background: var(--body-bg);
+    mask-image: url('/assets/square.svg');
+    mask-repeat: repeat-x;
+    mask-size: 40px 20px;
+  }
+  &::before { top: 0; }
+  &::after { bottom: 0;
+    transform: rotate( var(--ss-rotate) );
+  }
+}
+
+.shape-wavy {
+  background: linear-gradient(to right, seagreen,royalblue);
+
+
+  --mask:
+    radial-gradient(55.34px at 50% 76.5px,#000 99%,#0000 101%) calc(50% - 60px) 0/120px 51% repeat-x,
+    radial-gradient(55.34px at 50% -46.5px,#0000 99%,#000 101%) 50% 30px/120px calc(51% - 30px) repeat-x,
+    radial-gradient(55.34px at 50% calc(100% - 76.5px),#000 99%,#0000 101%) calc(50% - 60px) 100%/120px 51% repeat-x,
+    radial-gradient(55.34px at 50% calc(100% + 46.5px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px calc(51% - 30px) repeat-x;
+
+
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+
+}
+
+.shape-waves {
+  --curve-width: 200px;
+  --curve-height:  50px;
+  --curve-bg: linear-gradient(to right, #fdc830, #f37335);
+
+  position: relative;    /* for the absolute */
+  isolation: isolate;    /* for the z-index */
+  background: var(--curve-bg);
+  color: black;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%; height: var(--curve-height);
+    background: var(--body-bg);
+
+    mask-repeat: repeat-x;
+    mask-size: var(--curve-width) var(--curve-height);
+  }
+  &::before {
+    top: 0;
+    mask-image: url('/assets/wave2-start.svg');
+  }
+  &::after {
+    bottom: 0;
+    mask-image: url('/assets/wave2-end.svg');
+  }
+}
+
+.image-border {
+  padding: 2rem;
+  border: 25px solid;
+  border-radius: 10px;
+
+  border-image-source: url(/images/scottwebbunsplash-mlgreen2.jpg);
+  border-image-slice: 10 fill;
+
+  border-image-width: 10px;
+}
+
+.gradient-border {
+  padding: 1rem;
+  border: 1rem solid gray;
+
+  border-radius: 1rem;
+
+  border-image-source: linear-gradient(red,green,blue);
+  border-image-slice: 1;
+
+
+}
+
+.gradients-2 {
+  background: linear-gradient(to right,
+              red 0%,green 25%,blue 100%);
+}
+.gradients-1 {
+  background: radial-gradient(
+              red 0%,green 25%,blue 100%);
+}
+
+
+</style>
+
+</head>
+<body>
+<header>
+  <h1 class="site-title">Creative Section Shapes</h1>
+</header>
+<main>
+
+<section>
+  <div class="wrapper">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi recusandae consequuntur animi doloribus necessitatibus neque maiores pariatur facilis cum, fugiat beatae velit reiciendis. Totam, voluptatem.</p> 
+  </div>  
+</section>
+
+
+<section class="shape-diagonal">
+  <div class="wrapper">
+
+    <h2 class="section-title">Diagonal</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur. Exercitationem, corporis praesentium? Iure, officiis? Ab quam quia velit, ipsa, similique fuga omnis labore veniam assumenda temporibus reprehenderit ea.</p>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrapper">
+
+    <div class="gradients-1">
+      <h2 class="section-title">Another</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur. Exercitationem, corporis praesentium? Iure, officiis? Ab quam quia velit, ipsa, similique fuga omnis labore veniam assumenda temporibus reprehenderit ea.</p>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="shape-spikes">
+  <div class="wrapper">
+
+    <h2 class="section-title">Spikes</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur. Exercitationem, corporis praesentium? Iure, officiis? Ab quam quia velit, ipsa, similique fuga omnis labore veniam assumenda temporibus reprehenderit ea.</p>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrapper">
+    <div class="image-border">
+      <h2 class="section-title">Another</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="shape-curves">
+  <div class="wrapper">
+
+    <h2 class="section-title">Curves</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur. Exercitationem, corporis praesentium? Iure, officiis? Ab quam quia velit, ipsa, similique fuga omnis labore veniam assumenda temporibus reprehenderit ea.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nihil ex officiis quaerat neque itaque obcaecati similique. Minus id debitis quod veritatis, cumque libero, quam reprehenderit, explicabo ab culpa quisquam.</p>
+
+  </div>
+</section>
+
+<section class="shape-waves">
+  <div class="wrapper">
+
+    <h2 class="section-title">Waves</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur.</p>
+
+  </div>
+</section>
+
+<section class="shape-wavy">
+  <div class="wrapper">
+
+    <h2 class="section-title">Wavy</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur. Exercitationem, corporis praesentium? Iure, officiis? Ab quam quia velit, ipsa, similique fuga omnis labore veniam assumenda temporibus reprehenderit ea.</p>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrapper">
+
+    <div class="gradient-border">
+      <h2 class="section-title">Another</h2>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur.</p>
+    </div>
+
+
+  </div>
+</section>
+
+<section class="shape-squares">
+  <div class="wrapper">
+
+    <h2 class="section-title">Squares</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos cupiditate praesentium ex velit officiis est itaque suscipit quibusdam earum quae, tenetur natus! Eum tempora recusandae minima temporibus ipsa, consequatur quibusdam aspernatur. Exercitationem, corporis praesentium? Iure, officiis? Ab quam quia velit, ipsa, similique fuga omnis labore veniam assumenda temporibus reprehenderit ea.</p>
+
+  </div>
+</section>
+
+
+</main>
+<footer>
+  <h2>Footer</h2>
+  <p>&copy;2024 Tanaka Productions</p>
+</footer>
+</body>
+</html>
