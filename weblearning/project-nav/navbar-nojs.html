@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Navbar noJS</title>
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-padding: 10rem;
+}
+body {
+  font-family: sans-serif;
+
+  header {
+    min-height: 15dvh;
+    background-color: skyblue;
+
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    /* left: 0; */
+    padding: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main {
+    min-height: 75dvh;
+
+    margin-top: 15dvh;
+    margin-top: 20dvh;
+  }
+  footer {
+    min-height: 10dvh;
+    background-color: skyblue;
+    text-align: center;
+  }
+}
+h2 {
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 2rem;
+}
+#menu-check {
+  display: none;
+
+  &:checked ~ nav {
+    /* left: 0; */
+    right: 0;
+    opacity: 1;
+  }
+}
+.menu-label {
+  cursor: pointer;
+  font-size: 3rem;
+  display: none;
+}
+
+.textLogo {
+  font-size: 3rem;
+
+}
+nav {
+  
+
+  a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding-inline: 0.5rem;
+    padding-block: 0.0rem;
+    /* margin: 1rem; */
+
+    color: darkred;
+    font-weight: 400;
+
+    transition: .25s ease-in-out;
+    &:hover {
+      border-bottom: 5px solid orangered;
+      color: darkmagenta;
+      /* font-weight: 600; */
+    }
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    position: absolute;
+    /* left: 0; right: 0; */
+    /* left: -100%; */
+    right: -100%;       /* hide until checked */
+
+
+    top: 100%;
+    width: 100%;
+    background-color: lightgray;
+    padding: 1rem;
+
+    transition: .5s ease-in-out;
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 1rem;
+    }
+
+  }
+  .menu-label {
+    display: block;
+  }
+}
+
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <input type="checkbox" id="menu-check" name="for-menu">
+  
+  <h1 class="textLogo">Tanaka</h1>
+  <nav class="menu-dropdown">
+    <a href="#s1">Home</a>
+    <a href="#s2">About</a>
+    <a href="#s5">Articles</a>
+    <a href="#s6">Contact</a>
+  </nav>
+  <label class="menu-label" for="menu-check">&#9776;</label>
+  <!-- <label class="menu-label" for="menu-check">&#x2630;</label> -->
+  <!-- <label class="menu-label" for="menu-check">&#9547;</label> -->
+
+</header>  
+<main>
+  <h2 id="s1">Responsive Navbar No JS 1</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s2">Responsive Navbar No JS 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s3">Responsive Navbar No JS 3</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s4">Responsive Navbar No JS 4</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s5">Responsive Navbar No JS 5</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s6">Responsive Navbar No JS 6</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+</main>
+<footer>
+  <p>&copy; Tanaka Productions</p>
+</footer>
+</body>
+<script>
+  const menuLabel = document.querySelector('.menu-label')
+  const menuDropdown = document.querySelector('.menu-dropdown')
+
+  menuLabel.onclick = function() {
+    menuDropdown.classList.toggle('open')
+    const isOpen = menuDropdown.classList.contains('open')
+  }
+</script>
+</html>

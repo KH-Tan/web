@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Responsive</title>
+
+
+<style>
+
+body {
+  font-family: sans-serif;
+}
+header, footer {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;     /* fall-back  */
+
+  /* method 1 - use media queries */
+  /* 640px */
+  /* @media (width >= 40rem) { font-size: 3rem; } */
+  /* 960px */
+  /* @media (width >= 60rem) { font-size: 4rem; } */
+
+  /* method 2 - use clamp()   */
+  font-size: clamp(2rem, -2rem + 10vw  ,4rem);
+}
+h2 {
+  font-size: 1.25rem;
+  font-size: clamp( 1.25rem, -1.75rem + 7.5vw  ,2.75rem);
+}
+p {
+  font-size: 1rem;
+  font-size: clamp(1rem, -1rem + 5vw  ,2rem);
+}
+
+.intro-wrapper {
+  max-width: 60rem;
+  margin-inline: auto;  
+}
+
+.img-wrapper {
+  max-width: 60rem;
+  margin-inline: auto;
+
+  .img-file {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.cards {
+  max-width: 60rem;
+  margin-inline: auto; 
+
+  display: grid;
+
+  /* grid-template-columns: 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)) ;
+
+  gap: 1rem;
+  grid-auto-rows: 1fr;
+
+/*
+  @media (width >= 40rem) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (width >= 60rem) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+*/
+
+  .card {
+    border: 2px solid silver;
+    border-radius: 15px;
+    padding: 1rem;
+
+  }
+
+}
+
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <h1>Responsive Header1</h1>
+  <p>Responsive Paragraph</p>
+</header>
+<main>
+  <section class="intro-wrapper">
+    <h2>Responsive Header2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi alias, recusandae aut quo iste dolores odio repellat distinctio.</p>
+  </section>
+  
+  
+
+
+    <div class="img-wrapper">
+      <picture>
+      <source media="(min-width: 40rem)" srcset="/images/japan/Garden.jpg">
+      <img class="img-file" src="/images/japan/Garden-smaller.jpeg"></img>
+      </picture>
+    </div>
+ 
+
+
+    <div class="cards">
+      <div class="card">
+        <h2>Card 1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, blanditiis, veniam ducimus quod inventore ea adipisci culpa.</p>
+      </div>
+      <div class="card">
+        <h2>Card 2</h2>
+        <p>Omnis, blanditiis, veniam ducimus quod inventore ea adipisci culpa, similique eum in porro nesciunt tenetur facilis! Sequi!</p>
+      </div>
+      <div class="card">
+        <h2>Card 3</h2>
+        <p>Veniam ducimus quod inventore ea adipisci culpa, similique eum in porro nesciunt tenetur facilis! Sequi!</p>
+      </div>
+    </div>
+
+
+
+
+
+  <section>
+  </section>
+
+
+</main>
+<footer>
+  <p>Tanaka Productions</p>
+</footer>
+</body>
+</html>

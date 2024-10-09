@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlexPlay</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  /* flex-direction: row; */
+  /* flex-wrap: nowrap; */
+  flex-flow: row wrap;
+
+  /* justify-content: space-around; */
+  justify-content: flex-start;
+  align-content: center;
+      /* overrides align-items,applies to mult-line only */
+
+  /* align-items: stretch; */
+  align-items: flex-end;
+      /* overriden by align-self */
+  
+  /* row-gap: 1rem; */
+  /* column-gap: 2rem; */
+  /* gap: 1rem 2rem; */
+
+  width: 600px;
+  height: 300px;
+  border-radius: 8px;
+  background-color: cornflowerblue;
+  margin: 44px auto;
+
+
+  .flex-items {
+    background-color: lightgreen;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    /* padding: 0.5rem; */
+    /* text-align: center; */
+
+
+    /* flex-grow: 0; */
+    /* flex-shrink: 1; */
+    /* flex-basis: auto; */
+    flex: 0 1 auto;   /* defaults */
+  }
+  .flex-item-1 {
+    order: 0;
+    /* align-self: center; */
+    flex-grow: 0;
+    flex-shrink: 2;
+    flex-basis: 210px;
+    /* flex-basis is limited by max-width & min-width */
+    /* max-width: 350px; */
+    /* min-width: 250px; */
+  }
+  .flex-item-2 {
+    order: 0;
+    flex: 0 3 310px;
+    align-self: flex-end;
+  }
+  .flex-item-3 {
+    order: 0;
+    flex: 0 0 auto;
+    align-self: flex-start;
+  }
+  .flex-item-4 {
+    order: 0;
+    flex: 0 0 auto;
+    align-self: center;
+  }
+}
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+<h3>The complete guide to</h3>
+<h1>CSS FLEXBOX</h1>
+<h2>(content based)</h2>
+<h3>CSS GRID is layout based</h3>
+  
+<div class="flex-container">
+  <div class="flex-items flex-item-1">One</div>
+  <div class="flex-items flex-item-2">Two</div>
+  <div class="flex-items flex-item-3">Three</div>
+  <div class="flex-items flex-item-4">Four</div>
+
+  <div class="flex-items flex-item-5">Five</div>
+  <div class="flex-items flex-item-6">Six</div>
+  <div class="flex-items flex-item-7">Seven</div>
+  <div class="flex-items flex-item-8"><h1>Eight</h1></div>
+
+
+</div>
+
+
+
+</body>
+</html>

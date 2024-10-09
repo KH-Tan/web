@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grid Template</title>
+
+<style>
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.wrapper-grid {
+  display: grid;
+  grid-template-areas:
+        " . header header header header header . "
+        " .  main   main   main   main   main  . "
+        " . footer footer footer footer footer . "
+        ;
+  grid-template-rows: 15vh auto 10vh;
+
+ 
+  header {
+    grid-area: header;
+
+    background-color: skyblue;
+
+    display: grid;
+    grid-template-areas:
+        " logo site nav nav nav";
+    .logo {
+      grid-area: logo;
+    }
+    .site {
+      grid-area: site;
+    }
+    .nav {
+      grid-area: nav;
+    }
+  }
+  main {
+    grid-area: main;
+
+    background-color: lightgray;
+  }
+  footer {
+    grid-area: footer;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    background-color: steelblue;
+  }
+
+
+
+}
+
+
+</style>
+
+</head>
+<body class="wrapper-grid">
+<header>
+  <div class="logo">T</div>
+  <h1 class="site">Tanaka</h1>
+  <nav class="nav">
+    <a href="#">About</a>
+    <a href="#">Places</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>  
+<main>
+  <section>
+    <h2>Lorem</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita mollitia quam dicta tenetur consequuntur ratione distinctio dolore quos, odit, voluptatibus rem culpa doloremque ab, enim esse sint aperiam accusantium qui.</p>
+  </section>
+  
+  <section>
+  </section>
+
+  <aside>
+  </aside>  
+</main>
+<footer>
+  <p>&copy;2024 Tanaka Productions</p>
+</footer>
+</body>
+</html>

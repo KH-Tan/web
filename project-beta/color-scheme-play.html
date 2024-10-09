@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ColorSchemePlay</title>
+
+
+<style>
+:root {
+  /* from Canva - Autumn Reflections */
+  --clr-dark: #55423A;       /*  Carafe */
+  --clr-mid: #817B70;        /*  Pewter */
+  --clr-highlight: #FDD55E;  /*  Mimosa */
+  --clr-light: #ECE6DB;      /*  Ivory */
+
+
+  /* from Canva - Big Kahuna */
+  --clr-dark: #2B1120;       /*  Ebony */
+  --clr-mid: #74A45C;        /*  Kelly Green */
+  --clr-highlight: #DC9750;  /*  Desert Sun */
+  --clr-light: #E2E4D0;      /*  Ivory */
+
+  /* from Canva - Pastel Dreams */
+  --clr-dark: #FBE7C6;       /*  Yellow */
+  --clr-mid: #B4F8C8;        /*  Mint */
+  --clr-highlight: #FFAEBC;  /*  Hot Pink */
+  --clr-light: #E2E4D0;      /*  Tiffany Blue */
+
+}
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+
+}
+html {
+  font-size: 16px;
+  scroll-padding: 25vh;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 1.45;
+  background-color: var(--clr-light);
+}
+header {
+  min-height: 17vh;
+  background-color: var(--clr-dark);
+
+  position: sticky;
+  top: 0; left: 0;
+
+  text-align: center;
+  user-select: none;
+}
+main {
+  min-height: 75vh;
+  background-color: var(--clr-light);
+
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+section {
+  margin-block: 1rem;
+}
+p {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+footer {
+  min-height: 10vh;
+  background-color: var(--clr-mid);
+  color: var(--clr-gray110);
+  font-size: 1rem;
+  text-align: center;
+
+  padding: 1rem;
+}
+
+.h-logo {
+  color: var(--clr-gray110);
+  font-size: 2.5rem;
+  font-family: cursive;
+}
+.h-nav {
+  font-size: 1.15rem;
+
+  a {
+    text-decoration: none;
+    color: var(--clr-gray110);
+
+    padding: 0.2rem;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--clr-highlight);
+       
+      /* text-decoration-thickness: 3px; */
+      /* text-decoration-style: solid; */
+      /* text-decoration-color: orange; */
+      /* text-decoration-line: underline overline; */
+      text-decoration: underline overline var(--clr-highlight) 3px solid;
+      text-underline-offset: 0.25rem;
+      text-decoration-skip-ink: none;
+    }    
+  }
+
+}
+
+</style>
+
+
+</head>
+<body>
+  <header>
+    <div class="h-logo">Tanaka</div>
+    <nav class="h-nav">
+      <a href="#h-home">Home</a>
+      <a href="#h-thailand">Thailand</a>
+      <a href="#h-japan">Japan</a>
+      <a href="#h-contact">Contact</a>
+    </nav>
+  </header>  
+  <main>
+  
+  <section id="h-home">
+    <h2>Home - Autumn Reflections/Big Kahuna/Pastel Dreams</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae iusto earum soluta itaque nobis possimus illo corrupti doloribus voluptas dolor rem exercitationem voluptatem voluptatibus dolorum asperiores harum laudantium, adipisci maiores?</p>
+  </section>
+  
+  <section id="h-thailand">
+    <h2>Thailand</h2>
+    <h5>From Wikipedia, the free encyclopedia</h5>
+    <p>Thailand, officially the Kingdom of Thailand and historically known as Siam (the official name until 1939), is a country in Southeast Asia on the Indochinese Peninsula. With a population of almost 66 million, it spans 513,115 square kilometres (198,115 sq mi).</p>
+    <p>Thailand is bordered to the northwest by Myanmar, to the northeast and east by Laos, to the southeast by Cambodia, to the south by the Gulf of Thailand and Malaysia, and to the southwest by the Andaman Sea; it also shares maritime borders with Vietnam to the southeast and Indonesia and India to the southwest. Bangkok is the state capital and largest city.</p>
+  </section>
+  
+  <section id="h-japan">
+    <h2>Japan</h2>
+    <h5>From Wikipedia, the free encyclopedia</h5>
+    <p>Japan is an island country in East Asia. Located in the Pacific Ocean off the northeast coast of the Asian mainland, is bordered on the west by the Sea of Japan and extends from the Sea of Okhotsk in the north to the East China Sea in the south.</p>
+    <p>The Japanese archipelago consists of four major islands—Hokkaido, Honshu, Shikoku, and Kyushu—and thousands of smaller islands, covering 377,975 square kilometres (145,937 sq mi).</p>
+    <p>Japan has a population of nearly 124 million as of 2024, and is the eleventh-most populous country. Its capital and largest city is Tokyo; the Greater Tokyo Area is the largest metropolitan area in the world, with more than 38 million inhabitants as of 2016. Japan is divided into 47 administrative prefectures and eight traditional regions.</p>
+    <p>About three-quarters of the country's terrain is mountainous and heavily forested, concentrating its agriculture and highly urbanized population along its eastern coastal plains. The country sits on the Pacific Ring of Fire, making its islands prone to destructive earthquakes and tsunamis.</p>
+  </section>
+  
+  <section id="h-contact">
+    <h2>Contact</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae iusto earum soluta itaque nobis possimus illo corrupti doloribus voluptas dolor rem exercitationem voluptatem voluptatibus dolorum asperiores harum laudantium, adipisci maiores?</p>
+  </section>
+  
+  </main>
+  <footer>
+    <div>&copy;2024</div>
+    <div>Tanaka Productions</div>
+  </footer>  
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <script src="main.js" type="module"></script> -->
+  <script src="/wc-blue-box.js" type="module"></script> 
+  <script src="/web-components.js" type="module"></script>
+
+  <title>WebComponents1</title>
+
+<style>
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+header {
+  background-color: lavender;
+  color: black;
+}
+main {
+  padding: 1rem 3rem;
+}
+footer {
+  background-color: black;
+  color: black;
+}
+h1 { font-size: 3rem;}
+h2 { font-size: 2rem;}
+h3 { font-size: 1.5rem;}
+
+
+</style>
+
+
+</head>
+<body>
+  <header>
+    <h1>Basic Web Components</h1>
+  </header>
+  <main>
+    <h2>Main Area</h2>
+    <h3>Web Component Below</h3>
+    <hr>
+
+    <blue-box>WC in wc-blue-box.js</blue-box>
+    <blue-box></blue-box>
+    <blue-box></blue-box>
+
+  </main>
+
+  <footer-wc>Web Component in web-components.js</footer-wc>  
+</body>
+</html>

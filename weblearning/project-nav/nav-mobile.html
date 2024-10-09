@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nav Mobile</title>
+
+
+<style>
+
+:root {
+  --color-1: darkslategray;
+  --text-color: whitesmoke;
+  --accent-color: royalblue;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+nav {
+  background-color: var(--color-1);
+  height: 60px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+    }
+
+  }
+
+  .home-link {
+    margin-right: auto;
+  }
+
+}
+#sidebar-active {
+  display: none;
+}
+.sidebar-open, .sidebar-close {
+  /* padding: 0 20px; */
+  display: none;
+}
+
+
+.links-container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+
+}
+
+.button-static {
+  --clr-button: whitesmoke;
+
+  background: transparent;
+  border: 1px solid var(--clr-button, dimgray);
+  border-radius: 0.25rem;
+
+  width: 2rem;
+  height: 2rem;
+
+  .hamburger {
+    width: 100%; height: 100%;
+    fill: var(--clr-button, dimgray);
+  }
+  .close {
+    width: 100%; height: 100%;
+    stroke: var(--clr-button, dimgray);
+    stroke-width: 10;
+    stroke-linecap: round;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .links-container {
+    /* for animation  */
+    /* display: none; */
+    
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: fixed;
+    top: 0;
+
+    right: 0;
+    right: -100%;    /* for animation */
+
+    z-index: 9;
+    width: 200px;
+
+    background-color: var(--color-1);
+
+    transition: 0.5s ease-out;
+
+  }
+  nav {
+    a {
+      width: 100%;
+      height: auto;
+
+      justify-content: flex-start;
+      padding: 20px 30px;
+    }
+  }
+
+  .sidebar-open, .sidebar-close {
+    padding: 20px;
+    display: block;
+  }
+  #sidebar-active:checked ~ .links-container {
+    /* for animation */
+    /* display: flex; */
+
+    right: 0;   /* for animation */
+  }
+  #sidebar-active:checked ~ #overlay {
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
+}
+
+</style>
+
+
+
+
+
+</head>
+<body>
+
+  <nav>
+    <input type="checkbox" id="sidebar-active">
+    <label for="sidebar-active" class="sidebar-open">
+      <div class="button-static">
+        <svg class="hamburger" viewBox="0 0 100 100"
+              width="32" height="32">
+          <rect width="80" height="10" x="10" y="25" rx="6.5"></rect>
+          <rect width="80" height="10" x="10" y="45" rx="6.5"></rect>
+          <rect width="80" height="10" x="10" y="65" rx="6.5"></rect>
+        </svg>
+      </div>  
+    </label>
+  
+    <label id="overlay" for="sidebar-active"></label>
+
+    <div class="links-container">
+      <label for="sidebar-active" class="sidebar-close">
+        <div class="button-static">
+          <svg class="close" viewBox="0 0 100 100" width="32" height="32">
+            <line x1="15" y1="25" x2="85" y2="75"></line>
+            <line x1="15" y1="75" x2="85" y2="25"></line>       
+          </svg>
+        </div>
+      </label>
+
+      <a class="home-link" href="#">Home</a> 
+      <a href="#">About</a>
+      <a href="#">Articles</a>
+      <a href="#">Links</a>
+
+
+    </div>
+  
+  
+  
+  
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

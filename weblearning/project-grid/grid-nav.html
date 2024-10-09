@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>Grid Nav</title>
+
+<style>
+
+:root {
+  --background: rgba(0, 214, 170, .85)
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #222;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+.content {
+  height: 200vh;
+  background-color: #999;
+  /* display: grid; */
+  /* place-items: center; */
+}
+
+header {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+.logo {
+  padding: 0.5em;
+  font-size: 3rem;
+}
+nav {
+  position: absolute;
+  top: 100%;
+  text-align: left;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+
+
+  /* display: none; */
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.5s ease-in-out;
+
+  ul {
+    list-style: none;   
+  }
+  li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+  
+    a {
+      color: antiquewhite;
+      text-decoration: none;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+
+      &:hover {
+        color: black;
+      }
+
+    }
+  
+  }
+
+
+}
+
+#nav-toggle {
+  display: none;
+
+  &:checked ~ nav {
+    /* display: block; */
+    transform: scale(1,1);
+
+  }  
+}
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  /* border: 1px solid red; */
+  /* padding: 1em; */
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  span,
+  span::before,
+  span::after {
+    display: block;
+    background-color: white;
+
+    height: 2px;
+    width: 2em;
+    position: relative;
+  }
+  span::before,
+  span::after {
+    content: '';
+    position: absolute;
+  }
+  span::before {
+    bottom: 7px;
+  }
+  span::after {
+    top: 7px;
+  }
+
+}
+
+@media (min-width: 500px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr  auto  minmax(500px, 3fr)  1fr;
+
+    .logo {
+      grid-column: 2 / span 1;
+    }
+
+    nav {
+      all: unset;
+      grid-column: 3 / 4;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      ul {
+        display: flex;
+        border: 1px solid red;
+
+        li {
+          margin-left: 3em;
+          margin-bottom: 0;
+
+          a::before {
+            content: '';
+            display: block;
+            height: 5px;
+            background-color: black;
+
+            transform: scale(0,1);
+            transition: transform ease-in-out .25s;
+          
+          }
+          a:hover::before {
+            transform: scale(1,1);
+          }
+
+        }
+      }
+    }
+
+  }
+
+
+}
+
+
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <div class="logo">Logo</div>
+
+  <input id="nav-toggle" type="checkbox">
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Places</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul> 
+  </nav>
+
+</header>
+  
+
+
+  <div class="content">
+    <h2>Content</h2>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe magnam hic modi iusto, doloribus itaque quaerat aliquid fugiat odit nisi? Cumque minima inventore unde odit, pariatur, qui obcaecati accusamus amet commodi laudantium nostrum officia. Natus magni, quod repudiandae provident impedit accusamus, a facere quis consequatur dolores ut nulla, sint ipsa!</p>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe magnam hic modi iusto, doloribus itaque quaerat aliquid fugiat odit nisi? Cumque minima inventore unde odit, pariatur, qui obcaecati accusamus amet commodi laudantium nostrum officia. Natus magni, quod repudiandae provident impedit accusamus, a facere quis consequatur dolores ut nulla, sint ipsa!</p>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe magnam hic modi iusto, doloribus itaque quaerat aliquid fugiat odit nisi? Cumque minima inventore unde odit, pariatur, qui obcaecati accusamus amet commodi laudantium nostrum officia. Natus magni, quod repudiandae provident impedit accusamus, a facere quis consequatur dolores ut nulla, sint ipsa!</p>
+  </div>
+
+
+
+</body>
+</html>

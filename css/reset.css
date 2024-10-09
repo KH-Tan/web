@@ -59,6 +59,10 @@ img {
 h1,h2,h3,h4,h5,h6 {
   text-wrap: balance;
 }
+p, li, figcaption {
+  max-width: 65ch;
+}
+
 p {
   /* default sizing - change as desired */
   /* max-width: 75ch; */
@@ -79,6 +83,10 @@ p {
   /* text-indent: 2em; */
   /* text-overflow: clip; */
 
+}
+
+header, footer, main, section, article, aside {
+  container-type: inline-size;
 }
 
 @media (prefers-reduced-motion: no-preferance) {

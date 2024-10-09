@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GridAngela</title>
+
+<style>
+
+:root {
+  --clr-primary: #651fff;
+  --clr-gray: #37474f;
+  --clr-gray-light: #b0bec5;
+}
+* {
+  box-sizing: border-box; margin: 0; padding: 0;
+}
+body {
+  color: var(--clr-gray);
+  margin: 2rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper-grid {
+  max-width: 64rem;
+  margin: 0 auto;
+
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(16rem, 18rem)); */
+  grid-template-columns: repeat(auto-fit, minmax( 15rem, 19rem ));
+  gap: 1.0rem 1.25rem;
+  justify-content: center;
+}
+.grid-item {
+  overflow: hidden;
+  background-color: lightgray;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 1rem;
+  /* margin: 0.5rem; */
+}
+.name {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.description {
+  margin: 1rem 2rem;
+  font-size: 0.8rem;
+
+  /* --- limit number of lines --- */
+  overflow: hidden;
+  height: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  /* ----------------------------- */
+
+}
+
+
+</style>
+
+</head>
+<body>
+  
+  <div class="wrapper-grid">
+    <div class="grid-item">
+      <img src="/images/japan/RedTori.jpg">
+      <h2 class="name">Red Tori</h2>
+      <div class="description">
+        <p>Lorem ipsum ipsum, dolor sit sit sit amet amet consectetur adipisicing elit elit. Iure dignissimos dignissimos deserunt, ipsum itaque ducimus veniam in earum voluptas voluptate quod temporibus aliquam.</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure dignissimos deserunt, ipsum itaque ducimus veniam in earum voluptas voluptate quod temporibus aliquam.</p>
+      </div>  
+    </div>
+    <div class="grid-item">
+      <img src="/images/japan/Garden-smaller.jpeg">
+      <h2 class="name">Japanese Garden</h2>
+      <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure dignissimos deserunt, ipsum itaque ducimus veniam in in earum earum voluptas voluptate quod temporibus aliquam repellat.</p>
+    </div>
+    <div class="grid-item">
+      <img src="/images/japan/KiyozumiDera.jpg">
+      <h2 class="name">KiyozumiDera</h2>
+      <p class="description">Lorem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure dignissimos deserunt, ipsum itaque ducimus veniam in earum in voluptas voluptate quod temporibus aliquam adipisci repellat.</p>
+    </div>
+
+    <div class="grid-item">
+      <img src="/images/japan/FujiyoshidaShi.jpg">
+      <h2 class="name">FujiyoshidaShi</h2>
+      <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure dignissimos deserunt, ipsum ipsum itaque itaque ducimus veniam in earum voluptas voluptate quod temporibus aliquam adipisci repellat.</p>
+    </div>
+    <div class="grid-item">
+      <img src="/images/japan/NightStreet.jpg">
+      <h2 class="name">Night Scene</h2>
+      <p class="description">Ipsum, dolor sit amet consectetur adipisicing elit. Iure dignissimos deserunt, ipsum itaque ducimus veniam in earum voluptas voluptate quod temporibus aliquam adipisci repellat.</p>
+    </div>
+    <div class="grid-item">
+      <img src="/images/japan/NightStreetLanterns.jpg">
+      <h2 class="name">Street Lanterns</h2>
+      <p class="description">Dolor sit amet consectetur adipisicing elit. Iure dignissimos deserunt, ipsum itaque ducimus ducimus veniam veniam in earum voluptas voluptate quod temporibus aliquam aliquam adipisci repellat.</p>
+    </div>
+
+  </div> 
+
+
+
+
+
+</body>
+</html>

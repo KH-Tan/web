@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding2Go</title>
+
+<style>
+:root {
+  --color-1: #0f1016;
+  --text-color: #f0f0f0;
+  --accent-color: #006aff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+nav {
+  background-color: var(--color-1);
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  a {
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color);
+
+    &:hover {
+      background-color: var(--accent-color);
+    }
+  }
+  .home-link {
+    margin-right: auto;
+  }
+}
+.links-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.open-sidebar-button {
+  color: var(--text-color);
+  padding: 0 20px;
+  display: none;
+}
+.close-sidebar-button {
+  color: var(--text-color);
+  padding: 0 20px;
+  display: none;
+}
+#sidebar-active {
+  display: none;
+}
+
+@media (max-width: 420px) {
+  .links-container {
+    /* display: none; */
+    flex-direction: column;
+    align-items: flex-end;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    right: -100%;
+    z-index: 9;
+    width: 250px;
+
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgb(0, 0, 0, 0.25);
+
+    transition: 1s ease-out;
+  }
+  nav a {
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-end;
+  }
+  .open-sidebar-button {
+    font-size: 3.5rem;
+    padding: 20px;
+    display: block;
+    cursor: pointer;
+  }
+  .close-sidebar-button {
+    font-size: 3rem;
+    padding: 20px 30px;
+    display: block;
+    cursor: pointer;
+  }
+  #sidebar-active:checked ~ .links-container {
+    /* display: flex; */
+    right: 0;
+  }
+  #sidebar-active:checked ~ #overlay {
+
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+}
+
+
+</style>
+
+</head>
+<body>
+<header>
+  <nav>
+    <input type="checkbox" id="sidebar-active">
+    <label for="sidebar-active" class="open-sidebar-button">&equiv;</label> 
+&#9776;
+    <label id="overlay" for="sidebar-active"></label>
+
+    <div class="links-container">
+      <label for="sidebar-active" class="close-sidebar-button">&#8811</label>
+      <a class="home-link" href="#">Home</a>
+      <a href="#s1">About</a>
+      <a href="#s3">Places</a>
+      <a href="#s6">Contact</a>
+    </div>
+  </nav>
+</header>
+<main>
+  <h2 id="s1">Responsive Navbar No JS 1</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s2">Responsive Navbar No JS 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s3">Responsive Navbar No JS 3</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s4">Responsive Navbar No JS 4</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s5">Responsive Navbar No JS 5</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+  <h2 id="s6">Responsive Navbar No JS 6</h2>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam ducimus voluptates itaque velit sapiente quos dignissimos eos repellat tenetur? Rerum, in voluptatem vero esse eius dignissimos velit repudiandae explicabo fugit. Ipsa omnis, rerum nulla repellendus repudiandae repellat perferendis sit accusamus odit in sint aliquid magni id dicta ut delectus alias!</p>
+
+</main>
+<footer>
+  <p>&copy; Tanaka Productions</p>
+</footer>  
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayOverflow</title>
+
+<style>
+
+.div-1 {
+  outline: 1px solid lightcoral;
+  width: 200px;
+  height: 200px;
+
+  
+
+  /* overflow-x: ; */
+  /* overflow-y: ; */
+  /* overflow: hidden; */
+  /* visible/hidden/clip/scroll/auto */
+  /* overflow-anchor: auto; */
+
+  /* padding: 10px;
+  overflow: clip;
+  overflow-clip-margin: content-box; */
+
+  overflow: hidden;
+
+  /* for long words */
+  /* word-wrap: break-word;  replace with overflow-wrap: ; */
+  /* word-break: break-all;   alternative to below */
+  overflow-wrap: break-word;
+  hyphens: auto;
+  
+  word-spacing: 0.15em;
+}
+.div-2 {
+  outline: 1px solid lightsalmon;
+  width: 210px;
+  height: 200px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;   /* not working ??? */
+  white-space: nowrap;
+  
+    
+}
+.div-3 {
+  outline: 1px solid lightpink;
+  width: 200px;
+
+
+  /* --- limit number of lines --- */
+  overflow: hidden;
+  height: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  /* ----------------------------- */
+
+}
+
+</style>
+
+</head>
+<body>
+    
+<div class="div-1">
+  <p>Lorem ipsumipsumipsumipsumipsumipsumipsumipsum dolor sit amet consectetur adipisicing elit. Libero ratione veniam possimus consequatur sequi tenetur perspiciatis qui doloribus quasi itaque saepe, numquam ad eaque unde rerum consequuntur iusto autem laudantium non nulla! Eaque totam id vero incidunt nam voluptates recusandae, vitae dolor magnam. Amet, molestiae placeat sequi culpa quas quis.</p>
+</div>
+
+<div class="div-2">
+  <p>ipsum ipsum ipsumipsumipsumipsumipsumipsumipsumipsum</p>
+</div>
+
+<div class="div-3">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ratione veniam possimus consequatur sequi tenetur perspiciatis qui doloribus quasi itaque saepe, numquam ad eaque unde rerum consequuntur iusto autem laudantium non nulla! Eaque totam id vero incidunt nam voluptates recusandae, vitae dolor magnam. Amet, molestiae placeat sequi culpa quas quis.</p>
+</div>
+
+</body>
+</html>

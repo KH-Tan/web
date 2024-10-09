@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+<style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: sans-serif;
+  background-color: aquamarine;
+  color: #000;
+
+  display: grid;
+  grid-template-columns: [page-start] 1fr [content-start] 70vw [content-end] 1fr [page-end];
+  grid-template-rows: [hero-start] 45vh [info-start] 1em [hero-end] 6em [info-end] auto [bottom];
+}
+
+
+.title {
+  color: white;
+  font-size: 3.5rem;
+
+  span {
+    display: block;
+    font-weight: 300;
+  }
+}
+
+.small-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.section-1 {
+  background-color: #777;
+  text-align: center;
+
+  grid-column: page-start / page-end;
+  grid-row: hero-start / hero-end;
+}
+
+.section-2 {
+  background-color: #ddd;
+  text-align: center;
+
+  grid-column: content-start / content-end;
+  grid-row: info-start / info-end;
+  z-index: 9;
+
+
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.section-3 {
+  background-color: lightblue;
+
+  grid-column: page-start / page-end;
+  grid-row: hero-end / bottom;
+
+  padding: 8rem 0;
+
+
+  display: grid;
+  grid-template-columns: inherit;
+
+  .container {
+    background-color: pink;
+    grid-column: content-start / content-end;
+
+    padding: 1rem;
+  }
+}
+
+
+</style>
+
+</head>
+<body>
+
+
+<section class="section-1">
+  <h2 class="title">CSS Grid<span>grid line names</span></h2>
+</section>
+
+<section class="section-2">
+  <div class="info">
+    <h2 class="small-title">The Grid Rocks</h2>
+    <p>Some cool stuff here</p>
+    <p>Some more cool stuff here</p>
+  </div>
+  <div class="info">
+    <h2 class="small-title">The Grid Rocks</h2>
+    <p>Some cool stuff here</p>
+    <p>Some more cool stuff here</p>
+  </div>
+  <div class="info">
+    <h2 class="small-title">The Grid Rocks</h2>
+    <p>Some cool stuff here</p>
+    <p>Some more cool stuff here</p>
+  </div>
+</section>
+
+
+<section class="section-3">
+  <div class="container">
+
+    Wat Ratchanatdaram (Thai: วัดราชนัดดาราม, pronounced [wát râːt.t͡ɕʰā.nát.dāːrāːm]) is a Buddhist temple (wat) located at the intersection between Ratchadamnoen Klang and Maha Chai Road, in Phra Nakhon district, Bangkok. Meaning Temple of the Royal Niece, the temple was built to the order of King Nangklao (Rama III) for his granddaughter, Princess Somanass Waddhanawathy in 1846. It is popularly known as Loha Prasat, literally meaning the iron palace.[1][2]
+
+
+
+    By Ninara from Helsinki, Finland - 4Y1A0775 Bangkok, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=61352313
+
+
+    From Wikipedia, the free encyclopedia
+
+    Yaowarat Road is the main artery of Chinatown.
+    
+    Chinatown Gate, Bangkok
+    Bangkok's Chinatown is one of the largest Chinatowns in the world. It was founded in 1782 when the city was established as the capital of the Rattanakosin Kingdom, and served as the home of the mainly Teochew immigrant Chinese population, who soon became the city's dominant ethnic group. Originally centred around Sampheng, the core of Chinatown now lies along Yaowarat Road, which serves as its main artery and sometimes lends its name to the entire area, which is often referred to as Yaowarat (Thai: เยาวราช). Chinatown's entire area roughly coincides with Samphanthawong District, and includes neighbourhoods such as Song Wat and Talat Noi along the Chao Phraya River, and Charoen Chai, Khlong Thom and Nakhon Khasem along Charoen Krung Road.
+
+    By กสิณธร ราชโอรส - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=137173000
+
+
+    By <a href="//commons.wikimedia.org/w/index.php?title=User:%E0%B8%81%E0%B8%AA%E0%B8%B4%E0%B8%93%E0%B8%98%E0%B8%A3_%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B9%82%E0%B8%AD%E0%B8%A3%E0%B8%AA&amp;action=edit&amp;redlink=1" class="new" title="User:กสิณธร ราชโอรส (page does not exist)">กสิณธร ราชโอรส</a> - <span class="int-own-work" lang="en">Own work</span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=137173000">Link</a>
+
+
+    Wat Arun Ratchawararam Ratchawaramahawihan (Thai: วัดอรุณราชวราราม ราชวรมหาวิหาร ) or Wat Arun ("Temple of Dawn") is a Buddhist temple (wat) in the Bangkok Yai district of Bangkok, Thailand. It is situated on Thonburi on the west bank of the Chao Phraya River. The temple derives its name from the Hindu god Aruṇa, often personified as the radiations of the rising sun. Wat Arun is among the best known of Thailand's landmarks. Although the temple has existed since at least the 17th century, its distinctive prang (spire) was built in the early 19th century during the reigns of Rama II and Rama III.
+
+    Wat Arun can be accessed through the Chao Phraya River, and ferries travel across the river towards the Maharaj pier. For foreigners, the temple charges an entrance fee of 200 baht (as of March 2024). During Kathina, the king travels to Wat Arun in a procession of royal barges to present new robes to the monks there.
+
+
+
+
+
+
+    <h2>More content here</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias similique fuga dicta nisi aliquam placeat nulla quos hic doloribus. Modi veritatis officiis voluptates delectus cum saepe iusto velit impedit? Voluptates, facere minima repellendus autem facilis suscipit est minus animi sint vel laborum vitae incidunt, earum quo molestias. Maiores, reiciendis enim.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae accusamus, quaerat nesciunt quod dignissimos ipsa cumque explicabo nemo. Placeat iste quo id laudantium officiis saepe dolores enim alias reprehenderit non quia quas, nulla sit voluptas aut atque! Impedit asperiores commodi at esse quasi omnis nostrum? Quam, aliquam dolorem dignissimos perferendis alias aut nobis ipsam nulla repellendus officia, eligendi maxime voluptas facilis mollitia sapiente in vero officiis doloremque. Sit praesentium voluptate aut, dolor expedita fugit nulla!</p>
+  </div>
+</section>
+
+
+</body>
+</html>

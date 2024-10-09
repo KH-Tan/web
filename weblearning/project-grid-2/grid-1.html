@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid 1</title>
+
+
+<style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  header {
+    min-height: 15vh;
+    background-color: #888;
+  }
+  main {
+    min-height: 75vh;
+    background-color: #aaa;
+  }
+  footer {
+    min-height: 10vh;
+    background-color: #ccc;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  shape-margin: 0.75rem;
+
+  /* padding: 0.25rem; */
+  /* border-radius: 0.75rem; */
+}
+
+.grid-wrapper {
+  padding: 0.5rem;
+
+  /* width: 96%;  */
+  max-width: 115ch;
+  width: 1024px;
+
+  margin-inline: auto;
+
+  /* width: min( 1024px, 100% - 1rem ); */
+
+
+  /* container-name: grid-wrap; */
+  container-type: inline-size;
+
+  display: grid;
+  gap: 1.25rem 1rem;
+
+  --columns: 3;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  /* grid-template-columns: repeat( auto-fill, minmax( 33ch, 1fr )); */
+
+  .grid-box {
+    background-color: lightgray;
+    /* max-width: 33ch; */
+    /* min-width: 31ch; */
+    width: 31ch;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media ( width <= 420px ) {
+  .grid-wrapper {
+    --columns: 1;
+    width: 400px;
+  } 
+}
+@media ( 420px < width <= 800px ) {
+  .grid-wrapper {
+    --columns: 2;
+    width: 600px;
+  }
+} 
+@media ( 800px < width ) {
+  .grid-wrapper {
+    --columns: 3;
+    width: 768px;
+  }
+} 
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <h1>Grid 1</h1>
+</header>  
+<main>
+
+<section class="grid-wrapper">
+  <div class="grid-box">
+    <h2>Box 1</h2>
+    <img src="/images/japan/RedTori.jpg">
+  </div>
+  <div class="grid-box">
+    <h2>Box 2</h2>
+    <img src="/images/japan/Kyoto.jpg">
+  </div>
+  <div class="grid-box">
+    <h2>Box 3</h2>
+    <img src="/images/japan/NightStreet.jpg">
+  </div>
+  <div class="grid-box">
+    <h2>Box 4</h2>
+    <img src="/images/japan/NightStreetLanterns.jpg">
+  </div>
+  <div class="grid-box">
+    <h2>Box 5</h2>
+    <img src="/images/japan/CanalFlower.jpg">
+  </div>
+</section>
+
+
+</main>
+<footer>Tanaka Productions</footer>
+</body>
+</html>

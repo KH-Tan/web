@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container Queries</title>
+
+<style>
+
+
+.wrapper-grid {
+  display: grid;
+  grid-template-areas:
+        " . header  header  header  header   header   . "
+        " . content content content content  sidebar  . "
+        " . footer  footer  footer  footer   footer   . "
+        ;
+  grid-template-rows: 15vh auto 10vh;
+
+  padding: 1rem;
+ 
+  .site-header {
+    grid-area: header;
+    padding: 1rem;
+
+    background-color: skyblue;
+  }
+  .content {
+    grid-area: content;
+    padding: 1rem;
+    background-color: lightgoldenrodyellow;
+
+    container-name: content;
+    container-type: inline-size;
+    container: content / inline-size;
+  }
+  .sidebar {
+    grid-area: sidebar;
+    padding: 1rem;
+    background-color: lightgoldenrodyellow;
+
+    container: sidebar / inline-size;
+  }
+  .site-footer {
+    grid-area: footer;
+    padding: 1rem;
+  }
+}
+
+
+.thumbnail {
+  aspect-ratio: 2 / 1;
+  margin-block-end: 1rem;
+  background-color: #ffe566;
+}
+
+.content,
+.sidebar {
+  container-type: inline-size;
+}
+@container (width > 20rem) {
+  .post-thumbnails {
+    display: flex;
+    gap: 1rem;
+
+    .thumbnail {
+      flex: 1;
+    }
+  }
+}
+@container content (width > 20rem) {
+  .post-thumbnails {
+    background-color: darkkhaki;
+    padding: 1rem;
+
+    .thumbnail {
+      margin-block-end: 0;
+    }
+  }
+}
+
+</style>
+
+
+
+
+
+</head>
+<body class="wrapper-grid">
+
+<header class="site-header">
+  <div class="site-logo">Tanaka</div>
+</header>
+
+<main class="content">
+  <h1>CSS @container Queries</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum corrupti cum beatae expedita blanditiis, recusandae atque nihil quam excepturi voluptas nobis et nulla fugit quas similique? Soluta voluptate deleniti quos?</p>
+
+  <div class="post-thumbnails">
+    <div class="thumbnail"></div>
+    <div class="thumbnail"></div>
+    <div class="thumbnail"></div>
+  </div>
+</main>
+
+<aside class="sidebar">
+  <h2>Sidebar</h2>
+  <div class="post-thumbnails">
+    <div class="thumbnail"></div>
+    <div class="thumbnail"></div>
+  </div>
+</aside>
+
+<footer class="site-footer">
+  Footer
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar CSS JS</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: beige;
+
+  font-family: sans-serif;
+  font-size: 1rem;
+ 
+}
+nav {
+  background-color: black;
+  padding: 1em 2em;
+
+  ul {
+    list-style-type: none;
+
+    a {
+      display: block;
+      color: whitesmoke;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    li {
+      font-size: 1.25rem;
+      padding: .25em .25em;
+    }
+
+  }
+
+  .logo a {
+    font-size: 2rem;
+  }
+
+}
+
+/* Mobile Menu */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  .item {
+    display: none;
+
+    .active {
+      display: block;
+    }
+  }
+}
+
+.bars {
+  background-color: #999;
+  width: 32px;
+  height: 3px;
+  display: inline-block;
+  position: relative;
+
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+
+    background-color: #999;
+    width: 32px;
+    height: 3px;
+  }
+  &::before {
+    top: 8px;
+  }
+  &::after {
+    top: -8px;
+  }
+}
+.toggle {
+  cursor: pointer;
+}
+
+/* Tablet Menu */
+@media (min-width: 468px) {
+  .menu {
+    justify-content: center;
+  }
+  .logo {
+    flex: 1;
+  }
+
+
+}
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul class="menu">
+    <li class="logo"><a href="#">Logo</a></li>
+    <li class="item"><a href="#">Home</a></li>
+    <li class="item"><a href="#">About</a></li>
+    <li class="item"><a href="#">Services</a></li>
+    <li class="item button"><a href="#">Login</a></li>
+    <li class="item button secondary"><a href="#">Sign Up</a></li>
+    <li class="toggle"><span class="bars"></span></li>
+    </ul>
+  </nav>
+</header>
+<main>
+
+  <h2>Lorem ipsum dolor</h2>
+  <p>Sit amet consectetur, adipisicing elit. Explicabo quae perspiciatis dolor neque veniam, quam nemo blanditiis labore officia. Perferendis totam quidem dolorem commodi aspernatur numquam excepturi beatae, voluptatibus id.</p>
+     
+
+
+
+
+
+
+
+
+</main>
+<footer>
+  <h3>&copy;2024 Tanaka Productions</h3>
+</footer>
+</body>
+</html>

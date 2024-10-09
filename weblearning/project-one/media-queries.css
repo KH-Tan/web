@@ -1,0 +1,18 @@
+
+@media (width >= 600px) {
+  #desktop-nav {
+    display: flex;
+  }
+  #hamburger-nav {
+    display: none;
+  }
+}
+
+@media (width < 600px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+  }
+}
