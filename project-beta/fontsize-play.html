@@ -4,22 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FontSizePlay</title>
-
+  
 
 <style>
+
+html {
+  /* determines REM units */
+  font-size: 16px;
+}
+
 
 body {
   max-width: 60%;
   margin-inline: auto;
 
+  /* determines EM units */
   font-size: 20px;
+
   line-height: 1.4;
 }
 
+
+#h-units {
+  font-size: 1em;
+
+  .units-rem {
+    font-size: 1rem;
+  }
+  .units-em {
+    font-size: 1em
+  }
+}
+#h-cta-rem {
+  background-color: orange;
+  color: white;
+  margin-block: 50px;
+  text-align: center;
+
+  padding: 2rem 1rem;
+
+  button {
+    display: inline-block;
+    border: none;
+    background-color: black;
+    color: inherit;
+  
+    font-size: 0.5rem;
+    padding: 1rem 3rem;
+  }
+
+}
+#h-cta-em {
+  background-color: orange;
+  color: white;
+  margin-block: 50px;
+  text-align: center;
+
+  padding: 2rem 1rem;
+
+  button {
+    display: inline-block;
+    border: none;
+    background-color: black;
+    color: inherit;
+  
+    font-size: 0.5rem;
+    padding: 1em 3em;
+  }
+
+}
+
+
+/*
 @media (width <= 375px) {
   body {
     max-width: 90%;
-    /* margin-inline: auto; */
 
     font-size: 14px;
     line-height: 1.25;
@@ -29,7 +88,6 @@ body {
 @media (375px < width <= 768px) {
   body {
     max-width: 80%;
-    /* margin-inline: auto; */
 
     font-size: 16px;
     line-height: 1.3;
@@ -38,13 +96,12 @@ body {
 @media (768px < width <= 1024px) {
   body {
     max-width: 70%;
-    /* margin-inline: auto; */
 
     font-size: 18px;
     line-height: 1.35;
   }
 }
-
+*/
 </style>
 
 
@@ -68,6 +125,37 @@ body {
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae iusto earum soluta itaque nobis possimus illo corrupti doloribus voluptas dolor rem exercitationem voluptatem voluptatibus dolorum asperiores harum laudantium, adipisci maiores?</p>
     </section>
     
+
+
+  <section id="h-units">
+    <h2>em Vs rem</h2>
+    <hr>
+
+    <article class="units-rem">
+      <h3>rems</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, ipsum. Voluptatem aliquam labore dolores rem nisi porro harum, est rerum?</p>
+    </article>
+
+    <article class="units-em">
+      <h3>ems</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, ipsum. Voluptatem aliquam labore dolores rem nisi porro harum, est rerum?</p>
+    </article>
+
+  </section>
+
+  <section id="h-cta-rem">
+    <h2>Call to Action REM</h2>
+    <button>Click Me</button>
+  </section>
+
+  <section id="h-cta-em">
+    <h2>Call to Action EM</h2>
+    <button>Click Me</button>
+  </section>
+
+
+
+
     <section id="h-thailand">
       <h2>Thailand</h2>
       <h5>From Wikipedia, the free encyclopedia</h5>
