@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PositionSticky</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+
+  max-width: 70ch;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+}
+
+.article {
+  border: 1px solid #aaa;
+  background-color: #ccc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+
+  display: grid;
+  align-items: start;
+  grid-template-columns: 12ch 1fr;
+  gap: 2rem;
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.35;
+    font-size: 0.85rem;
+  }
+  .article-heading {
+    /* outline: 1px solid black; */
+    position: sticky;
+    top: 1rem;
+  }
+  .article-content {
+    /* outline: 1px solid black; */
+  }
+}
+
+</style>
+
+
+</head>
+<body>
+  
+
+
+  <article class="article">
+    <h2 class="article-heading">Article 1</h2>
+    <div class="article-content">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, natus quisquam temporibus eveniet officiis quos laudantium cum unde officia fugit expedita est libero quo.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ex saepe nulla impedit quaerat consequuntur libero perspiciatis quasi nesciunt, maxime voluptate modi incidunt iste repellendus non cum officia. Dolorum nam molestias explicabo ducimus exercitationem, similique adipisci, temporibus quisquam fugiat iste ab soluta illo voluptatem dolores, quia assumenda molestiae necessitatibus aliquam!</p>
+    </div>
+  </article>
+
+<article class="article">
+  <h2 class="article-heading">Article 2</h2>
+  <div class="article-content">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, natus quisquam temporibus eveniet officiis quos laudantium cum unde officia fugit expedita est libero quo.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ex saepe nulla impedit quaerat consequuntur libero perspiciatis quasi nesciunt, maxime voluptate modi incidunt iste repellendus non cum officia. Dolorum nam molestias explicabo ducimus exercitationem, similique adipisci, temporibus quisquam fugiat iste ab soluta illo voluptatem dolores, quia assumenda molestiae necessitatibus aliquam!</p>
+  </div>
+</article>
+
+<article class="article">
+  <h2 class="article-heading">Article 3</h2>
+  <div class="article-content">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, natus quisquam temporibus eveniet officiis quos laudantium cum unde officia fugit expedita est libero quo.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ex saepe nulla impedit quaerat consequuntur libero perspiciatis quasi nesciunt, maxime voluptate modi incidunt iste repellendus non cum officia. Dolorum nam molestias explicabo ducimus exercitationem, similique adipisci, temporibus quisquam fugiat iste ab soluta illo voluptatem dolores, quia assumenda molestiae necessitatibus aliquam!</p>
+  </div>
+</article>
+
+<article class="article">
+  <h2 class="article-heading">Article 4</h2>
+  <div class="article-content">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam, natus quisquam temporibus eveniet officiis quos laudantium cum unde officia fugit expedita est libero quo.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ex saepe nulla impedit quaerat consequuntur libero perspiciatis quasi nesciunt, maxime voluptate modi incidunt iste repellendus non cum officia. Dolorum nam molestias explicabo ducimus exercitationem, similique adipisci, temporibus quisquam fugiat iste ab soluta illo voluptatem dolores, quia assumenda molestiae necessitatibus aliquam!</p>
+  </div>
+</article>
+
+</body>
+</html>
