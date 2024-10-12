@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iFramePlay</title>
+
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+  .wrapper-ytube {
+    max-width: 300px;
+    margin: 1rem auto;
+    /* padding: 1rem; */
+    background-color: aqua;
+
+    iframe {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .wrapper-gmap {
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: salmon;
+
+    iframe {
+      aspect-ratio: 3 / 2;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .wrapper-www {
+    max-width: 800px;
+    margin: 1rem auto;
+    padding: 0;
+    background-color: skyblue;
+
+    .www-content {
+      background-color: salmon;
+    }
+    iframe {
+      background-color: salmon;
+      /* border: 1px solid black; */
+      /* aspect-ratio: 3 / 2; */
+      width: 100%;
+      display: block;
+      /* height: auto; */
+    }
+  }
+
+
+</style>
+
+
+</head>
+<body>
+<header>
+  <h1>YouTube in iFrame</h1>
+</header>
+  
+
+  <div class="wrapper-ytube">
+  <iframe
+    frameborder="0"
+    width="1166" height="664"
+    src="https://www.youtube.com/embed/jTDPm73mFxE?list=RDjTDPm73mFxE"
+    title="Gabriel Fauré: Romance Sans Paroles, Op.17/3"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>    
+  </div>
+
+  <div class="wrapper-ytube">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/jTDPm73mFxE?si=3p5c-GP0aOAh5BjQ"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+  </div>
+
+  <div class="wrapper-gmap">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6067.778848560732!2d100.540526800342!3d13.729337090391438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ssg!4v1728641062896!5m2!1sen!2ssg"
+    width="400" height="300" style="border:0;"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  </div>
+
+  <div class="wrapper-gmap">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8341.219379925433!2d100.48561073784516!3d13.741818267689245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29906eaff2b69%3A0x86fd997e5694b89d!2sWat%20Arun%20Ratchawararam%20Ratchawaramahawihan!5e0!3m2!1sen!2ssg!4v1728642045803!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="wrapper-www">
+    <!-- <div class="www-content">
+      <h2>HELLO</h2>
+    </div> -->
+    <iframe src="/c-footer.html" frameborder="0"></iframe>
+  </div>
+
+
+
+<footer>
+  <p>&copy; 2024 Tanaka Productions</p>
+</footer>
+</body>
+</html>
