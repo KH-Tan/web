@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoPlay</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  width: 100%;
+  height: auto;
+  background-color: rgb(50, 50, 50, 0.3);
+  min-height:  50vh;
+
+  position: relative;
+
+  /* padding: 200px 0; */
+  /* margin-bottom: 50px; */
+
+  /* overflow: hidden; */
+
+  .video-bg {
+
+    /* width: 100%; */
+    /* height: auto; */
+    /* min-width: 100%; */
+    /* min-height: 100%; */
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+
+    /* right: 0; */
+    /* bottom: 0; */
+    /* inset: 0; */
+
+    /* display: block; */
+  }
+}
+/* 
+@media (min-aspect-ratio: 16/9) {
+  .video-bg {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-bg {
+    width: auto;
+    height: 100%;
+  }
+} */
+
+.intro {
+  width: 80%;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+</style>
+
+
+</head>
+<body>
+  
+<div class="hero">
+  <h1>Some Text</h1>
+  <video class="video-bg" autoplay muted loop>
+    <source src="/assets/BirdonBranch.mp4" type="video/mp4">
+  </video>
+</div>
+
+<section class="intro">
+  <h2>Lorem</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque minima eius eveniet, hic modi quod dolores aperiam molestias magnam corrupti sit molestiae reprehenderit excepturi! Recusandae dolorum enim ea, nemo incidunt est, totam consequuntur error repudiandae vero commodi neque ratione et eos sit provident accusamus officia! Nulla consectetur vitae similique!</p>
+</section>
+
+<section class="intro">
+  <h2>Lorem</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque minima eius eveniet, hic modi quod dolores aperiam molestias magnam corrupti sit molestiae reprehenderit excepturi! Recusandae dolorum enim ea, nemo incidunt est, totam consequuntur error repudiandae vero commodi neque ratione et eos sit provident accusamus officia! Nulla consectetur vitae similique!</p>
+</section>
+
+<section class="intro">
+  <h2>Lorem</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque minima eius eveniet, hic modi quod dolores aperiam molestias magnam corrupti sit molestiae reprehenderit excepturi! Recusandae dolorum enim ea, nemo incidunt est, totam consequuntur error repudiandae vero commodi neque ratione et eos sit provident accusamus officia! Nulla consectetur vitae similique!</p>
+</section>
+
+<section class="intro">
+  <h2>Lorem</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eaque minima eius eveniet, hic modi quod dolores aperiam molestias magnam corrupti sit molestiae reprehenderit excepturi! Recusandae dolorum enim ea, nemo incidunt est, totam consequuntur error repudiandae vero commodi neque ratione et eos sit provident accusamus officia! Nulla consectetur vitae similique!</p>
+</section>
+
+</body>
+</html>
