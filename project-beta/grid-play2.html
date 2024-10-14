@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GridPlay2</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding-inline: min(0.5rem, 10%) ;
+}
+
+
+#grid-container-cards {
+  /* border: 1px solid green; */
+  /* background-color: #888; */
+  max-width: 1024px;
+  margin: 1rem auto;
+  padding: 1rem;
+
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-rows: 200px 200px; */
+  /* grid-auto-rows: 200px; */
+  gap: 0.75rem;
+  justify-content: center;
+
+  .cards {
+    border: 1px solid pink;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+
+  .card-1 {
+    background-color: #eee;
+  }
+  .card-2 {
+    background-color: #ddd;
+  }
+  .card-3 {
+    background-color: #ccc;
+  }
+  .card-4 {
+    background-color: #bbb;
+  }
+  .card-5 {
+    background-color: #aaa;
+  }
+  .card-6 {
+    background-color: #999;
+  }
+
+
+}
+
+
+</style>
+
+
+</head>
+<body>
+<h3>The complete guide to</h3>
+<h1>CSS GRID - Responsive</h1>
+<h3>CSS GRID is layout based</h3>
+  
+
+
+<div id="grid-container-cards">
+<section class="cards card-1">
+  <h2>Section A</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aut eaque, alias tenetur velit autem. Corrupti commodi quaerat dolor expedita, iure recusandae deserunt dignissimos unde.</p>
+</section>
+<section class="cards card-2">
+  <h2>Section B</h2>
+  <p>Sit amet consectetur adipisicing elit. Doloremque aut eaque, alias tenetur velit autem. Corrupti commodi quaerat dolor expedita, iure recusandae deserunt dignissimos unde.</p>
+</section>
+<section class="cards card-3">
+  <h2>Section C</h2>
+  <p>Doloremque aut eaque, alias tenetur velit autem. Corrupti commodi quaerat dolor expedita, iure recusandae deserunt dignissimos unde.</p>
+</section>
+
+<article class="cards card-4">
+  <h2>Article 1</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque aut eaque, alias tenetur velit autem. Corrupti commodi quaerat dolor expedita, iure recusandae deserunt dignissimos unde.</p>
+</article>
+<article class="cards card-5">
+  <h2>Article 2</h2>
+  <p>Doloremque aut eaque, alias tenetur velit autem.</p>
+</article>
+<article class="cards card-6">
+  <h2>Article 3</h2>
+  <p>Corrupti commodi quaerat dolor expedita, iure recusandae deserunt dignissimos unde.</p>
+</article>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<div class="header-content">
+
+  <div class="logo">Tanaka</div>
+
+  <nav>
+    <a href="A_index.html">Home</a>
+    <a href="B_about.html">About</a>
+    <a href="C_contact.html">Contact</a>
+  </nav>    
+
+</div>
+
+
+<style>
+  
+.header-content {
+  /* min-height: 15vh; */
+  /* background-color: olive; */
+  text-align: center;
+
+  .logo {
+    padding-block-start: 0.5rem;
+    font-size: 2rem;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding-inline: 1rem;
+    font-size: 1.25rem;
+  }
+
+}
+
+</style>
+
+<script>
+  const homeAnchor = document.querySelectorAll('nav a')[0]
+  homeAnchor.addEventListener('click', (e)=> {
+    e.preventDefault()
+    alert('Home Clicked')
+  })
+
+  // this does not work
+  // function sayHello() {
+  //   alert('Hello')
+  // }
+
+</script>
+
+
+
+
